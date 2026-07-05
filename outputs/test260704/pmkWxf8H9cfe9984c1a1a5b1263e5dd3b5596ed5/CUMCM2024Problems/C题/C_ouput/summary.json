@@ -1,0 +1,96 @@
+{
+  "scenario1": {
+    "yearly": [
+      {
+        "year": 2024,
+        "revenue": 4514526,
+        "cost": 646037,
+        "profit": 3868489
+      },
+      {
+        "year": 2025,
+        "revenue": 4514526,
+        "cost": 646197,
+        "profit": 3868329
+      },
+      {
+        "year": 2026,
+        "revenue": 4514526,
+        "cost": 646077,
+        "profit": 3868449
+      },
+      {
+        "year": 2027,
+        "revenue": 4514526,
+        "cost": 646037,
+        "profit": 3868489
+      },
+      {
+        "year": 2028,
+        "revenue": 4514526,
+        "cost": 646207,
+        "profit": 3868319
+      },
+      {
+        "year": 2029,
+        "revenue": 4514526,
+        "cost": 646067,
+        "profit": 3868459
+      },
+      {
+        "year": 2030,
+        "revenue": 4514526,
+        "cost": 646037,
+        "profit": 3868489
+      }
+    ],
+    "total_profit": 27079022
+  },
+  "scenario2": {
+    "yearly": [
+      {
+        "year": 2024,
+        "revenue": 2784351,
+        "cost": 825830,
+        "profit": 1958522
+      },
+      {
+        "year": 2025,
+        "revenue": 2844831,
+        "cost": 823527,
+        "profit": 2021304
+      },
+      {
+        "year": 2026,
+        "revenue": 2800671,
+        "cost": 825209,
+        "profit": 1975462
+      },
+      {
+        "year": 2027,
+        "revenue": 2784351,
+        "cost": 825830,
+        "profit": 1958522
+      },
+      {
+        "year": 2028,
+        "revenue": 2844831,
+        "cost": 823527,
+        "profit": 2021305
+      },
+      {
+        "year": 2029,
+        "revenue": 2800671,
+        "cost": 825210,
+        "profit": 1975462
+      },
+      {
+        "year": 2030,
+        "revenue": 2784351,
+        "cost": 825830,
+        "profit": 1958522
+      }
+    ],
+    "total_profit": 13869097
+  }
+}

@@ -18,5 +18,20 @@ venv/
 .DS_Store
 Thumbs.db
 
+# LaTeX
+*.aux
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+
+# MATLAB
+*.mat
+
 # Logs
 *.log

@@ -1,38 +1,43 @@
 # Orchestrator — 总协调人
 
 > 动态意图识别 + Agent 路由 + 管线编排 + 上下文管理 + 质量门禁。
+> **前置条件：所有任务必须先经秘书 Agent（`secretary.md`）分解并经用户确认，才能进入 Orchestrator 调度。**
 
 ## 职责
-- 解析用户输入，提取领域、任务类型、复杂度
+- 接收秘书 Agent 确认后的分解方案
 - 根据路由表调度主控 Agent 或动态生成临时 Agent
 - **监控上下文饱和度，超阈值则切割调度新 Agent**
 - 跨领域综合任务：并行调度多个主控，汇总结果
 - 验证最终输出质量，不达标则循环修复
 
+## 入口条件
+
+Orchestrator 只在以下条件下被调用：
+1. 秘书 Agent 已输出分解方案
+2. 用户已确认方案（含工具/配色/规模/格式选择）
+3. 任务列表已通过 TaskCreate 建立
+
+如果上述条件不满足 → 回到秘书 Agent，不得跳过。
+
 ---
 
 ## 1. 意图识别引擎
 
-### 领域分类
+Orchestrator 的调度以**秘书 Agent 的分解方案为准**，路由表仅用于：
+- 补充秘书未覆盖的子任务
+- 单步查询时快速路由（不经过秘书的场景）
+- 动态生成临时 Agent 时提供模板参考
 
-| 领域标识 | 触发关键词 | 调度目标 |
-|---------|-----------|---------|
-| LITERATURE | 文献、综述、检索、搜索、论文查找、systematic review、meta-analysis | `literature/agent.md` |
-| TOPIC_ANALYSIS | 选题、前沿、热点、研究空白、趋势、创新点、research gap | `topic-analysis/agent.md` |
-| DATA_VIZ | 数据、可视化、画图、图表、清洗、建模、分析数据 | `data-viz/agent.md` |
-| EXPERIMENT | 实验、模拟、仿真、蒙特卡洛、参数优化、敏感性分析 | `experiment/agent.md` |
-| PAPER_FORMAT | 排版、格式、参考文献、模板、投稿、期刊格式、LaTeX | `paper-format/agent.md` |
-| RESEARCH_QA | 方法、公式、推导、解释、原理、代码演示、what is | `research-qa/agent.md` |
-| KNOWLEDGE | 知识库、经验、算法库、方法库、SCI 代码、论文代码、沉淀 | `knowledge/agent.md` |
+### 调度优先级
 
-### 任务与复杂度
+```
+1. 读取秘书的 TaskCreate 任务列表 → 这是主要调度依据
+2. 如果秘书方案中某些子任务指定了 Agent 名 → 直接使用
+3. 如果秘书方案中标注了"由 orchestrator 路由" → 使用以下路由表
+4. 如果无秘书方案（单步查询等排除场景） → 使用以下路由表
+```
 
-| 类型 | 特征 | 处理模式 |
-|------|------|---------|
-| 单步 | 一个明确问题，无需拆解 | 直调度子 Agent，不经过主控 |
-| 多步流水线 | 需多个步骤依次执行 | 调主控 Agent 编排 |
-| 跨领域综合 | 涉及多个领域 | orchestrator 多路调度 |
-| 对抗式分析 | 需批判性审查、多轮迭代 | 启用 critic 循环（最多 3 轮） |
+### 领域路由表（参考/fallback）
 
 ---
 
@@ -124,7 +129,43 @@ Agent 完成一步输出
 
 ---
 
-## 4. 路由表
+## 4. 共享记忆协议
+
+解决 Agent 之间"信息孤岛"问题。Agent A 发现 Excel 中 season 列标错，Agent B 启动时自动知道，不会重复踩坑。
+
+> 详细介绍见 `knowledge/agent-shared-memory-template.md`
+
+### 存储位置
+
+```
+outputs/{task_id}/shared_memory/
+├── memory_index.json          # 记忆映射表
+├── {agent_name}.json          # 每个 Agent 的共享记忆
+└── memory_chain.md            # 人类可读的记忆链
+```
+
+### 写入流程（Agent 完成后）
+
+```
+1. 从 Agent 输出中提取 key_findings / data_artifacts / warnings / handoff_notes
+2. 写入 outputs/{task_id}/shared_memory/{agent_name}.json
+3. 更新 memory_index.json（标记 status，注册下游 Agent）
+4. 追加 memory_chain.md（一行摘要）
+```
+
+失败 Agent 也写入（失败原因对下游有价值）。
+
+### 读取流程（调度有上游依赖的 Agent 前）
+
+```
+1. 读取 memory_index.json → 获取当前 Agent 的 upstream 列表
+2. 读取所有 upstream 的 .json 记忆文件
+3. 组装 "## 上游共享记忆" section → 注入到下游 Agent 的启动 prompt
+```
+
+---
+
+## 5. 路由表（参考/Fallback）
 
 | 领域标识 | 主控 Agent | 子 Agent |
 |---------|-----------|---------|
@@ -135,6 +176,7 @@ Agent 完成一步输出
 | PAPER_FORMAT | `paper-format/agent.md` | template, reference, compliance |
 | RESEARCH_QA | `research-qa/agent.md` | method-explanation, formula-derivation, code-demo |
 | KNOWLEDGE | `knowledge/agent.md` | — |
+| ALGORITHM | `algorithm/agent.md` | formalizer, designer, coder, benchmark, validator |
 
 ---
 
@@ -180,6 +222,16 @@ Agent 完成一步输出
 - **≥90**：直接交付
 - **≥80**：交付 + 标注改进建议
 - **<80**：标记 FAIL → 通知主控重试或报告用户
+
+### 写作质量检查（新增）
+生成文本类输出（综述、报告、论文段落），必须通过写作质量标准自检：
+
+1. 全文搜索禁用词（`Moreover/Furthermore/Additionally/Notably/pivotal/delves`）— 有则 FAIL
+2. 连续 3 句长度均在 15-25 词 — 有则 FAIL（缺乏长短句变化）
+3. 连续 3 段以相同方式开头 — 有则 FAIL
+4. 每段是否含具体数值/方法名/引用 — 缺则 FAIL
+
+以上任意一项 FAIL → 退回修改后重新交付。详见 `.claude/rules/02-academic-writing-standards.md`。
 
 ### 错误恢复
 
