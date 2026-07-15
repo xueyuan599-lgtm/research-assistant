@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Idea2Top — 数学建模半自动：将研究方法想法自动转化为顶刊级可复现实现的智能框架">
+  <meta name="theme-color" content="#f7f3ed">
+
+  <title>Idea2Top — 数学建模半自动</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ====================================================== -->
+  <!-- Navigation -->
+  <!-- ====================================================== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="seal">I2T</span>
+        <span>Idea2Top</span>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"/>
+          <line x1="4" y1="12" x2="20" y2="12"/>
+          <line x1="4" y1="17" x2="20" y2="17"/>
+        </svg>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#home" data-i18n="nav.home">首页</a></li>
+        <li><a href="#about" data-i18n="nav.about">项目简介</a></li>
+        <li><a href="#architecture" data-i18n="nav.architecture">系统架构</a></li>
+        <li><a href="#workflow" data-i18n="nav.workflow">工作流</a></li>
+        <li><a href="#agents" data-i18n="nav.agents">智能体</a></li>
+        <li><a href="#knowledge" data-i18n="nav.knowledge">知识库</a></li>
+        <li><a href="#guide" data-i18n="nav.guide">使用指南</a></li>
+        <li>
+          <div class="lang-toggle" role="radiogroup" aria-label="Language selection">
+            <button class="lang-option active" data-lang="zh" role="radio" aria-checked="true">中</button>
+            <button class="lang-option" data-lang="en" role="radio" aria-checked="false">EN</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ====================================================== -->
+  <!-- Hero Section -->
+  <!-- ====================================================== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="wash-1"></div>
+      <div class="wash-2"></div>
+      <div class="wash-3"></div>
+      <div class="ink-line"></div>
+      <div class="ink-line"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-i18n="hero.badge">研究自动化框架</div>
+
+      <h1 class="hero-title">
+        <span class="cn" data-i18n="hero.title_cn">研究想法 → 顶刊实现</span>
+        <span class="en" data-i18n="hero.title_en">Idea to Top-Journal Implementation</span>
+      </h1>
+
+      <p class="hero-sub" data-i18n="hero.subtitle">
+        将研究方法想法自动转化为顶刊级可复现代码与实验结果的智能框架
+      </p>
+
+      <div class="hero-actions">
+        <a href="#architecture" class="btn btn-primary" data-i18n="hero.btn_start">探索架构</a>
+        <a href="#guide" class="btn btn-outline" data-i18n="hero.btn_guide">快速上手</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-label="Scroll to explore">
+      <span>SCROLL</span>
+      <div class="line"></div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- About Section -->
+  <!-- ====================================================== -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="about.header_zh">项目简介</span>
+          <span class="en-sub" data-i18n="about.header_en">About</span>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-i18n="about.desc1">
+            Idea2Top 是一个将研究方法想法自动转化为顶刊级可复现实现的智能框架。
+            用户只需用自然语言描述研究想法，系统即可自动完成文献对标、方案设计、代码生成、实验验证和对抗式 QA 的全流程。
+          </p>
+          <p data-i18n="about.desc2">
+            系统采用多智能体（Multi-Agent）架构，由秘书 Agent 统一入口分解任务，
+            Orchestrator 动态调度各领域 Agent 集群，实现从想法到交付的完全自动化流水线。
+          </p>
+          <div class="tagline" data-i18n="about.tagline">
+            从想法的宣纸起笔，到顶刊的朱砂落款——让每一个研究方法创新都被精确实现。
+          </div>
+        </div>
+
+        <div class="stats-grid" id="stats-container">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Architecture Section -->
+  <!-- ====================================================== -->
+  <section id="architecture" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="architecture.header_zh">系统架构</span>
+          <span class="en-sub" data-i18n="architecture.header_en">Architecture</span>
+        </h2>
+        <span class="zh-sub" data-i18n="architecture.sub_zh">多智能体分层协作架构</span>
+        <span class="en-sub" data-i18n="architecture.sub_en" style="font-style:italic;color:var(--ink-faint);font-size:0.85rem;margin-top:-4px;">
+          Multi-Agent Hierarchical Architecture
+        </span>
+      </div>
+
+      <p class="arch-intro" data-i18n="architecture.intro">
+        系统采用三层智能体架构：顶层由秘书 Agent 统一接收任务并分解，
+        中层由 Orchestrator 动态编排管线，底层由各领域专业 Agent 集群执行具体任务。
+      </p>
+
+      <div class="arch-hierarchy">
+        <!-- Level 1: Secretary -->
+        <div class="arch-level">
+          <div class="arch-card secretary" tabindex="0">
+            <span class="arch-icon">🔐</span>
+            <h4 data-i18n="architecture.secretary.title">Secretary</h4>
+            <span class="arch-zh" data-i18n="architecture.secretary.zh">秘书 Agent</span>
+            <span class="arch-count" data-i18n="architecture.secretary.desc">任务分解守门人</span>
+            <div class="arch-sub-agents">
+              <ul>
+                <li data-i18n="architecture.secretary.agents.0">任务分解</li>
+                <li data-i18n="architecture.secretary.agents.1">用户确认</li>
+                <li data-i18n="architecture.secretary.agents.2">Orchestrator 调度</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 2: Orchestrator -->
+        <div class="arch-level">
+          <div class="arch-card orchestrator" tabindex="0">
+            <span class="arch-icon">🎯</span>
+            <h4 data-i18n="architecture.orchestrator.title">Orchestrator</h4>
+            <span class="arch-zh" data-i18n="architecture.orchestrator.zh">总协调人</span>
+            <span class="arch-count" data-i18n="architecture.orchestrator.desc">意图识别 & 管线编排</span>
+            <div class="arch-sub-agents">
+              <ul>
+                <li data-i18n="architecture.orchestrator.agents.0">路由调度</li>
+                <li data-i18n="architecture.orchestrator.agents.1">上下文管理</li>
+                <li data-i18n="architecture.orchestrator.agents.2">质量门禁</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Level 3: Domain Agents -->
+        <div class="arch-level">
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">📚</span>
+            <h4 data-i18n="architecture.literature.title">Literature</h4>
+            <span class="arch-zh" data-i18n="architecture.literature.zh">文献智能体</span>
+            <span class="arch-count" data-i18n="architecture.literature.desc">3 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">🔍</span>
+            <h4 data-i18n="architecture.topic.title">Topic Analysis</h4>
+            <span class="arch-zh" data-i18n="architecture.topic.zh">选题分析</span>
+            <span class="arch-count" data-i18n="architecture.topic.desc">3 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">📊</span>
+            <h4 data-i18n="architecture.dataviz.title">Data & Viz</h4>
+            <span class="arch-zh" data-i18n="architecture.dataviz.zh">数据处理与可视化</span>
+            <span class="arch-count" data-i18n="architecture.dataviz.desc">4 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">🧪</span>
+            <h4 data-i18n="architecture.experiment.title">Experiment</h4>
+            <span class="arch-zh" data-i18n="architecture.experiment.zh">实验设计</span>
+            <span class="arch-count" data-i18n="architecture.experiment.desc">3 Agents</span>
+          </div>
+        </div>
+
+        <div class="arch-level">
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">⚗️</span>
+            <h4 data-i18n="architecture.algorithm.title">Algorithm</h4>
+            <span class="arch-zh" data-i18n="architecture.algorithm.zh">算法创造</span>
+            <span class="arch-count" data-i18n="architecture.algorithm.desc">5 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">📝</span>
+            <h4 data-i18n="architecture.paper.title">Paper Format</h4>
+            <span class="arch-zh" data-i18n="architecture.paper.zh">论文格式</span>
+            <span class="arch-count" data-i18n="architecture.paper.desc">3 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">💡</span>
+            <h4 data-i18n="architecture.researchqa.title">Research QA</h4>
+            <span class="arch-zh" data-i18n="architecture.researchqa.zh">科研问答</span>
+            <span class="arch-count" data-i18n="architecture.researchqa.desc">3 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">🏆</span>
+            <h4 data-i18n="architecture.kaggle.title">Kaggle</h4>
+            <span class="arch-zh" data-i18n="architecture.kaggle.zh">竞赛</span>
+            <span class="arch-count" data-i18n="architecture.kaggle.desc">7 Agents</span>
+          </div>
+
+          <div class="arch-card" tabindex="0">
+            <span class="arch-icon">🗄️</span>
+            <h4 data-i18n="architecture.knowledge.title">Knowledge</h4>
+            <span class="arch-zh" data-i18n="architecture.knowledge.zh">知识库管理</span>
+            <span class="arch-count" data-i18n="architecture.knowledge.desc">1 Agent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Workflow Section -->
+  <!-- ====================================================== -->
+  <section id="workflow" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="workflow.header_zh">工作流</span>
+          <span class="en-sub" data-i18n="workflow.header_en">Workflow</span>
+        </h2>
+        <span class="zh-sub" data-i18n="workflow.sub_zh">从想法到交付的完整流水线</span>
+      </div>
+
+      <div class="workflow-container" id="workflow-steps">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Agents Section -->
+  <!-- ====================================================== -->
+  <section id="agents" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="agents.header_zh">智能体集群</span>
+          <span class="en-sub" data-i18n="agents.header_en">Agent Cluster</span>
+        </h2>
+        <span class="zh-sub" data-i18n="agents.sub_zh">30+ 专业智能体覆盖科研全流程</span>
+      </div>
+
+      <div class="agents-grid" id="agent-cards">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Knowledge Section -->
+  <!-- ====================================================== -->
+  <section id="knowledge" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="knowledge.header_zh">知识库</span>
+          <span class="en-sub" data-i18n="knowledge.header_en">Knowledge Repository</span>
+        </h2>
+        <span class="zh-sub" data-i18n="knowledge.sub_zh">50+ 算法与方法的知识沉淀</span>
+      </div>
+
+      <div class="knowledge-grid" id="knowledge-categories">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Guide Section -->
+  <!-- ====================================================== -->
+  <section id="guide" class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>
+          <span data-i18n="guide.header_zh">使用指南</span>
+          <span class="en-sub" data-i18n="guide.header_en">Quick Start</span>
+        </h2>
+        <span class="zh-sub" data-i18n="guide.sub_zh">三步上手 Idea2Top</span>
+      </div>
+
+      <div class="guide-steps" id="guide-steps">
+        <!-- Populated by JavaScript -->
+      </div>
+
+      <p style="text-align:center;margin-top:48px;font-size:0.9rem;color:var(--ink-faint);max-width:600px;margin-left:auto;margin-right:auto;" data-i18n="guide.note">
+        提示：系统支持多种输入类型——研究想法、数据分析请求、竞赛任务、文献综述需求等。
+        只需用自然语言描述，剩下的交给 Agent 集群。
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================================================== -->
+  <!-- Footer -->
+  <!-- ====================================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3 data-i18n="footer.brand">数学建模半自动 · Idea2Top</h3>
+        <p data-i18n="footer.tagline">将研究方法想法转化为顶刊级可复现实现</p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.product">产品</h4>
+        <ul>
+          <li><a href="#home" data-i18n="footer.productItems.0">首页</a></li>
+          <li><a href="#architecture" data-i18n="footer.productItems.1">架构</a></li>
+          <li><a href="#workflow" data-i18n="footer.productItems.2">工作流</a></li>
+          <li><a href="#agents" data-i18n="footer.productItems.3">智能体</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.resources">资源</h4>
+        <ul>
+          <li><a href="#knowledge" data-i18n="footer.resourceItems.0">知识库</a></li>
+          <li><a href="#guide" data-i18n="footer.resourceItems.1">使用指南</a></li>
+          <li><a href="#knowledge" data-i18n="footer.resourceItems.2">算法索引</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Idea2Top Research Framework</span>
+      <span data-i18n="footer.built">Powered by Claude Multi-Agent Architecture</span>
+    </div>
+  </footer>
+
+  <!-- ====================================================== -->
+  <!-- Scripts -->
+  <!-- ====================================================== -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

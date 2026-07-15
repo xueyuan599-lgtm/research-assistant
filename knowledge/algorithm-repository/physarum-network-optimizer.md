@@ -72,4 +72,27 @@ $$
 4. 与 GWO/DE 的核心算子混合
 
 ## 代码
-见 `scripts/pno_benchmark.py`
+
+完整实现（含 PNO + PSO + GWO + DE + Random Search 基线 + 统计检验）:
+📄 [`scripts/pno_benchmark.py`](../../scripts/pno_benchmark.py) (613 行)
+
+快速使用示例:
+
+```python
+import numpy as np
+from scripts.pno_benchmark import PhysarumNetworkOptimizer, BENCHMARKS
+
+# 定义目标函数
+def sphere(x):
+    return np.sum(x ** 2)
+
+# 初始化 PNO
+pno = PhysarumNetworkOptimizer(
+    n_pop=50, n_dim=30,
+    bounds=(-100, 100), max_fes=30000
+)
+
+# 运行优化
+best_x, best_fit, convergence = pno.optimize(sphere)
+print(f"Best fitness: {best_fit:.6e}")
+```

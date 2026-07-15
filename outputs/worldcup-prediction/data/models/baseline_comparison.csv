@@ -1,0 +1,13 @@
+model,split,accuracy,log_loss,brier_score,auc_ovr,n
+Elo,train_ts,0.533,0.9775,0.1938,0.6588,4700
+Elo,val_ts,0.5872,0.915,0.1802,0.7056,1175
+Elo,group_cv_avg,0.5424,0.9683,0.1918,0.6638,5875
+Poisson,train_ts,0.1715,1.7082,0.3299,0.3437,4700
+Poisson,val_ts,0.1515,1.7476,0.3398,0.3268,1175
+Poisson,group_cv_avg,0.1744,1.689,0.3283,0.3449,5875
+XGBoost,train_ts,0.9926,0.2405,0.0311,0.9998,4700
+XGBoost,val_ts,0.56,0.9204,0.1782,0.7274,1175
+XGBoost,group_cv_avg,0.5973,0.907,0.1748,0.7328,5875
+LightGBM,train_ts,0.7243,0.6714,0.1283,0.9037,4700
+LightGBM,val_ts,0.6179,0.8389,0.1641,0.7621,1175
+LightGBM,group_cv_avg,0.5916,0.9317,0.1776,0.73,5875

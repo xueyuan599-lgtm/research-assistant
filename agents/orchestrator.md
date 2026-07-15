@@ -177,6 +177,9 @@ outputs/{task_id}/shared_memory/
 | RESEARCH_QA | `research-qa/agent.md` | method-explanation, formula-derivation, code-demo |
 | KNOWLEDGE | `knowledge/agent.md` | — |
 | ALGORITHM | `algorithm/agent.md` | formalizer, designer, coder, benchmark, validator |
+| KAGGLE | `kaggle/agent.md` | data-explorer, baseline, feature-engineer, model-builder, ensemble, submission, post-mortem |
+
+> **Kaggle 赛道说明：** 当用户提出 Kaggle 竞赛任务时触发。依赖 `kaggle-skill` MCP server（[shepsci/kaggle-skill](https://github.com/shepsci/kaggle-skill)）进行数据下载和提交管理。算法选择由 `knowledge/kaggle/` 知识库驱动，而非硬编码。详见 `../.claude/rules/03-kaggle-track.md` 和 `agents/kaggle/agent.md`。
 
 ---
 

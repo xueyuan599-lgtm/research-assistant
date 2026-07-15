@@ -1,0 +1,167 @@
+{
+  "competition": {
+    "name": "Titanic - Machine Learning from Disaster",
+    "kaggle_url": "https://www.kaggle.com/competitions/titanic",
+    "type": "binary_classification",
+    "difficulty": "beginner",
+    "category": "Getting Started",
+    "description": "Use machine learning to create a model that predicts which passengers survived the Titanic shipwreck.",
+    "background": "On April 15, 1912, the RMS Titanic sank after colliding with an iceberg. Of the 2,224 passengers and crew, 1,502 died because there were not enough lifeboats. While some element of luck was involved, some groups of people were more likely to survive than others (e.g., women, children, upper-class)."
+  },
+  "goal": {
+    "task": "Predict survival outcome for each passenger in the test set",
+    "target_variable": "Survived",
+    "target_values": {
+      "0": "Did not survive (died)",
+      "1": "Survived"
+    }
+  },
+  "evaluation": {
+    "metric": "accuracy",
+    "formula": "Accuracy = correct_predictions / total_predictions",
+    "description": "The percentage of passengers correctly predicted. For binary classification, this is (TP + TN) / (TP + TN + FP + FN).",
+    "benchmarks": {
+      "random_guess": 0.5,
+      "all_die_baseline": 0.616,
+      "gender_baseline_all_female_survive": 0.7655,
+      "typical_ml_models": "0.78 - 0.85",
+      "realistic_upper_bound": 0.85
+    },
+    "note": "Scores above 85% typically involve overfitting or external data. A perfect score of 1.0 implies manual lookup of actual passenger fates, which is considered cheating."
+  },
+  "files": {
+    "train_csv": {
+      "filename": "train.csv",
+      "rows": 891,
+      "description": "Training data with survival labels (Survived column included)",
+      "usage": "Model training and validation"
+    },
+    "test_csv": {
+      "filename": "test.csv",
+      "rows": 418,
+      "description": "Test data without survival labels",
+      "usage": "Generate predictions for Kaggle submission"
+    },
+    "gender_submission_csv": {
+      "filename": "gender_submission.csv",
+      "rows": 418,
+      "description": "Baseline submission file — predicts all females survive (Survived=1) and all males die (Survived=0)",
+      "usage": "Format reference and baseline benchmark"
+    }
+  },
+  "columns": {
+    "PassengerId": {
+      "dtype": "int",
+      "description": "Unique identifier for each passenger",
+      "train_range": "1-891",
+      "test_range": "892-1309",
+      "in_submission": true
+    },
+    "Survived": {
+      "dtype": "int",
+      "is_target": true,
+      "description": "Survival outcome: 0 = Did not survive, 1 = Survived",
+      "values": [0, 1],
+      "in_train_only": true,
+      "in_submission": true
+    },
+    "Pclass": {
+      "dtype": "int",
+      "description": "Ticket class (socio-economic status proxy)",
+      "values": {
+        "1": "1st class (Upper)",
+        "2": "2nd class (Middle)",
+        "3": "3rd class (Lower)"
+      },
+      "missing": false,
+      "category": "socioeconomic"
+    },
+    "Name": {
+      "dtype": "string",
+      "description": "Passenger's full name, includes title (Mr, Mrs, Miss, Master, etc.)",
+      "feature_potential": "Title extraction, family name grouping, name length",
+      "missing": false,
+      "category": "identity"
+    },
+    "Sex": {
+      "dtype": "string",
+      "description": "Gender of passenger",
+      "values": ["male", "female"],
+      "missing": false,
+      "category": "demographic"
+    },
+    "Age": {
+      "dtype": "float",
+      "description": "Age in years. Fractional if less than 1 year old. Some ages are estimated (xx.5 indicates estimated).",
+      "unit": "years",
+      "missing": true,
+      "missing_count_train": 177,
+      "missing_pct": 19.9,
+      "category": "demographic"
+    },
+    "SibSp": {
+      "dtype": "int",
+      "description": "Number of siblings or spouses aboard the Titanic",
+      "detail": "Sibling = brother, sister, stepbrother, stepsister. Spouse = husband, wife (mistresses and fiancés not included).",
+      "missing": false,
+      "category": "family"
+    },
+    "Parch": {
+      "dtype": "int",
+      "description": "Number of parents or children aboard the Titanic",
+      "detail": "Parent = mother, father. Child = daughter, son, stepdaughter, stepson. Children traveling with only a nanny have Parch=0.",
+      "missing": false,
+      "category": "family"
+    },
+    "Ticket": {
+      "dtype": "string",
+      "description": "Ticket number (alphanumeric). Can be used for family grouping — same ticket number often means traveling together.",
+      "missing": false,
+      "category": "travel"
+    },
+    "Fare": {
+      "dtype": "float",
+      "description": "Passenger fare (ticket price) paid in British pounds",
+      "missing": false,
+      "category": "socioeconomic"
+    },
+    "Cabin": {
+      "dtype": "string",
+      "description": "Cabin number. High missing rate. First letter often indicates deck level (A through G).",
+      "missing": true,
+      "missing_pct": 77.1,
+      "feature_potential": "Deck extraction (first letter), cabin area grouping",
+      "category": "travel"
+    },
+    "Embarked": {
+      "dtype": "string",
+      "description": "Port of embarkation",
+      "values": {
+        "C": "Cherbourg",
+        "Q": "Queenstown",
+        "S": "Southampton"
+      },
+      "missing": true,
+      "missing_count_train": 2,
+      "category": "travel"
+    }
+  },
+  "submission_format": {
+    "file_type": "csv",
+    "required_columns": ["PassengerId", "Survived"],
+    "rows": 418,
+    "header": true,
+    "index": false,
+    "example_row": {"PassengerId": 892, "Survived": 0},
+    "python_template": "submission = pd.DataFrame({'PassengerId': test_df['PassengerId'], 'Survived': predictions})\nsubmission.to_csv('submission.csv', index=False)"
+  },
+  "derived_features_common": {
+    "FamilySize": "SibSp + Parch + 1 (self)",
+    "IsAlone": "FamilySize == 1",
+    "Title": "Extracted from Name (Mr, Mrs, Miss, Master, Dr, Rev, etc.)",
+    "Deck": "First character of Cabin (A-G, or Unknown)",
+    "FarePerPerson": "Fare / FamilySize",
+    "AgeGroup": "Binned age categories (Child, Young Adult, Adult, Senior)",
+    "HasCabin": "Whether Cabin is not null (proxy for wealth/deck access)"
+  }
+}

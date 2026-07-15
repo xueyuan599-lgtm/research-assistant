@@ -1,7 +1,10 @@
-# 算法知识库
+# 自创算法库 — Pipeline 产出
 
-> 经由 Algorithm Design Pipeline 创造的算法统一存放于此。
-> 每次新增算法必须更新本索引。
+> **与 `algorithm-repository/` 的区别**：
+> - `algorithm-repository/` — 从顶刊提取的**已有方法**实现（阅读/参考用）
+> - `algorithms/` — 经由 **Algorithm Design Pipeline** 自创的**新算法**（创意产出）
+>
+> 本目录当前为空，等待 Pipeline 首次创建后填充。
 
 ## 索引
 

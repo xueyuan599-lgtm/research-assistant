@@ -1,0 +1,199 @@
+[
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "应用统计硕士（025200）考研择校分析报告",
+      "align": "center",
+      "bold": true,
+      "size": "22pt",
+      "font.latin": "Times New Roman",
+      "font.ea": "黑体",
+      "font": "黑体",
+      "spaceBefore": "36pt",
+      "spaceAfter": "12pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "——基于2025年招录数据的多维度比较",
+      "align": "center",
+      "size": "14pt",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "spaceAfter": "24pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "报告说明",
+      "align": "left",
+      "bold": true,
+      "size": "16pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "18pt",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "本报告基于2025年全国硕士研究生招生录取数据，系统梳理了长三角、武汉、北京地区主要高校应用统计专业（025200）的招录信息。数据来源为各高校研究生院官网、统计学院公告及权威考研资讯平台。",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "size": "12pt",
+      "firstLineIndent": "0.74cm",
+      "lineSpacing": "1.5x",
+      "spaceAfter": "3pt"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "一、长三角地区（上海/杭州/南京/苏州）",
+      "align": "center",
+      "bold": true,
+      "size": "16pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "18pt",
+      "spaceAfter": "6pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "1.1 复旦大学",
+      "align": "left",
+      "bold": true,
+      "size": "14pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "12pt",
+      "spaceAfter": "3pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "招生单位：数学科学学院、上海数学与交叉学科研究院、上海数学中心、大数据学院。2025年复试分数线345分（较2024年395分大幅下降50分），统考计划招生约147人，一志愿上线149人，拟录取约144人。预估报录比约3:1。大数据学院录取最低分369分，平均分超400分，最高分451分。学制2-3年，学费21.8万-25万。2026年计划统招198人。",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "size": "12pt",
+      "firstLineIndent": "0.74cm",
+      "lineSpacing": "1.5x",
+      "spaceAfter": "3pt"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "1.2 上海交通大学",
+      "align": "left",
+      "bold": true,
+      "size": "14pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "12pt",
+      "spaceAfter": "3pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "招生单位：数学科学学院。2025年复试分数线375分，统考录取61人（含二次扩招），进入复试74人，淘汰约13人，复录比约1.21:1。报录比约4.7:1。专业课平均分137+，最高149分。初试考英语（一）。总成绩=初试+复试（初试占71.4%）。学制2年，学费约20万。",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "size": "12pt",
+      "firstLineIndent": "0.74cm",
+      "lineSpacing": "1.5x",
+      "spaceAfter": "3pt"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "1.3 华东师范大学",
+      "align": "left",
+      "bold": true,
+      "size": "14pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "12pt",
+      "spaceAfter": "3pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "招生单位：统计学院。2025年复试分数线360分，统考录取65人（扩招），一志愿上线76人，淘汰11人，复录比约1.17:1。报录比3.4:1（近5年最低，报考223人）。录取最低分360分（即复试线），最高分430分。专业课平均分130分。学制2年，学费约10万/年。",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "size": "12pt",
+      "firstLineIndent": "0.74cm",
+      "lineSpacing": "1.5x",
+      "spaceAfter": "3pt"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "1.4 上海财经大学",
+      "align": "left",
+      "bold": true,
+      "size": "14pt",
+      "font": "黑体",
+      "font.ea": "黑体",
+      "spaceBefore": "12pt",
+      "spaceAfter": "3pt",
+      "lineSpacing": "1.5x"
+    }
+  },
+  {
+    "command": "add",
+    "parent": "/body",
+    "type": "paragraph",
+    "props": {
+      "text": "招生单位：统计与数据科学学院、数学学院。2025年复试分数线323分（国家线），统考名额约93人（统计学院68人+数学学院25人）。预估报录比约7:1-13:1，热门方向20:1。实际录取平均分预估360+，远高于复试线。学制2年，学费约20万。",
+      "font": "宋体",
+      "font.ea": "宋体",
+      "size": "12pt",
+      "firstLineIndent": "0.74cm",
+      "lineSpacing": "1.5x",
+      "spaceAfter": "3pt"
+    }
+  }
+]
