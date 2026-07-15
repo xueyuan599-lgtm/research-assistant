@@ -1,0 +1,43 @@
+{
+  "data_summary": {
+    "total_matches": 5779,
+    "total_teams": 262,
+    "total_tournaments": 66,
+    "host_countries": 211,
+    "date_range": "2021-01-12 至 2026-07-07",
+    "date_span_days": 2002
+  },
+  "match_outcomes": {
+    "home_win_pct": 47.9,
+    "away_win_pct": 29.2,
+    "draw_pct": 22.9
+  },
+  "goals_stats": {
+    "mean_per_match": 2.73,
+    "median": 2,
+    "std": 1.833,
+    "max": 14,
+    "zero_goal_pct": 8.1
+  },
+  "data_quality": {
+    "missing_values_international_matches": 0,
+    "missing_values_rankings": 0,
+    "missing_values_wc2026": {
+      "date": 0,
+      "stage": 0,
+      "group": 0,
+      "home_team": 0,
+      "away_team": 0,
+      "home_score": 4,
+      "away_score": 4,
+      "home_group": 0,
+      "away_group": 0,
+      "status": 0,
+      "venue_country": 0,
+      "venue_city": 0,
+      "total_goals": 4
+    },
+    "duplicate_matches": 1,
+    "future_matches": 0
+  }
+}

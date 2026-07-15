@@ -35,3 +35,18 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Personal Claude Code settings (user-specific, not shared)
+.claude/settings.local.json
+.claude/settings.json
+
+# CatBoost
+catboost_info/
+
+# Environment files
+.env
+.env.local
+
+# Large data files (download separately if needed)
+outputs/kaggle_NCAA/data/MMasseyOrdinals.csv
+outputs/test260704/

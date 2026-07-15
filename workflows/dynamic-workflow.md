@@ -31,9 +31,9 @@
 ### 1. 意图识别
 orchestrator 分析用户输入，判断所属领域和任务类型。
 
-**领域**：literature / topic-analysis / data-viz / experiment / paper-format / research-qa / 综合
+**领域**：literature / topic-analysis / data-viz / experiment / paper-format / research-qa / kaggle / algorithm / 综合
 
-**任务类型**：检索 / 分析 / 生成 / 优化 / 问答 / 可视化
+**任务类型**：检索 / 分析 / 生成 / 优化 / 问答 / 可视化 / 竞赛
 
 **复杂度**：单任务 / 多步 / 复杂对抗
 
@@ -89,6 +89,8 @@ if auto_split(stage, output_text):
 | "设计XX实验" | design → simulation → optimization | simulation 后（参数网格大时） |
 | "投XX期刊，排版" | template → reference → compliance | —（通常较小，很少需要切割） |
 | "解释XX方法" | method-explanation → formula-derivation → code-demo | code-demo 前（代码+输出较大） |
+| "打Kaggle竞赛XX" | data-explorer → baseline → feature-engineer → model-builder → ensemble → submission → post-mortem | baseline 后（特征工程产出大时） |
+| "设计XX算法" | formalizer → designer → coder → benchmark → validator | coder 后（代码较长时） |
 
 ---
 

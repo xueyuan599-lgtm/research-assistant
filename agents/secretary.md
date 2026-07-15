@@ -80,12 +80,55 @@
 | 任务执行中出现阻塞 | 需重新评估分解方案 |
 | 单 Agent 输出超过 200 行代码 | 触发细粒度拆分 |
 
+## 领域识别（自动路由）
+
+秘书在分析任务时，按以下关键词自动判定领域：
+
+| 关键词 | 领域 | 路由到 |
+|--------|------|--------|
+| Kaggle, kaggle, 竞赛, leaderboard, LB, 提交分数, submission.csv, 数据竞赛 | **KAGGLE** | `kaggle/agent.md` |
+| 文献综述, 搜索论文, 检索文献, survey, review | LITERATURE | `literature/agent.md` |
+| 研究热点, 选题, 前沿, gap analysis | TOPIC_ANALYSIS | `topic-analysis/agent.md` |
+| 可视化, 绘图, 图表, 数据清洗, 建模 | DATA_VIZ | `data-viz/agent.md` |
+| 实验设计, 参数优化, 敏感性分析 | EXPERIMENT | `experiment/agent.md` |
+| 排版, 模板, 参考文献, 投稿 | PAPER_FORMAT | `paper-format/agent.md` |
+| 方法解释, 公式推导, XX 是什么（深入） | RESEARCH_QA | `research-qa/agent.md` |
+| 设计算法, 新方法, 估计量 | ALGORITHM | `algorithm/agent.md` |
+
+**KAGGLE 领域判定优先级：** 含竞赛 URL（kaggle.com/competitions/）或明确说"打 Kaggle" → 直接路由 Kaggle 赛道，使用以下分解模板。
+
 ## 排除场景
 
 以下情况不触发秘书：
 - "XX 是什么"（单步查询）
 - 简单文件读写
 - 用户明确指定了完整步骤且步骤 ≤ 2
+
+## Kaggle 赛道分解模板
+
+当检测到 KAGGLE 领域时，使用以下预设分解方案（调整竞赛名、数据规模等变量即可）：
+
+```
+任务分解方案（Kaggle 赛道）:
+├─ Phase 1: data-explorer-agent → 数据探查 + 泄漏检测
+├─ Phase 2: baseline-agent → 查询知识库 → 快速基线 → Top-3 方向推荐
+├─ Phase 3: feature-engineer-agent → 特征工程（依赖: Phase 1+2）
+├─ Phase 4: model-builder-agent → 精模构建 + 调参（依赖: Phase 3）
+├─ Phase 5: ensemble-agent → 集成（依赖: Phase 4）
+├─ Phase 6: submission-agent → 提交 + LB 跟踪（依赖: Phase 5）
+├─ Phase 7: post-mortem-agent → 赛后复盘 + 写回知识库（依赖: Phase 6）
+│
+并行机会: Phase 3 的特征生成脚本可与 Phase 4 并行准备
+Socrates 质询: Phase 2-5 之间各插入 1 次质询
+预计总 Agent 数: 7 个
+
+确认项:
+  - 工具: Python (sklearn, xgboost, lgbm, catboost, optuna, autogluon/flaml) + kaggle-skill MCP
+  - GPU: 是否有 GPU？(大规模数据时关键)
+  - 目标排名: top 10% / top 30% / 仅参与?
+  - 时间预算: 几小时 / 几天？
+  - 提交频率: 每日最多几次提交？
+```
 
 ## 约束
 

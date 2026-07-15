@@ -1,0 +1,321 @@
+======================================================================
+TITANIC V4 FEATURE SELECTION REPORT
+======================================================================
+Total candidate features: 131
+
+--------------------------------------------------
+Stage 1: Mutual Information Filter (MI > 0.01)
+--------------------------------------------------
+Kept: 78 features
+Dropped: 53 features
+  - HasChild: MI=0.009917
+  - Embarked_Q: MI=0.008740
+  - FamilySize_bin_Couple: MI=0.008547
+  - Pclass_Embarked_P3_C: MI=0.007149
+  - Sex_Embarked_F_Q: MI=0.006959
+  - Pclass_FamilySize_P1_Alone: MI=0.006852
+  - Title_Rare: MI=0.006499
+  - Age_Pclass_Sex_Teen_P2_F: MI=0.006418
+  - Age_Pclass_Sex_Child_P1_M: MI=0.005445
+  - TitleGroup_Honorific: MI=0.005168
+  - Age_Pclass_Sex_Adult_P3_F: MI=0.005143
+  - HasSpouse: MI=0.004811
+  - Age_Pclass_Sex_YoungAdult_P3_F: MI=0.003990
+  - TicketLen: MI=0.003484
+  - Sex_Pclass_F_P3: MI=0.003385
+  - TicketPrefix_count: MI=0.003328
+  - Pclass_Embarked_P2_S: MI=0.002886
+  - Age_Pclass_Sex_YoungAdult_P1_M: MI=0.000803
+  - Embarked_S: MI=0.000000
+  - Parch_bin_2+: MI=0.000000
+  - TitleGroup_Clergy: MI=0.000000
+  - Pclass_Embarked_P1_Q: MI=0.000000
+  - Pclass_Embarked_P1_C: MI=0.000000
+  - Pclass_Embarked_P2_Q: MI=0.000000
+  - Pclass_FamilySize_P3_Nuclear: MI=0.000000
+  - Pclass_Embarked_P2_C: MI=0.000000
+  - Sex_FamilySize_M_FSCouple: MI=0.000000
+  - Pclass_FamilySize_P2_Large: MI=0.000000
+  - Pclass_FamilySize_P2_Nuclear: MI=0.000000
+  - Pclass_FamilySize_P1_Large: MI=0.000000
+  - Parch_bin_1: MI=0.000000
+  - TitleGroup_Professional: MI=0.000000
+  - CabinNum_100+: MI=0.000000
+  - CabinNum_61-100: MI=0.000000
+  - TitleGroup_Other: MI=0.000000
+  - Sex_Pclass_M_P2: MI=0.000000
+  - Sex_Pclass_M_P1: MI=0.000000
+  - TitleGroup_Military: MI=0.000000
+  - Parch_bin_0: MI=0.000000
+  - Age_Pclass_Sex_Teen_P3_F: MI=0.000000
+  - Age_Pclass_Sex_Senior_P3_F: MI=0.000000
+  - Age_Pclass_Sex_Child_P3_F: MI=0.000000
+  - Age_Pclass_Sex_Senior_P1_M: MI=0.000000
+  - Age_Pclass_Sex_Senior_P2_F: MI=0.000000
+  - Age_Pclass_Sex_Senior_P2_M: MI=0.000000
+  - Age_Pclass_Sex_Adult_P1_M: MI=0.000000
+  - Age_Pclass_Sex_Adult_P3_M: MI=0.000000
+  - Age_Pclass_Sex_Teen_P3_M: MI=0.000000
+  - Age_Pclass_Sex_Adult_P2_F: MI=0.000000
+  - TicketNoneSurvived: MI=0.000000
+  - TicketAllSurvived: MI=0.000000
+  - AgeMissing: MI=0.000000
+  - IsAlone: MI=0.000000
+
+--------------------------------------------------
+Stage 2: Spearman Correlation Dedup (|r| > 0.85)
+--------------------------------------------------
+  Title_SurvivalRate vs Sex_Age: r=0.875, SKIP (target-encoded vs clean, keep both)
+  Title_SurvivalRate vs TitleGroup_Male_Common: r=-0.913, SKIP (target-encoded vs clean, keep both)
+  Title_SurvivalRate vs Title_count: r=-0.875, SKIP (target-encoded vs clean, keep both)
+  Title_SurvivalRate vs TitleGroup_Female_Honorific: r=0.881, SKIP (target-encoded vs clean, keep both)
+  Title_SurvivalRate vs Sex: r=0.882, SKIP (target-encoded vs clean, keep both)
+  Sex_Age vs TitleGroup_Female_Honorific: r=0.959, drop TitleGroup_Female_Honorific (MI=0.1318 < 0.1850)
+  Sex (protected) vs Sex_Age: r=0.970, drop Sex_Age
+  TitleGroup_Male_Common vs Title_count: r=0.960, drop Title_count (MI=0.1610 < 0.1629)
+  Sex (protected) vs TitleGroup_Male_Common: r=-0.867, drop TitleGroup_Male_Common
+  Sex (protected) vs TitleGroup_Female_Honorific: r=0.993, drop TitleGroup_Female_Honorific
+  Deck_Pclass_count vs Pclass_FareMean: r=-0.926, drop Pclass_FareMean (MI=0.0513 < 0.0815)
+  Pclass (protected) vs Deck_Pclass_count: r=0.926, drop Deck_Pclass_count
+  FamilySize (protected) vs FamilySize_bin_Alone: r=-0.964, drop FamilySize_bin_Alone
+  HasCabin (protected) vs CabinNum_Missing: r=-0.987, drop CabinNum_Missing
+  HasCabin (protected) vs Deck_count: r=-0.989, drop Deck_count
+  CabinNum_Missing vs Deck_count: r=0.974, drop Deck_count (MI=0.0344 < 0.0514)
+  Pclass (protected) vs Pclass_FareMean: r=-1.000, drop Pclass_FareMean
+  IsMaster (protected) vs TitleGroup_Child: r=1.000, drop TitleGroup_Child
+  Pclass_FamilySize_P3_Large vs FamilySize_bin_Large: r=0.929, drop FamilySize_bin_Large (MI=0.0160 < 0.0238)
+Kept: 67 features
+Dropped: 11 features
+
+--------------------------------------------------
+Stage 3: Boruta (RF, n_estimators=200, max_depth=5)
+--------------------------------------------------
+Accepted: 27
+Tentative: 2
+Rejected: 38
+Top 5 by importance:
+  Title_SurvivalRate: importance=0.186198
+  Deck_SurvivalRate: importance=0.253035
+  Title_Pclass_count: importance=0.069000
+  Fare_log: importance=0.014226
+  FarePerPerson: importance=0.022088
+  Pclass_Fare: importance=0.023452
+  Sex: importance=0.061049
+  Pclass_Age: importance=0.020738
+  Sex_FamilySize_M_FSAlone: importance=0.023470
+  Sex_Pclass_F_P1: importance=0.032319
+  Pclass_FareRank: importance=0.006825
+  Sex_Pclass_M_P3: importance=0.026718
+  Sex_Embarked_M_S: importance=0.031166
+  TicketSurvRate: importance=0.026875
+  FamilySize: importance=0.006311
+  Sex_Embarked_F_S: importance=0.006485
+  Pclass_Embarked_P3_S: importance=0.014911
+  HasCabin: importance=0.025159
+  Sex_FamilySize_F_FSAlone: importance=0.013041
+  Pclass: importance=0.023886
+  Sex_FamilySize_F_FSCouple: importance=0.004839
+  Sex_Pclass_F_P2: importance=0.018718
+  CabinShared: importance=0.007864
+  TicketGroupSize: importance=0.008369
+  Age: importance=0.001522
+  Pclass_FamilySize_P3_Large: importance=0.000330
+  Sex_Embarked_F_C: importance=0.000738
+
+--------------------------------------------------
+Stage 4: Stability Selection (L1-LR, 100 bootstrap x 0.7)
+--------------------------------------------------
+Kept (prob > 0.6): 38
+Dropped: 29
+  TicketNumLen: prob=0.78 [KEPT]
+  CabinNum_31-60: prob=0.75 [KEPT]
+  CabinNum_0-30: prob=0.73 [KEPT]
+  Pclass_FamilySize_P2_Alone: prob=0.68 [KEPT]
+  TicketGroupSize: prob=0.67 [KEPT]
+  CabinShared: prob=0.66 [KEPT]
+  Age_Pclass_Sex_Adult_P1_F: prob=0.62 [KEPT]
+  FarePerPerson: prob=0.61 [KEPT]
+  Pclass_Fare: prob=0.57 [DROPPED]
+  Pclass_FamilySize_P3_Couple: prob=0.53 [DROPPED]
+  Sex_FamilySize_M_FSLarge: prob=0.53 [DROPPED]
+  Sex_Embarked_F_S: prob=0.46 [DROPPED]
+  Pclass_FamilySize_P3_Alone: prob=0.46 [DROPPED]
+  Sex_FamilySize_F_FSNuclear: prob=0.42 [DROPPED]
+  Embarked_C: prob=0.42 [DROPPED]
+  Sex_Embarked_M_Q: prob=0.32 [DROPPED]
+  Pclass_Embarked_P3_Q: prob=0.31 [DROPPED]
+  SibSp_bin_2+: prob=0.29 [DROPPED]
+  Age_Pclass_Sex_Child_P2_M: prob=0.27 [DROPPED]
+  Sex_Embarked_M_C: prob=0.26 [DROPPED]
+  SibSp_bin_1: prob=0.26 [DROPPED]
+  Sex_FamilySize_M_FSNuclear: prob=0.24 [DROPPED]
+  SibSp_bin_0: prob=0.21 [DROPPED]
+  Pclass_FamilySize_P1_Couple: prob=0.19 [DROPPED]
+  Pclass_Embarked_P1_S: prob=0.15 [DROPPED]
+  Pclass_FamilySize_P1_Nuclear: prob=0.12 [DROPPED]
+  Age_Pclass_Sex_Teen_P1_F: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Teen_P2_M: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Child_P1_F: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Child_P3_M: prob=0.00 [DROPPED]
+  Sex_FamilySize_F_FSLarge: prob=0.00 [DROPPED]
+  FareZero: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Senior_P1_F: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Teen_P1_M: prob=0.00 [DROPPED]
+  Pclass_FamilySize_P2_Couple: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Senior_P3_M: prob=0.00 [DROPPED]
+  Age_Pclass_Sex_Child_P2_F: prob=0.00 [DROPPED]
+
+--------------------------------------------------
+Stage 5: Permutation Importance (RF, n_repeats=20)
+--------------------------------------------------
+Kept (mean - 2*std > 0): 9
+Dropped: 58
+  HasCabin: mean=0.0173, std=0.0024, mean-2std=0.0125 [KEPT]
+  Pclass_Age: mean=0.0041, std=0.0013, mean-2std=0.0014 [KEPT]
+  FarePerPerson: mean=0.0027, std=0.0011, mean-2std=0.0005 [KEPT]
+  Fare_log: mean=0.0022, std=0.0010, mean-2std=0.0002 [KEPT]
+  Pclass_Fare: mean=0.0019, std=0.0008, mean-2std=0.0002 [KEPT]
+  TicketSurvRate: mean=0.0017, std=0.0012, mean-2std=-0.0007 [DROPPED]
+  CabinNum_0-30: mean=0.0012, std=0.0006, mean-2std=0.0000 [KEPT]
+  Sex_Pclass_M_P3: mean=0.0011, std=0.0008, mean-2std=-0.0006 [DROPPED]
+  CabinNum_31-60: mean=0.0011, std=0.0002, mean-2std=0.0006 [KEPT]
+  Age: mean=0.0010, std=0.0009, mean-2std=-0.0007 [DROPPED]
+  Age_Pclass_Sex_YoungAdult_P3_M: mean=0.0007, std=0.0005, mean-2std=-0.0003 [DROPPED]
+  Sex_Embarked_M_S: mean=0.0006, std=0.0010, mean-2std=-0.0014 [DROPPED]
+  TicketNumLen: mean=0.0006, std=0.0007, mean-2std=-0.0007 [DROPPED]
+  Pclass_Embarked_P1_S: mean=0.0002, std=0.0004, mean-2std=-0.0007 [DROPPED]
+  FamilySize_bin_Nuclear: mean=0.0002, std=0.0004, mean-2std=-0.0006 [DROPPED]
+  Sex_Pclass_F_P1: mean=0.0001, std=0.0009, mean-2std=-0.0018 [DROPPED]
+  CabinShared: mean=0.0001, std=0.0005, mean-2std=-0.0009 [DROPPED]
+  Age_Pclass_Sex_YoungAdult_P1_F: mean=0.0001, std=0.0002, mean-2std=-0.0004 [DROPPED]
+  Sex_FamilySize_F_FSLarge: mean=0.0001, std=0.0002, mean-2std=-0.0004 [DROPPED]
+  Age_Pclass_Sex_Adult_P1_F: mean=0.0001, std=0.0002, mean-2std=-0.0004 [DROPPED]
+  Pclass_FareRank: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  FamilySize: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_Embarked_P3_S: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_FamilySize_F_FSCouple: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  TicketGroupSize: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_FamilySize_F_FSNuclear: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P3_Couple: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P1_Couple: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Teen_P1_F: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Teen_P2_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  SibSp_bin_2+: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Child_P1_F: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P3_Alone: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  IsMaster: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Child_P3_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_YoungAdult_P2_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_FamilySize_M_FSNuclear: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P2_Alone: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  FareZero: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P3_Large: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P1_Nuclear: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Child_P2_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Senior_P1_F: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_Embarked_F_C: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  SibSp_bin_0: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Adult_P2_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  FamilyID_Count: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_Embarked_M_Q: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Teen_P1_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Embarked_C: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_YoungAdult_P2_F: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_FamilySize_P2_Couple: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Senior_P3_M: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Age_Pclass_Sex_Child_P2_F: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_FamilySize_M_FSLarge: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Pclass_Embarked_P3_Q: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_Embarked_M_C: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  SibSp_bin_1: mean=0.0000, std=0.0000, mean-2std=0.0000 [DROPPED]
+  Sex_FamilySize_F_FSAlone: mean=-0.0001, std=0.0003, mean-2std=-0.0008 [DROPPED]
+  Sex_Pclass_F_P2: mean=-0.0001, std=0.0003, mean-2std=-0.0008 [DROPPED]
+  Sex_Embarked_F_S: mean=-0.0003, std=0.0005, mean-2std=-0.0013 [DROPPED]
+  Title_Pclass_count: mean=-0.0004, std=0.0010, mean-2std=-0.0023 [DROPPED]
+  Sex: mean=-0.0006, std=0.0015, mean-2std=-0.0036 [DROPPED]
+  Sex_FamilySize_M_FSAlone: mean=-0.0008, std=0.0013, mean-2std=-0.0035 [DROPPED]
+
+======================================================================
+FINAL FEATURE SET DECISION
+======================================================================
+
+Three-way intersection (core, 3/3): 6 features
+  + Deck_SurvivalRate
+  + FarePerPerson
+  + Fare_log
+  + HasCabin
+  + Pclass_Age
+  + Title_SurvivalRate
+
+Two-way candidates (borderline, 2/3): 24 features
+  ~ Age [passed: Boruta, Stability]
+  ~ Age_Pclass_Sex_YoungAdult_P3_M [passed: Boruta, Stability]
+  ~ CabinNum_0-30 [passed: Stability, Permutation]
+  ~ CabinNum_31-60 [passed: Stability, Permutation]
+  ~ CabinShared [passed: Boruta, Stability]
+  ~ FamilyID_Count [passed: Boruta, Stability]
+  ~ FamilySize [passed: Boruta, Stability]
+  ~ Pclass [passed: Boruta, Stability]
+  ~ Pclass_Embarked_P3_S [passed: Boruta, Stability]
+  ~ Pclass_FamilySize_P3_Large [passed: Boruta, Stability]
+  ~ Pclass_Fare [passed: Boruta, Permutation]
+  ~ Pclass_FareRank [passed: Boruta, Stability]
+  ~ Sex [passed: Boruta, Stability]
+  ~ Sex_Embarked_F_C [passed: Boruta, Stability]
+  ~ Sex_Embarked_M_S [passed: Boruta, Stability]
+  ~ Sex_FamilySize_F_FSAlone [passed: Boruta, Stability]
+  ~ Sex_FamilySize_F_FSCouple [passed: Boruta, Stability]
+  ~ Sex_FamilySize_M_FSAlone [passed: Boruta, Stability]
+  ~ Sex_Pclass_F_P1 [passed: Boruta, Stability]
+  ~ Sex_Pclass_F_P2 [passed: Boruta, Stability]
+  ~ Sex_Pclass_M_P3 [passed: Boruta, Stability]
+  ~ TicketGroupSize [passed: Boruta, Stability]
+  ~ TicketSurvRate [passed: Boruta, Stability]
+  ~ Title_Pclass_count [passed: Boruta, Stability]
+
+Dropped (1/3 or 0/3): 37 features
+  - Age_Pclass_Sex_Adult_P1_F [passed only: Stability]
+  - Age_Pclass_Sex_Adult_P2_M [passed only: Stability]
+  - Age_Pclass_Sex_YoungAdult_P1_F [passed only: Stability]
+  - Age_Pclass_Sex_YoungAdult_P2_F [passed only: Stability]
+  - Age_Pclass_Sex_YoungAdult_P2_M [passed only: Stability]
+  - FamilySize_bin_Nuclear [passed only: Stability]
+  - IsMaster [passed only: Stability]
+  - Pclass_FamilySize_P2_Alone [passed only: Stability]
+  - Sex_Embarked_F_S [passed only: Boruta]
+  - TicketNumLen [passed only: Stability]
+  - Age_Pclass_Sex_Child_P1_F [no selection method passed]
+  - Age_Pclass_Sex_Child_P2_F [no selection method passed]
+  - Age_Pclass_Sex_Child_P2_M [no selection method passed]
+  - Age_Pclass_Sex_Child_P3_M [no selection method passed]
+  - Age_Pclass_Sex_Senior_P1_F [no selection method passed]
+  - Age_Pclass_Sex_Senior_P3_M [no selection method passed]
+  - Age_Pclass_Sex_Teen_P1_F [no selection method passed]
+  - Age_Pclass_Sex_Teen_P1_M [no selection method passed]
+  - Age_Pclass_Sex_Teen_P2_M [no selection method passed]
+  - Embarked_C [no selection method passed]
+  - FareZero [no selection method passed]
+  - Pclass_Embarked_P1_S [no selection method passed]
+  - Pclass_Embarked_P3_Q [no selection method passed]
+  - Pclass_FamilySize_P1_Couple [no selection method passed]
+  - Pclass_FamilySize_P1_Nuclear [no selection method passed]
+  - Pclass_FamilySize_P2_Couple [no selection method passed]
+  - Pclass_FamilySize_P3_Alone [no selection method passed]
+  - Pclass_FamilySize_P3_Couple [no selection method passed]
+  - Sex_Embarked_M_C [no selection method passed]
+  - Sex_Embarked_M_Q [no selection method passed]
+  - Sex_FamilySize_F_FSLarge [no selection method passed]
+  - Sex_FamilySize_F_FSNuclear [no selection method passed]
+  - Sex_FamilySize_M_FSLarge [no selection method passed]
+  - Sex_FamilySize_M_FSNuclear [no selection method passed]
+  - SibSp_bin_0 [no selection method passed]
+  - SibSp_bin_1 [no selection method passed]
+  - SibSp_bin_2+ [no selection method passed]
+
+======================================================================
+FINAL FEATURE SET: 30 features
+  Core (3/3): 6
+  Borderline (2/3): 24
+  Total selected: 30
+======================================================================

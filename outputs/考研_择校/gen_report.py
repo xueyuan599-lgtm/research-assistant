@@ -1,0 +1,75 @@
+#!/d/py/Python3/python
+# -*- coding: utf-8 -*-
+import json, subprocess, os
+
+commands = [
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"应用统计硕士（025200）考研择校分析报告","align":"center","bold":True,"size":"22pt","font":"黑体","font.ea":"黑体","spaceBefore":"36pt","spaceAfter":"12pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"—— 基于2025年招录数据的多维度比较","align":"center","size":"14pt","font":"宋体","font.ea":"宋体","spaceAfter":"24pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"报告说明","align":"left","bold":True,"size":"16pt","font":"黑体","font.ea":"黑体","spaceBefore":"18pt","spaceAfter":"6pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"本报告基于2025年全国硕士研究生招生录取数据，系统梳理了长三角、武汉、北京地区主要高校应用统计专业（025200）的招录信息。数据来源为各高校研究生院官网、统计学院公告及权威考研资讯平台。部分数据因院校未公开完整信息，以预估或未公布标注。建议考生以各校研究生院官网发布的最新招生简章为准。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"一、长三角地区","align":"center","bold":True,"size":"16pt","font":"黑体","font.ea":"黑体","spaceBefore":"18pt","spaceAfter":"6pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.1 复旦大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学科学学院、上海数学与交叉学科研究院、上海数学中心、大数据学院。2025年复试分数线345分（较2024年395分大幅下降50分），统考计划招生约147人，一志愿上线149人，拟录取约144人。预估报录比约3:1（报考约400-500人）。大数据学院录取最低分369分，平均分超400分，最高分451分。学制2-3年，学费21.8万-25万。2026年计划统招198人。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.2 上海交通大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学科学学院。2025年复试分数线375分，统考录取61人（含二次扩招），进入复试74人，淘汰约13人，复录比约1.21:1。报录比约4.7:1。专业课平均分137+，最高149分。初试考英语（一），难度高于多数院校。学制2年，学费约20万。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.3 华东师范大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计学院。2025年复试分数线360分，统考录取65人（扩招后），一志愿上线76人，淘汰11人，复录比约1.17:1。报录比仅3.4:1（近5年最低，报考223人）。录取最低分360分，最高分430分。专业课平均分130分。学费约10万/年，学制2年。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.4 上海财经大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计与数据科学学院、数学学院。2025年复试分数线323分（国家线水平），统考名额合计约93人（统计学院68人+数学学院25人）。预估报录比约7:1-13:1。实际录取平均分预估360+。学制2年，学费约20万。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.5 南京大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学学院。2025年复试分数线355分（较2024年下降15分），统考名额14人，一志愿复试17人，录取14人，仅淘汰3人。录取最低分359分。2025年统考较2024年扩招7人。预估报录比10:1以上。建议目标380分+。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.6 东南大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学学院。2025年复试分数线351分，统考招生13人（含卓工3人），一志愿复试16人，拟录取15人，仅淘汰1人，复录比极高。专业课平均分114.5分，进复试最高分394分，最低分351分。建议目标360-370分+。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.7 苏州大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学科学学院。2025年复试分数线370分，统考名额仅13人，实际录取15人（扩招2人）。报考148人，报录比高达9.87:1（近5年最高）。录取最低分380分。学制2年，学费仅1万/年（性价比极高但竞争激烈）。建议目标385-400分。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"1.8 浙江财经大学（本校）","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数据科学学院。2025年复试分数线345分，计划招生72人，实际一志愿录取约90人（含扩招），一志愿进复试125人，淘汰约35人，复录比约1.39:1。录取最高分421分，最低分346分。学制2.5年，学费仅1万/年。作为本校考生，在地缘和资源获取上有明显优势。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"6pt"}},
+
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"二、武汉地区","align":"center","bold":True,"size":"16pt","font":"黑体","font.ea":"黑体","spaceBefore":"18pt","spaceAfter":"6pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"2.1 武汉大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学与统计学院。2025年复试分数线380分，总计划39人，推免34人，统考仅5人（+1专项）。报考55人，报录比9.17:1。录取最低分382分，最高分427分。淘汰情况：进复试7人录取5人，有396分和394分的高分考生因笔试成绩低被淘汰。学费已涨至6万/年。统考名额极紧，风险很高。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"2.2 华中科技大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：数学与统计学院。2025年复试分数线365分，统考录取31人，上线约42人，淘汰约11人，复录比约1.37:1。近三年分数线稳定在365-375分。不接收调剂。统考名额在武汉高校中较为充裕。建议目标380分+。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"2.3 中南财经政法大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计与数学学院。2025年复试分数线323分（国家线），统考录取约99人，进复试约120人，淘汰约21人。分数线从2023年的382分降至323分（因大幅扩招）。专业课压分明显（平均分仅107分）。学制2年，学费3.5万/年。2026年计划扩招至177人，预计复试线回升至355分左右。招生人数最多，性价比之选。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"6pt"}},
+
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"三、北京地区","align":"center","bold":True,"size":"16pt","font":"黑体","font.ea":"黑体","spaceBefore":"18pt","spaceAfter":"6pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"3.1 北京大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"原应用统计（025200）已停招，现对应大数据专硕（1453）。2025年复试分数线360分，进复试34人，录取22人，淘汰12人。录取最高分401分，最低分380分，400分以上仅7人。2024年首年招生线仅310分，2025年暴涨50分。建议目标380分+。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"3.2 中国人民大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计学院、统计与大数据研究院。2025年复试分数线355分（较2024年400分下降55分）。统计学院录取约33人，研究院录取15人，合计约48人。实际录取最低分369-375分。⚠2026年统考名额预警：统计学院仅2人，研究院仅2人，合计4人，竞争将极其惨烈。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"3.3 北京师范大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计学院（珠海校区）。2025年复试分数线345分（三年累计下降55分），三个方向总录取约237人（扩招57人）。进复试277人，淘汰40人，复录比仅1.17:1。预计报录比约11:1。01方向最低分347，02方向最低分347，03方向全部录取。招生规模全国最大，上岸概率最高。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"3.4 中央财经大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计与数学学院。2025年复试分数线342分（较2024年385分下降43分），统考录取59人（大幅扩招）。报考283人，报录比4.8:1。学制2年，学费仅2.5万/年。初试考英语（一）。2026年计划统招46人。性价比极高的211选择。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"3.5 对外经济贸易大学","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"招生单位：统计学院。2025年复试分数线360分，统考录取约69人（扩招），进复试83人，淘汰14人，复录比约1.2:1。预估报录比8:1-12:1。复试仅面试无笔试，初试占70%。学制2年，学费3万/年。2026年统考计划约43人。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"6pt"}},
+
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"四、综合推荐与备考建议","align":"center","bold":True,"size":"16pt","font":"黑体","font.ea":"黑体","spaceBefore":"18pt","spaceAfter":"6pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"4.1 报考难度梯队","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"第一梯队（地狱难度）：复旦大学、上海交通大学、南京大学、武汉大学、中国人民大学。复试线高、名额少、报录比极高，适合数学基础扎实的顶尖考生。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"第二梯队（高难度）：华东师范大学、华中科技大学、苏州大学、对外经济贸易大学、中央财经大学。复试线350-370，招生规模中等，适合学习成绩优异的考生。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"第三梯队（中等难度）：北京师范大学（珠海）345分/237人、上海财经大学323分/93人、中南财经政法大学323分/99人、浙江财经大学345分/90人。招生规模大、复试线相对友好，适合求稳考生。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"4.2 针对浙江财经大学本科背景的推荐","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"冲刺推荐：华东师范大学（报录比3.4:1，统考65人，性价比最高的985）、中央财经大学（211、报录比4.8:1、学费仅2.5万/年）、华中科技大学（统考31人、复试线365分较稳定）。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"稳妥选择：北京师范大学（珠海）招生237人，上岸概率最高；中南财经政法大学扩招至177人，323分复试线；浙江财经大学本校，地缘优势+学费1万/年。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"4.3 备考策略","align":"left","bold":True,"size":"14pt","font":"黑体","font.ea":"黑体","spaceBefore":"12pt","spaceAfter":"3pt","lineSpacing":"1.5x"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"（1）数学三（303）：应统考研的核心拉分科目，建议目标130+。重点突破高等数学和概率论，线性代数近年难度上升不可轻视。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"（2）432统计学：核心书目为贾俊平《统计学》（第七版）、茆诗松《概率论与数理统计教程》。多数学校自命题但知识点高度重合。部分院校考英语（一），需注意。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+    {"command":"add","parent":"/body","type":"paragraph","props":{"text":"（3）复试准备：多数学校复试占比30%-50%。武汉大学曾有396分被淘汰的案例，复试（尤其是笔试）不容忽视。建议提前准备Python/R编程及统计学基础面试问答。","font":"宋体","font.ea":"宋体","size":"12pt","firstLineIndent":"0.74cm","lineSpacing":"1.5x","spaceAfter":"3pt"}},
+]
+
+# Save JSON
+json_path = 'E:/wuyi/数学建模半自动/research-assistant/outputs/考研_report_batch.json'
+with open(json_path, 'w', encoding='utf-8') as f:
+    json.dump(commands, f, ensure_ascii=False)
+print(f'JSON saved with {len(commands)} items')
+
+# Run officecli batch
+officecli = 'C:/Users/lenovo/AppData/Local/OfficeCLI/officecli.exe'
+docx_path = 'E:/wuyi/数学建模半自动/research-assistant/outputs/应用统计考研择校报告.docx'
+result = subprocess.run([officecli, 'batch', docx_path, '--input', json_path, '--json'], capture_output=True, text=True)
+print(result.stdout[:500] if result.stdout else 'No stdout')
+if result.stderr:
+    print('STDERR:', result.stderr[:500])

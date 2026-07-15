@@ -1,0 +1,101 @@
+date,stage,group,home_team,away_team,home_score,away_score,home_group,away_group,status,venue_country,venue_city
+2026-06-11,Group Stage,A,Mexico,South Africa,2.0,0.0,A,A,Completed,Mexico,Mexico City
+2026-06-11,Group Stage,A,South Korea,Czech Republic,2.0,1.0,A,A,Completed,Mexico,Zapopan
+2026-06-12,Group Stage,B,Canada,Bosnia and Herzegovina,1.0,1.0,B,B,Completed,Canada,Toronto
+2026-06-12,Group Stage,C,United States,Paraguay,4.0,1.0,C,C,Completed,United States,Inglewood
+2026-06-13,Group Stage,B,Qatar,Switzerland,1.0,1.0,B,B,Completed,United States,Santa Clara
+2026-06-13,Group Stage,D,Brazil,Morocco,1.0,1.0,D,D,Completed,United States,East Rutherford
+2026-06-13,Group Stage,D,Haiti,Scotland,0.0,1.0,D,D,Completed,United States,Foxborough
+2026-06-13,Group Stage,C,Australia,Turkey,2.0,0.0,C,C,Completed,Canada,Vancouver
+2026-06-14,Group Stage,F,Germany,Curaçao,7.0,1.0,F,F,Completed,United States,Houston
+2026-06-14,Group Stage,F,Ivory Coast,Ecuador,1.0,0.0,F,F,Completed,United States,Philadelphia
+2026-06-14,Group Stage,E,Netherlands,Japan,2.0,2.0,E,E,Completed,United States,Arlington
+2026-06-14,Group Stage,E,Sweden,Tunisia,5.0,1.0,E,E,Completed,Mexico,Guadalupe
+2026-06-15,Group Stage,G,Saudi Arabia,Uruguay,1.0,1.0,G,G,Completed,United States,Miami Gardens
+2026-06-15,Group Stage,G,Spain,Cape Verde,0.0,0.0,G,G,Completed,United States,Atlanta
+2026-06-15,Group Stage,H,Belgium,Egypt,1.0,1.0,H,H,Completed,United States,Seattle
+2026-06-15,Group Stage,H,Iran,New Zealand,2.0,2.0,H,H,Completed,United States,Inglewood
+2026-06-16,Group Stage,I,France,Senegal,3.0,1.0,I,I,Completed,United States,East Rutherford
+2026-06-16,Group Stage,I,Iraq,Norway,1.0,4.0,I,I,Completed,United States,Foxborough
+2026-06-16,Group Stage,J,Argentina,Algeria,3.0,0.0,J,J,Completed,United States,Kansas City
+2026-06-16,Group Stage,J,Austria,Jordan,3.0,1.0,J,J,Completed,United States,Santa Clara
+2026-06-17,Group Stage,L,Portugal,DR Congo,1.0,1.0,L,L,Completed,United States,Houston
+2026-06-17,Group Stage,L,Uzbekistan,Colombia,1.0,3.0,L,L,Completed,Mexico,Mexico City
+2026-06-17,Group Stage,K,England,Croatia,4.0,2.0,K,K,Completed,United States,Arlington
+2026-06-17,Group Stage,K,Ghana,Panama,1.0,0.0,K,K,Completed,Canada,Toronto
+2026-06-18,Group Stage,B,Canada,Qatar,6.0,0.0,B,B,Completed,Canada,Vancouver
+2026-06-18,Group Stage,B,Switzerland,Bosnia and Herzegovina,4.0,1.0,B,B,Completed,United States,Inglewood
+2026-06-18,Group Stage,A,Mexico,South Korea,1.0,0.0,A,A,Completed,Mexico,Zapopan
+2026-06-18,Group Stage,A,Czech Republic,South Africa,1.0,1.0,A,A,Completed,United States,Atlanta
+2026-06-19,Group Stage,D,Scotland,Morocco,0.0,1.0,D,D,Completed,United States,Foxborough
+2026-06-19,Group Stage,D,Brazil,Haiti,3.0,0.0,D,D,Completed,United States,Philadelphia
+2026-06-19,Group Stage,C,United States,Australia,2.0,0.0,C,C,Completed,United States,Seattle
+2026-06-19,Group Stage,C,Turkey,Paraguay,0.0,1.0,C,C,Completed,United States,Santa Clara
+2026-06-20,Group Stage,F,Germany,Ivory Coast,2.0,1.0,F,F,Completed,Canada,Toronto
+2026-06-20,Group Stage,F,Ecuador,Curaçao,0.0,0.0,F,F,Completed,United States,Kansas City
+2026-06-20,Group Stage,E,Netherlands,Sweden,5.0,1.0,E,E,Completed,United States,Houston
+2026-06-20,Group Stage,E,Tunisia,Japan,0.0,4.0,E,E,Completed,Mexico,Guadalupe
+2026-06-21,Group Stage,G,Uruguay,Cape Verde,2.0,2.0,G,G,Completed,United States,Miami Gardens
+2026-06-21,Group Stage,G,Spain,Saudi Arabia,4.0,0.0,G,G,Completed,United States,Atlanta
+2026-06-21,Group Stage,H,Belgium,Iran,0.0,0.0,H,H,Completed,United States,Inglewood
+2026-06-21,Group Stage,H,New Zealand,Egypt,1.0,3.0,H,H,Completed,Canada,Vancouver
+2026-06-22,Group Stage,I,France,Iraq,3.0,0.0,I,I,Completed,United States,Philadelphia
+2026-06-22,Group Stage,I,Norway,Senegal,3.0,2.0,I,I,Completed,United States,East Rutherford
+2026-06-22,Group Stage,J,Argentina,Austria,2.0,0.0,J,J,Completed,United States,Arlington
+2026-06-22,Group Stage,J,Jordan,Algeria,1.0,2.0,J,J,Completed,United States,Santa Clara
+2026-06-23,Group Stage,L,Portugal,Uzbekistan,5.0,0.0,L,L,Completed,United States,Houston
+2026-06-23,Group Stage,L,Colombia,DR Congo,1.0,0.0,L,L,Completed,Mexico,Zapopan
+2026-06-23,Group Stage,K,England,Ghana,0.0,0.0,K,K,Completed,United States,Foxborough
+2026-06-23,Group Stage,K,Panama,Croatia,0.0,1.0,K,K,Completed,Canada,Toronto
+2026-06-24,Group Stage,D,Scotland,Brazil,0.0,3.0,D,D,Completed,United States,Miami Gardens
+2026-06-24,Group Stage,D,Morocco,Haiti,4.0,2.0,D,D,Completed,United States,Atlanta
+2026-06-24,Group Stage,B,Bosnia and Herzegovina,Qatar,3.0,1.0,B,B,Completed,United States,Seattle
+2026-06-24,Group Stage,A,South Africa,South Korea,1.0,0.0,A,A,Completed,Mexico,Guadalupe
+2026-06-24,Group Stage,B,Canada,Switzerland,1.0,2.0,B,B,Completed,Canada,Vancouver
+2026-06-24,Group Stage,A,Mexico,Czech Republic,3.0,0.0,A,A,Completed,Mexico,Mexico City
+2026-06-25,Group Stage,C,United States,Turkey,2.0,3.0,C,C,Completed,United States,Inglewood
+2026-06-25,Group Stage,C,Paraguay,Australia,0.0,0.0,C,C,Completed,United States,Santa Clara
+2026-06-25,Group Stage,F,Curaçao,Ivory Coast,0.0,2.0,F,F,Completed,United States,Philadelphia
+2026-06-25,Group Stage,F,Ecuador,Germany,2.0,1.0,F,F,Completed,United States,East Rutherford
+2026-06-25,Group Stage,E,Japan,Sweden,1.0,1.0,E,E,Completed,United States,Arlington
+2026-06-25,Group Stage,E,Tunisia,Netherlands,1.0,3.0,E,E,Completed,United States,Kansas City
+2026-06-26,Group Stage,I,Senegal,Iraq,5.0,0.0,I,I,Completed,Canada,Toronto
+2026-06-26,Group Stage,I,Norway,France,1.0,4.0,I,I,Completed,United States,Foxborough
+2026-06-26,Group Stage,G,Uruguay,Spain,0.0,1.0,G,G,Completed,Mexico,Zapopan
+2026-06-26,Group Stage,G,Cape Verde,Saudi Arabia,0.0,0.0,G,G,Completed,United States,Houston
+2026-06-26,Group Stage,H,New Zealand,Belgium,1.0,5.0,H,H,Completed,Canada,Vancouver
+2026-06-26,Group Stage,H,Egypt,Iran,1.0,1.0,H,H,Completed,United States,Seattle
+2026-06-27,Group Stage,J,Algeria,Austria,3.0,3.0,J,J,Completed,United States,Kansas City
+2026-06-27,Group Stage,J,Jordan,Argentina,1.0,3.0,J,J,Completed,United States,Arlington
+2026-06-27,Group Stage,L,Colombia,Portugal,0.0,0.0,L,L,Completed,United States,Miami Gardens
+2026-06-27,Group Stage,L,DR Congo,Uzbekistan,3.0,1.0,L,L,Completed,United States,Atlanta
+2026-06-27,Group Stage,K,Panama,England,0.0,2.0,K,K,Completed,United States,East Rutherford
+2026-06-27,Group Stage,K,Croatia,Ghana,2.0,1.0,K,K,Completed,United States,Philadelphia
+2026-06-28,Round of 32,A,South Africa,Canada,0.0,1.0,A,B,Completed,United States,Inglewood
+2026-06-29,Round of 32,E,Netherlands,Morocco,1.0,1.0,E,D,Completed,Mexico,Guadalupe
+2026-06-29,Round of 32,F,Germany,Paraguay,1.0,1.0,F,C,Completed,United States,Foxborough
+2026-06-29,Round of 32,D,Brazil,Japan,2.0,1.0,D,E,Completed,United States,Houston
+2026-06-30,Round of 32,F,Ivory Coast,Norway,1.0,2.0,F,I,Completed,United States,Arlington
+2026-06-30,Round of 32,I,France,Sweden,3.0,0.0,I,E,Completed,United States,East Rutherford
+2026-06-30,Round of 32,A,Mexico,Ecuador,2.0,0.0,A,F,Completed,Mexico,Mexico City
+2026-07-01,Round of 32,K,England,DR Congo,2.0,1.0,K,L,Completed,United States,Atlanta
+2026-07-01,Round of 32,H,Belgium,Senegal,3.0,2.0,H,I,Completed,United States,Seattle
+2026-07-01,Round of 32,C,United States,Bosnia and Herzegovina,2.0,0.0,C,B,Completed,United States,Santa Clara
+2026-07-02,Round of 32,G,Spain,Austria,3.0,0.0,G,J,Completed,United States,Inglewood
+2026-07-02,Round of 32,L,Portugal,Croatia,2.0,1.0,L,K,Completed,Canada,Toronto
+2026-07-02,Round of 32,B,Switzerland,Algeria,2.0,0.0,B,J,Completed,Canada,Vancouver
+2026-07-03,Round of 32,L,Colombia,Ghana,1.0,0.0,L,K,Completed,United States,Kansas City
+2026-07-03,Round of 32,J,Argentina,Cape Verde,3.0,2.0,J,G,Completed,United States,Miami Gardens
+2026-07-03,Round of 32,C,Australia,Egypt,1.0,1.0,C,H,Completed,United States,Arlington
+2026-07-04,Round of 16,B,Canada,Morocco,0.0,3.0,B,D,Completed,United States,Houston
+2026-07-04,Round of 16,C,Paraguay,France,0.0,1.0,C,I,Completed,United States,Philadelphia
+2026-07-05,Round of 16,D,Brazil,Norway,1.0,2.0,D,I,Completed,United States,East Rutherford
+2026-07-05,Round of 16,A,Mexico,England,2.0,3.0,A,K,Completed,Mexico,Mexico City
+2026-07-06,Round of 16,L,Portugal,Spain,0.0,1.0,L,G,Completed,United States,Dallas
+2026-07-06,Round of 16,C,United States,Belgium,1.0,4.0,C,H,Completed,United States,Seattle
+2026-07-07,Round of 16,J,Argentina,Egypt,3.0,2.0,J,H,Completed,United States,Atlanta
+2026-07-07,Round of 16,B,Switzerland,Colombia,0.0,0.0,B,L,Completed,Canada,Vancouver
+2026-07-09,Quarter-finals,I,France,Morocco,,,I,D,Scheduled,United States,Foxborough
+2026-07-10,Semi-finals,G,Spain,Belgium,,,G,H,Scheduled,United States,Inglewood
+2026-07-11,Semi-finals,I,Norway,England,,,I,K,Scheduled,United States,Miami Gardens
+2026-07-11,Semi-finals,J,Argentina,Switzerland,,,J,B,Scheduled,United States,Kansas City

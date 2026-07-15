@@ -1,0 +1,196 @@
+{
+  "model_type": "LightGBM (optimized)",
+  "calibration_method": "none",
+  "optuna_trials": 150,
+  "best_cv_logloss": 0.8554608603634634,
+  "best_params": {
+    "num_leaves": 43,
+    "max_depth": 14,
+    "min_child_samples": 5,
+    "learning_rate": 0.00875946759397299,
+    "n_estimators": 730,
+    "subsample": 0.9050948684015635,
+    "subsample_freq": 8,
+    "colsample_bytree": 0.7062921774118223,
+    "feature_fraction_bynode": 0.8974538950277869,
+    "reg_alpha": 1.8956561477694796e-05,
+    "reg_lambda": 0.025686154206295532,
+    "min_gain_to_split": 0.24464447113117183,
+    "min_data_per_group": 36,
+    "cat_smooth": 3.229031153012105
+  },
+  "train_metrics": {
+    "accuracy": 0.8313,
+    "log_loss": 0.5546,
+    "brier_score": 0.1006,
+    "auc_ovr": 0.9665
+  },
+  "val_metrics": {
+    "accuracy": 0.6264,
+    "log_loss": 0.8409,
+    "brier_score": 0.164,
+    "auc_ovr": 0.761
+  },
+  "cv_metrics_avg": {
+    "accuracy": 0.6148,
+    "log_loss": 0.8554599999999999,
+    "brier_score": 0.16668,
+    "auc_ovr": 0.7493
+  },
+  "cv_metrics_std": {
+    "accuracy": 0.04196608154212162,
+    "log_loss": 0.06417842628173426,
+    "brier_score": 0.014242106585754795,
+    "auc_ovr": 0.03929315462011166
+  },
+  "cv_metrics_per_fold": [
+    {
+      "accuracy": 0.6571,
+      "log_loss": 0.7744,
+      "brier_score": 0.15,
+      "auc_ovr": 0.7959,
+      "fold": 0
+    },
+    {
+      "accuracy": 0.5739,
+      "log_loss": 0.9126,
+      "brier_score": 0.1797,
+      "auc_ovr": 0.699,
+      "fold": 1
+    },
+    {
+      "accuracy": 0.5562,
+      "log_loss": 0.945,
+      "brier_score": 0.1869,
+      "auc_ovr": 0.706,
+      "fold": 2
+    },
+    {
+      "accuracy": 0.6317,
+      "log_loss": 0.8398,
+      "brier_score": 0.1616,
+      "auc_ovr": 0.7684,
+      "fold": 3
+    },
+    {
+      "accuracy": 0.6551,
+      "log_loss": 0.8055,
+      "brier_score": 0.1552,
+      "auc_ovr": 0.7772,
+      "fold": 4
+    }
+  ],
+  "robustness": [
+    {
+      "accuracy": 0.6264,
+      "log_loss": 0.8409,
+      "brier_score": 0.164,
+      "auc_ovr": 0.761,
+      "seed": 42,
+      "n_estimators_used": 339
+    },
+    {
+      "accuracy": 0.6221,
+      "log_loss": 0.8407,
+      "brier_score": 0.164,
+      "auc_ovr": 0.7624,
+      "seed": 123,
+      "n_estimators_used": 316
+    },
+    {
+      "accuracy": 0.6298,
+      "log_loss": 0.8387,
+      "brier_score": 0.1635,
+      "auc_ovr": 0.7608,
+      "seed": 2024,
+      "n_estimators_used": 352
+    }
+  ],
+  "top20_features": [
+    [
+      "fifa_rank_diff",
+      0.21644911644383372
+    ],
+    [
+      "fifa_points_diff",
+      0.21447397265349108
+    ],
+    [
+      "away_total_matches_played",
+      0.03950208221183127
+    ],
+    [
+      "home_total_matches_played",
+      0.03641385455088902
+    ],
+    [
+      "home_fifa_rank",
+      0.035769251959758906
+    ],
+    [
+      "is_neutral",
+      0.035221128641242806
+    ],
+    [
+      "away_fifa_rank",
+      0.034466845365163375
+    ],
+    [
+      "elo_home_pre",
+      0.025911676313548418
+    ],
+    [
+      "elo_diff",
+      0.024988467948333235
+    ],
+    [
+      "home_net_goals_10",
+      0.02287702669305343
+    ],
+    [
+      "home_avg_goals_against_10",
+      0.021664677543366876
+    ],
+    [
+      "elo_away_pre",
+      0.020603982947343783
+    ],
+    [
+      "home_goal_conversion_rate",
+      0.0189764480653106
+    ],
+    [
+      "away_goal_conversion_rate",
+      0.018115614443174645
+    ],
+    [
+      "home_wc_avg_goals_for",
+      0.01698032468714384
+    ],
+    [
+      "away_days_since_last_match",
+      0.016790163941331974
+    ],
+    [
+      "home_goals_conceded_std_5",
+      0.013815021702802016
+    ],
+    [
+      "away_goals_conceded_std_10",
+      0.013805299482166586
+    ],
+    [
+      "away_fifa_points",
+      0.013263218400650334
+    ],
+    [
+      "away_goals_conceded_std_5",
+      0.01271951068817804
+    ]
+  ],
+  "training_date": "2026-07-09T18:38:16.013331",
+  "seed": 42,
+  "n_train_samples": 4700,
+  "n_val_samples": 1175,
+  "n_features": 72
+}
