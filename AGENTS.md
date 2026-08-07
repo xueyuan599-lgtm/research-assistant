@@ -11,6 +11,7 @@
 | 数据处理与可视化 | 清洗、变换、建模、出版级图表 | 实验数据可视化助手、统计报表自动生成 |
 | 实验流程优化 | 方案设计、参数调优、敏感性分析 | 模拟实验自动化 pipeline |
 | 算法创造 | 研究想法到新算法：形式化→设计→实现→基准→验证入库 | 设计一个异质性处理效应稳健估计量 |
+| 数学建模竞赛 | 选题评估→审题→模型→代码→论文全流程 | "国赛C题农作物种植策略" |
 | 论文格式与排版 | 模板适配、参考文献格式化、图表规范 | 期刊模板一键排版、LaTeX 编译辅助 |
 
 ## 使用方式
@@ -26,39 +27,42 @@
 3. 用户确认后 → **Orchestrator**（`agents/orchestrator.md`）调度 Agent 集群
 4. 禁止在阶段 0（秘书分解）完成前写任何代码或探查数据
 
-详见 `.claude/rules/00-multi-agent-mandate.md`（父项目规则）。
+详见 `agents/secretary.md`。
 
 ## 架构
 ```yaml
 research-assistant/
-├── CLAUDE.md                       # 项目配置
-├── AGENTS.md                       # 架构总览
+├── AGENTS.md                       # 项目说明
 ├── .claude/rules/
 │   ├── 00-scope-boundary.md        # 作用域沙箱（不污染外层）
 │   ├── 01-agent-standards.md       # Agent 编写规范
 │   ├── 02-academic-writing-standards.md  # 学术写作质量标准
-│   └── 03-kaggle-track.md          # Kaggle 竞赛流水线
+│   ├── 03-kaggle-track.md          # Kaggle 竞赛流水线
+    │   └── 04-mcm-track.md            # 数学建模国赛赛道
+├── workflows/
+│   └── dynamic-workflow.md         # 动态管线协议
 ├── agents/                         # 科研智能体（核心，40+ 个定义）
 │   ├── secretary.md                # 任务分解守门人 — 所有任务的唯一入口
 │   ├── orchestrator.md             # 总协调人 — 意图识别 + 管线编排
 │   ├── shared-memory-template.md   # 跨 Agent 共享记忆模板
-│   ├── literature/                 # 文献检索与综述
-│   ├── topic-analysis/             # 选题分析与前沿探测
-│   ├── data-viz/                   # 数据处理与可视化
-│   ├── experiment/                 # 实验设计与优化
-│   ├── algorithm/                  # 算法创造（形式化→设计→实现→基准→验证）
-│   ├── paper-format/               # 论文格式与排版
-│   ├── research-qa/                # 科研知识问答
-│   ├── kaggle/                     # Kaggle 竞赛（7 Agent）
-│   └── knowledge/                  # 知识检索
-├── scripts/                        # 辅助脚本
-├── workflows/                      # 工作流协议
-│   ├── dynamic-workflow.md         # 动态管线协议
-│   └── schemas/                    # 交接 Schema
+│   ├── literature/                 # 文献检索与综述（3+1 Agent）
+│   ├── topic-analysis/             # 选题分析与前沿探测（3+1 Agent）
+│   ├── data-viz/                   # 数据处理与可视化（4+1 Agent）
+│   ├── experiment/                 # 实验设计与优化（3+1 Agent）
+│   ├── algorithm/                  # 算法创造（5+1 Agent）
+│   ├── paper-format/               # 论文格式与排版（3+1 Agent）
+│   ├── research-qa/                # 科研知识问答（3+1 Agent）
+│   ├── kaggle/                     # Kaggle 竞赛（7+1 Agent）
+│   ├── mcm/                        # 数学建模国赛（8 Agent）
+│   └── knowledge/                  # 知识检索（1 Agent）
+├── scripts/                        # 辅助脚本（Python + MATLAB）
+├── schemas/                        # 交接 JSON Schema
 ├── knowledge/                      # 知识库（70 算法条目）
 │   ├── algorithm-repository/       # 顶刊算法实现库
 │   ├── kaggle/                     # 竞赛模式库
-│   └── project-experience/         # 项目经验沉淀
+    │   ├── mcm/                       # 数学建模竞赛知识库
+│   ├── project-experience/         # 项目经验沉淀
+│   └── _index.md                   # 知识库索引
 └── outputs/                        # 所有输出落在此处
 ```
 

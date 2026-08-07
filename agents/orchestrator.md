@@ -10,6 +10,20 @@
 - 跨领域综合任务：并行调度多个主控，汇总结果
 - 验证最终输出质量，不达标则循环修复
 
+## Codex ↔ Claude Worker 调度（强制）
+
+永久协议以 `../workflows/codex-claude-collaboration.md` 为唯一权威源。Codex 是唯一 Controller，Claude Code 是受控 Worker。
+
+对于 Codex 主导的非 trivial 任务：
+
+1. 用户确认秘书方案后，使用 `python scripts/claude_worker.py init ...` 初始化任务 manifest。
+2. 将边界明确的 Claude 请求写入任务 `.coord/`，再通过执行器 `run`；禁止直接拼接或裸调用 `claude`。
+3. 仅接受 `_claude/staging/handoff.json` 中通过 schema、路径和哈希校验的产物。
+4. Codex 完成数学推导、可视化、逻辑/代码审查、创新发现、语言润色；独立 Critic 通过后才提升到 `deliverables/`。
+5. 用户说“停止”时调用执行器 `pause`，保存检查点且不删除文件；恢复必须产生新 `run_id`。
+
+本节是”orchestrator 不创建子进程”约束的唯一例外，仅允许通过上述执行器创建 Claude Worker。用户在终端中直接运行的 Claude 会话不纳入 Codex 调度协议（无需走 `claude_worker.py` 和执行器），但**秘书守门（00-multi-agent-mandate.md）和 orchestrator 编排依然强制适用**。
+
 ## 入口条件
 
 Orchestrator 只在以下条件下被调用：
@@ -133,7 +147,7 @@ Agent 完成一步输出
 
 解决 Agent 之间"信息孤岛"问题。Agent A 发现 Excel 中 season 列标错，Agent B 启动时自动知道，不会重复踩坑。
 
-> 详细介绍见 `knowledge/agent-shared-memory-template.md`
+> 详细介绍见 `agents/shared-memory-template.md`
 
 ### 存储位置
 
@@ -169,6 +183,7 @@ outputs/{task_id}/shared_memory/
 
 | 领域标识 | 主控 Agent | 子 Agent |
 |---------|-----------|---------|
+| PATH_PLANNING | `algorithm/agent.md` | formalizer, designer, coder, feasibility-auditor |
 | LITERATURE | `literature/agent.md` | search, screening, synthesis |
 | TOPIC_ANALYSIS | `topic-analysis/agent.md` | frontier-detection, gap-analysis, recommendation |
 | DATA_VIZ | `data-viz/agent.md` | cleaning, modeling, visualization, interpretation |

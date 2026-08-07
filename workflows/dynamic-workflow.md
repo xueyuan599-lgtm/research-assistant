@@ -24,6 +24,25 @@
                                                               验证 → 交付
 ```
 
+### Codex 主导任务的固定协作门
+
+非 trivial 任务在原动态管线外层固定套用：
+
+```text
+Secretary + 用户确认
+  → collaboration init
+  → DeepSeek / MCP / LaTeX preflight
+  → Codex 与 Claude 独立工作区执行
+  → schema + SHA-256 handoff
+  → Codex 五项专家职责
+  → 独立 Critic
+  → deliverables 提升
+```
+
+具体状态、写入所有权、Word/LaTeX 管线以及停止/恢复语义，以
+`workflows/codex-claude-collaboration.md` 为准。只有通过
+`scripts/claude_worker.py` 启动的 Claude Worker 才进入该管线；用户直接在终端运行 Claude Code 不受影响。
+
 ---
 
 ## 步骤

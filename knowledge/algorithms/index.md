@@ -10,7 +10,7 @@
 
 | 算法名 | 领域 | 创建日期 | 文件 |
 |--------|------|---------|------|
-| — | — | — | — |
+| Physarum Network Optimizer (PNO-GWO) | 群智能优化 | 2026-06-10 → 2026-07-29 | [README](physarum-network-optimizer/README.md) |
 
 ## 条目格式
 

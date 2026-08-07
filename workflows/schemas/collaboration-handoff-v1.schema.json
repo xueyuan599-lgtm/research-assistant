@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "collaboration-handoff-v1.schema.json",
+  "title": "Codex-Claude Collaboration Handoff v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "task_id",
+    "run_id",
+    "producer",
+    "consumer",
+    "phase",
+    "status",
+    "scope",
+    "inputs",
+    "outputs",
+    "decisions",
+    "assumptions",
+    "warnings",
+    "open_items",
+    "reproduction",
+    "checkpoint",
+    "next_action",
+    "timestamp"
+  ],
+  "properties": {
+    "protocol_version": {"const": "1.0.0"},
+    "task_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"},
+    "run_id": {"type": "string", "minLength": 1},
+    "producer": {"enum": ["codex", "claude"]},
+    "consumer": {"enum": ["codex", "claude"]},
+    "phase": {"type": "string", "minLength": 1},
+    "status": {"enum": ["completed", "partial", "failed", "stopped"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["read", "write"],
+      "properties": {
+        "read": {"type": "array", "items": {"type": "string"}},
+        "write": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "inputs": {"type": "array", "items": {"$ref": "#/$defs/inputArtifact"}},
+    "outputs": {"type": "array", "items": {"$ref": "#/$defs/outputArtifact"}},
+    "decisions": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "open_items": {"type": "array", "items": {"type": "string"}},
+    "reproduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command", "environment"],
+      "properties": {
+        "command": {"type": "array", "items": {"type": "string"}},
+        "environment": {"type": "object"}
+      }
+    },
+    "checkpoint": {"type": "string"},
+    "next_action": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "inputArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}
+      }
+    },
+    "outputArtifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "media_type", "sha256", "validation"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "media_type": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"},
+        "validation": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

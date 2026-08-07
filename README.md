@@ -1,6 +1,6 @@
 # Research Assistant — 科研全流程智能辅助助手
 
-> 面向科学研究全过程的智能辅助系统 | Multi-Agent 架构 | 7大功能模块 | 60+算法知识库
+> 面向科学研究全过程的智能辅助系统 | Multi-Agent 架构 | 8大功能模块 | 70+算法知识库
 
 ---
 
@@ -21,6 +21,8 @@
 | 📝 论文排版 | 模板适配 → 参考文献管理 → 合规检查 |
 | 💡 知识问答 | 方法解释 → 公式推导 → 代码示例 |
 | 🧠 算法创造 | 形式化 → 设计 → 编码 → 基准 → 验证入库 |
+| 🏆 Kaggle 竞赛 | 数据探查 → 基线 → 特征工程 → 模型 → 集成 → 提交 |
+| 🏆 数学建模竞赛 | 选题评估 → 审题 → 模型 → 代码 → 检验 → 论文（国赛/美赛） |
 
 ## 🏗️ 系统架构
 
@@ -77,27 +79,30 @@ claude
 
 ```
 research-assistant/
-├── agents/                    # 43个Agent定义（核心）
+├── agents/                    # 56个Agent定义（核心）
 │   ├── secretary.md          # 任务分解守门人
 │   ├── orchestrator.md       # 协调器
 │   ├── literature/           # 文献检索（4个Agent）
 │   ├── topic-analysis/       # 选题分析（4个Agent）
-│   ├── data-viz/             # 数据可视化（5个Agent）
+│   ├── data-viz/             # 数据可视化（9个Agent）
 │   ├── experiment/           # 实验优化（4个Agent）
 │   ├── research-qa/          # 科研问答（4个Agent）
 │   ├── paper-format/         # 排版格式（4个Agent）
-│   ├── algorithm/            # 算法创造（5个Agent）
-│   └── kaggle/               # Kaggle竞赛（7个Agent）
+│   ├── algorithm/            # 算法创造（6个Agent）
+│   ├── kaggle/               # Kaggle竞赛（8个Agent）
+│   └── mcm/                  # 数学建模竞赛（9个Agent）
 ├── knowledge/                # 知识库
-│   ├── algorithm-repository/ # 60+算法文档
-│   └── kaggle/               # 竞赛模式库
+│   ├── algorithm-repository/ # 70+算法文档
+│   ├── kaggle/               # 竞赛模式库
+│   └── mcm/                  # 数学建模竞赛知识库
 ├── outputs/                  # 实战案例输出
 │   ├── cumcm2024c/           # 数学建模竞赛
+│   ├── 2026_7_25/            # CUMCM 2025 A题（烟幕干扰弹）
 │   ├── ftz-did/              # DID因果推断论文
 │   ├── kaggle_titanic/       # Kaggle竞赛
 │   ├── worldcup-prediction/  # 世界杯预测
 │   └── ...
-├── .claude/rules/            # 7条工作流规则
+├── .claude/rules/            # 8条工作流规则
 └── CLAUDE.md                 # 项目配置
 ```
 
@@ -105,19 +110,11 @@ research-assistant/
 
 | 指标 | 数值 |
 |------|------|
-| Agent 定义 | 43个 |
+| Agent 定义 | 56个 |
 | 代码文件 | 170+（Python / MATLAB / R） |
-| 算法知识库 | 60+个算法文档 |
-| 实战案例 | 10+个完整案例 |
+| 算法知识库 | 70+个算法文档 |
+| 实战案例 | 10+个完整案例（含 2024 C 题、2025 A 题数学建模） |
 | 生成图表 | 50+张出版级图表 |
-
-## 👥 团队
-
-| 成员 | 角色 | 负责模块 |
-|------|------|---------|
-| 金彦诚 | 项目负责人 | 系统架构、文献与知识模块 |
-| 翟俊杰 | 核心开发 | 文献与知识模块、数据与实验模块 |
-| 徐渊 | 核心开发 | 系统架构与核心引擎 |
 
 ## 📄 许可证
 

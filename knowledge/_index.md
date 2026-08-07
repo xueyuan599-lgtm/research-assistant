@@ -15,7 +15,7 @@
 
 | 目录/文件 | 说明 | 规模 |
 |-----------|------|------|
-| `algorithm-repository/` | **SCI 级算法实现库** — 从顶刊提取的方法 + 可运行代码 | **59 个条目**（21 经典 + 38 个 2021-2026 前沿） |
+| `algorithm-repository/` | **SCI 级算法实现库** — 从顶刊提取的方法 + 可运行代码 | **70 个条目**（21 经典 + 49 个 2021-2026 前沿） |
 | `optimization-validation-framework.md` | 优化问题求解→验证→交付全流程方法论 | 1 个文件 |
 | `project-experience/` | 项目经验沉淀模板（待填充） | 框架就绪 |
 | `kaggle/` | Kaggle 竞赛复盘 + 模式模板 | 8 个模式 + 1 个 agent |
@@ -28,6 +28,7 @@
 |------|--------|---------|
 | 运筹优化 | 8 | Operations Research, INFORMS J. Comput., Math. Programming, EJOR, JOTA, SIAM J. Optim. |
 | 机器学习 | 7 | NeurIPS, ICML, ICLR, CVPR, ICCV, JMLR, TPAMI |
+| 时序融合 | 11 | Scientific Reports, PLOS ONE, IEEE Access, Eng. Struct., NeurIPS, ICLR |
 | 统计学 | 7 | JRSS-B, Ann. Statist., Biometrika, JASA, Statist. Sci. |
 | 因果推断 | 8 | J. Causal Inference, Econometrica, JRSS-B, Biometrika, NeurIPS, ICML |
 | 生信分析 | 8 | Nature, Nature Methods/Biotech., Science, Genome Biology, PLoS Comp. Bio. |

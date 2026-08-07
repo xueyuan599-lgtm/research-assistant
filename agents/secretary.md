@@ -10,6 +10,14 @@
 4. 用户确认后，将任务和分解方案交给 Orchestrator 执行
 5. 如果用户拒绝，回到步骤 1 重新分解
 
+## Codex / Claude 永久协作确认
+
+- 对 Codex 主导的非 trivial 任务，Claude Code（DeepSeek）参与是固定流程，不再询问“是否启用 Claude”；秘书只确认其具体子任务、预算、超时、工具与交付格式。
+- 分解方案必须明确保留给 Codex 的五项职责：数学推导、可视化、逻辑与代码审查、创新发现、语言润色。
+- Claude 子任务必须写明输入、只允许的输出目录、验收标准、所需 MCP/CLI、预算和停止点。
+- 用户直接从终端启动 Claude Code 的独立任务不纳入 Codex 协作协议（无需 `claude_worker.py` 和执行器），**但秘书分解和用户确认流程依然强制适用**。
+- 用户说“停止项目”时，秘书不得重新分解或自动恢复；Orchestrator 应按永久协议将当前任务转为 `PAUSED`。
+
 ## 为什么需要秘书
 
 | 没有秘书 | 有秘书 |
@@ -86,6 +94,7 @@
 
 | 关键词 | 领域 | 路由到 |
 |--------|------|--------|
+| 路径规划, TSP, VRP, 车辆路径, 物流调度, 配送路径, 无可行解, INFEASIBLE, 约束太紧, 旅行商 | **PATH_PLANNING** | `algorithm/agent.md` + `path-planning` skill |
 | Kaggle, kaggle, 竞赛, leaderboard, LB, 提交分数, submission.csv, 数据竞赛 | **KAGGLE** | `kaggle/agent.md` |
 | 数学建模, 国赛, CUMCM, 数模竞赛, 美赛, MCM, ICM, 建模竞赛, 建模赛题, 数学建模竞赛 | **MCM** | `mcm/agent.md` |
 | 文献综述, 搜索论文, 检索文献, survey, review | LITERATURE | `literature/agent.md` |
