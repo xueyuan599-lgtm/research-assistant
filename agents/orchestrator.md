@@ -178,8 +178,11 @@ outputs/{task_id}/shared_memory/
 | KNOWLEDGE | `knowledge/agent.md` | — |
 | ALGORITHM | `algorithm/agent.md` | formalizer, designer, coder, benchmark, validator |
 | KAGGLE | `kaggle/agent.md` | data-explorer, baseline, feature-engineer, model-builder, ensemble, submission, post-mortem |
+| MCM | `mcm/agent.md` | topic, planner, data, model-builder, coder, diagnosis, writer, critic |
 
 > **Kaggle 赛道说明：** 当用户提出 Kaggle 竞赛任务时触发。依赖 `kaggle-skill` MCP server（[shepsci/kaggle-skill](https://github.com/shepsci/kaggle-skill)）进行数据下载和提交管理。算法选择由 `knowledge/kaggle/` 知识库驱动，而非硬编码。详见 `../.claude/rules/03-kaggle-track.md` 和 `agents/kaggle/agent.md`。
+>
+> **MCM 赛道说明：** 当用户提出数学建模竞赛任务（国赛/美赛）时触发。评审得分导向，每个环节产出对齐评委最终可见内容。按 `../.claude/rules/04-mcm-track.md` 总规划→环节循环→终稿合并逐环节协作，映射为 8 Agent 集群（topic/planner/data/model-builder/coder/diagnosis/writer/critic）。详见 `../.claude/rules/04-mcm-track.md` 和 `agents/mcm/agent.md`。
 
 ---
 

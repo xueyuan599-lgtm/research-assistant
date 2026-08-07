@@ -1,0 +1,73 @@
+# MCM / Science publication figure style
+# 89 mm single-column canvas, restrained color, vector-safe fonts.
+
+figure.dpi: 120
+figure.facecolor: white
+figure.edgecolor: white
+figure.constrained_layout.use: True
+figure.figsize: 3.504, 2.628
+
+font.size: 7
+font.family: sans-serif
+font.sans-serif: Arial, Microsoft YaHei, Source Han Sans SC, Source Han Sans CN, Noto Sans CJK SC, SimHei, DejaVu Sans
+mathtext.fontset: dejavusans
+axes.unicode_minus: False
+
+axes.linewidth: 0.6
+axes.labelsize: 7
+axes.titlesize: 7
+axes.titleweight: normal
+axes.titlepad: 5
+axes.labelpad: 3
+axes.spines.top: False
+axes.spines.right: False
+axes.edgecolor: 333333
+axes.labelcolor: 222222
+axes.axisbelow: True
+axes.grid: False
+axes.prop_cycle: cycler('color', ['3B6FB6', 'E07A2D', '2A9D8F', '8E6C8A', 'D6A532'])
+
+xtick.major.size: 2.5
+xtick.minor.size: 1.4
+xtick.major.width: 0.55
+xtick.minor.width: 0.4
+xtick.labelsize: 6
+xtick.color: 333333
+xtick.direction: out
+xtick.major.pad: 2
+ytick.major.size: 2.5
+ytick.minor.size: 1.4
+ytick.major.width: 0.55
+ytick.minor.width: 0.4
+ytick.labelsize: 6
+ytick.color: 333333
+ytick.direction: out
+ytick.major.pad: 2
+
+grid.color: D9D9D9
+grid.linewidth: 0.45
+grid.alpha: 0.65
+
+lines.linewidth: 1.25
+lines.markersize: 3.8
+lines.markeredgewidth: 0.55
+patch.linewidth: 0.55
+
+legend.fontsize: 6
+legend.frameon: False
+legend.handlelength: 1.8
+legend.handletextpad: 0.5
+legend.columnspacing: 0.9
+legend.borderaxespad: 0.3
+
+pdf.fonttype: 42
+ps.fonttype: 42
+svg.fonttype: none
+savefig.dpi: 600
+savefig.bbox: tight
+savefig.pad_inches: 0.04
+savefig.facecolor: white
+savefig.edgecolor: white
+
+image.cmap: cividis
+image.interpolation: nearest

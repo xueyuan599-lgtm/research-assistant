@@ -1,0 +1,4 @@
+-r requirements-figures-core.txt
+networkx>=3.1
+geopandas>=0.14
+shapely>=2.0

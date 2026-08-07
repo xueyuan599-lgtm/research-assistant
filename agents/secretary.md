@@ -87,6 +87,7 @@
 | 关键词 | 领域 | 路由到 |
 |--------|------|--------|
 | Kaggle, kaggle, 竞赛, leaderboard, LB, 提交分数, submission.csv, 数据竞赛 | **KAGGLE** | `kaggle/agent.md` |
+| 数学建模, 国赛, CUMCM, 数模竞赛, 美赛, MCM, ICM, 建模竞赛, 建模赛题, 数学建模竞赛 | **MCM** | `mcm/agent.md` |
 | 文献综述, 搜索论文, 检索文献, survey, review | LITERATURE | `literature/agent.md` |
 | 研究热点, 选题, 前沿, gap analysis | TOPIC_ANALYSIS | `topic-analysis/agent.md` |
 | 可视化, 绘图, 图表, 数据清洗, 建模 | DATA_VIZ | `data-viz/agent.md` |
@@ -128,6 +129,44 @@ Socrates 质询: Phase 2-5 之间各插入 1 次质询
   - 目标排名: top 10% / top 30% / 仅参与?
   - 时间预算: 几小时 / 几天？
   - 提交频率: 每日最多几次提交？
+```
+
+## MCM 赛道分解模板
+
+当检测到 MCM 领域时，使用以下预设分解方案（调整赛题名、数据规模等变量即可）：
+
+```
+任务分解方案（数学建模国赛赛道 · 逐环节协作）:
+├─ 【总规划 · 一次性】
+│   ├─ Phase 1: topic-agent → 选题评估（题目已定可跳过）
+│   ├─ Phase 2a: planner-agent → 审题拆解 + 全局方案 + 关键小问 + 环节清单 + 论文骨架 ← 建模手
+│   └─ Phase 2b: data-agent → 数据审查与预处理（总规划 P2）← 编程手（与 2a 并行）
+├─ 【环节循环 · 逐环节: plan → auto → 完成+门禁 → 停止】
+│   ├─ 环节① 问题重述 (writer)
+│   ├─ 环节②~⑥ 逐问建模与求解 (model-builder → coder → diagnosis → writer)
+│   ├─ 环节⑦ 模型假设 (writer)
+│   ├─ 环节⑧ 符号说明 (writer)
+│   ├─ 环节⑨ 模型评价 (writer)
+│   ├─ 环节⑩ 参考文献 (writer)
+│   ├─ 环节⑪ 附录 (writer)
+│   └─ 环节⑫ 摘要 (writer, 最后)
+└─ 【终稿合并 · 一次性】
+    ├─ 合并 paper/sections/*.md → 论文草稿.md
+    ├─ critic-agent → 评审自查（N7 唯一触发）
+    └─ 交付（论文 + 代码 + 答案速查表）
+
+并行机会: Phase 2a（建模手）与 Phase 2b（编程手）可同时启动；每环节内 model-builder→coder→diagnosis 串行
+用户确认点: 选题确认 → 模型路线 + 环节清单确认 → 每环节完成确认（S 门禁）→ 终稿确认
+预计 Agent 数: 8 个（每环节内按需调度 3-4 个）
+
+确认项:
+  - 工具: Python (numpy, scipy, pulp, ortools, cvxpy, sklearn, matplotlib) + MATLAB（可选）+ math-modeling-writing skill
+  - 数据规模: 小 / 中 / 大（附件数量和数据量级）
+  - 建模经验: 无 / 校赛 / 美赛 / 国赛
+  - 时间预算: 距提交还剩多少小时？
+  - 编程水平: 零基础 / 能改代码 / 能独立编程
+  - 交付重点: 模型创新 / 结果精度 / 论文规范 / 综合最优
+  - 环节粒度偏好: 章节级 / 逐问级（默认逐问推进建模求解）
 ```
 
 ## 约束
