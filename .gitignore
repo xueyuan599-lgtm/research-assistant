@@ -53,5 +53,11 @@ outputs/mathtestC/
 .env.local
 
 # Large data files (download separately if needed)
-outputs/kaggle_NCAA/data/MMasseyOrdinals.csv
 outputs/test260704/
+
+# 竞赛数据/模型（体积大，按需重新下载/训练）
+outputs/kaggle_NCAA/data/
+outputs/kaggle_NCAA/submission_a.csv
+outputs/kaggle_NCAA/方案B_output/submission_*.csv
+outputs/worldcup-prediction/data/models/saved_models/
+outputs/worldcup-prediction/data/features/
