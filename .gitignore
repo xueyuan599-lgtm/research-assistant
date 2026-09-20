@@ -40,6 +40,10 @@ Thumbs.db
 # Personal Claude Code settings (user-specific, not shared)
 .claude/settings.local.json
 .claude/settings.json
+.claude/settings.local.json.bak-*
+
+# VSCode 工作区设置（含本机解释器绝对路径，换机器即失效，不共享）
+.vscode/
 
 # CatBoost
 catboost_info/
@@ -47,6 +51,9 @@ catboost_info/
 # Temp / test directories
 test_name/
 outputs/mathtestC/
+
+# 临时暂存（CUMCM 论文重构中间件，约 55MB，不进版本控制）
+staging/
 
 # Environment files
 .env

@@ -1,28 +1,42 @@
 # 作用域边界（沙箱协议）
 
+> 沙箱 = **本仓库根**（也是 CWD 与 git 根）。下表路径一律**仓库根相对**——写 `research-assistant/xxx`
+> 会解析成不存在的嵌套路径。
+> 已于 2026-09-20 单层化：父层的 6 条规则与 17 个技能均已并入本仓库（后者在 `.claude/skills/`）。
+> 父目录现只剩 `settings*.json` 与一个指针 `CLAUDE.md`，**已不是项目的组成部分**。
+
 ## 核心规则
-所有操作**只允许在 `research-assistant/` 目录内**，禁止触碰外层文件。
+
+所有操作**只允许在本仓库内**，禁止触碰外层文件。
 
 ## 允许的操作（白名单）
+
 | 操作 | 范围 |
 |------|------|
-| 读写文件 | `research-assistant/**`（含子目录） |
-| 创建目录 | `research-assistant/**` |
-| 安装依赖 | 仅 Python/R 包，不影响项目文件 |
-| 读取工具 | 允许读取外层 skills 参考文档 |
-| 运行代码 | 仅运行 `research-assistant/` 下的脚本 |
+| 读写文件 | 仓库内任意路径（含子目录） |
+| 创建目录 | 仓库内 |
+| 安装依赖 | 仅 Python/R 包，不改动项目文件 |
+| 调用技能 | `.claude/skills/` 下的 17 个技能（仓库内，可读写） |
+| 读取外部 | 允许读取用户级 `~/.claude/` 参考文档（只读） |
+| 运行代码 | 仅运行本仓库下的脚本 |
 
 ## 禁止的操作
-- 修改 `research-assistant/` 以外的任何文件
+
+- 修改本仓库以外的任何文件
 - 在外层目录创建文件或目录
-- 修改父项目的 `CLAUDE.md`、`.claude/rules/`、`.claude/agents/`
+- 修改父目录的 `CLAUDE.md`（尤其不得把它改回规则文件）
 - 运行外层目录下的脚本（除非只读调用）
+- 改动同级独立项目（`kaggle-skill/`、`matlab-agentic-toolkit/`、`xiaoziliao/`）
 
 ## 例外（需用户明确批准）
+
 - 需要用到外层 `quality_reports/`、`test/` 等目录时
 - 需要跨项目引用数据文件时
+- 需要改动父目录结构本身时（如 2026-09-20 的规则层与技能层两次合并）
 
 ## 输出约定
-- 所有实验结果、图表 → `research-assistant/outputs/`
-- 所有新增 Agent → `research-assistant/agents/`
-- 工作流修改 → `research-assistant/workflows/`
+
+- 所有实验结果、图表 → `outputs/`
+- 所有新增 Agent → `agents/`
+- 所有新增技能 → `.claude/skills/`
+- 工作流修改 → `workflows/`

@@ -1,7 +1,17 @@
+---
+paths:
+  - "agents/kaggle/**/*"
+  - "outputs/kaggle_*/**/*"
+---
+
 # Kaggle Competition Track — 竞赛流水线
 
 > 当用户提出 Kaggle 竞赛任务时触发，提供端到端自动化方案。
 > 借鉴 AutoKaggle / PiML / OpenDataSci / CoMind / Socrates 等社区最佳实践。
+>
+> **按需加载**：本文件只在**读取 `agents/kaggle/**` 或 Kaggle 输出目录时**进入上下文。
+> Kaggle 任务必然先读 kaggle Agent 文件，故必然触发；非 Kaggle 任务不再承担这 5.4k 常驻成本。
+> 触发条件与领域路由见 `agents/secretary.md` 与 `agents/orchestrator.md`（常驻）。
 
 ## 触发条件
 

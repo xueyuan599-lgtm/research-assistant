@@ -1,0 +1,7 @@
+interface:
+  display_name: "科研提示词优化器"
+  short_description: "强制检索增强的科研提示词优化与审阅确认（数学建模/通用科研）"
+  default_prompt: "使用 $research-prompt-refiner 优化我的科研提示词：<粘贴提示词或科研主题>"
+
+policy:
+  allow_implicit_invocation: true

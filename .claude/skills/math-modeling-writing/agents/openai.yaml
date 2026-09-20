@@ -1,0 +1,4 @@
+interface:
+  display_name: "数学建模写作"
+  short_description: "按国赛中文论文风格分章节撰写数学建模竞赛论文，读取题目、代码与运行结果生成各章节Markdown草稿。"
+  default_prompt: "帮我写这篇数学建模论文的摘要（或指定章节），输入在 [路径]，运行结果在 [路径]"

@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# md2word 依赖（首次使用由 SKILL.md 引导 pip 安装，不入库）
+phase2-md2word/lib/
+
+# 本地回归语料（真实章节草稿，不入库）
+phase2-md2word/tests/regression/
