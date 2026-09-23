@@ -1,3 +1,11 @@
+---
+title: Mamba: Linear-Time Sequence Modeling with Selective State Spaces
+type:
+  - sequence-modeling
+  - deep-learning
+domain:
+  - nlp-llm
+---
 # Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
 **Source**: Gu, A., & Dao, T. (2023). Mamba: Linear-time sequence modeling with selective state spaces. *arXiv preprint arXiv:2312.00752*. https://arxiv.org/abs/2312.00752

@@ -1,3 +1,12 @@
+---
+title: Pareto Dominance Principle for Data-Driven Optimization
+type:
+  - optimization
+  - pareto
+  - multi-objective
+domain:
+  - operations-research
+---
 # Pareto Dominance Principle for Data-Driven Optimization
 
 **Source**: Sutter, T., Van Parys, B. P. G., & Kuhn, D. (2024). A Pareto dominance principle for data-driven optimization. *Operations Research*, 72(5), 1976-1999. https://doi.org/10.1287/opre.2021.0609

@@ -1,3 +1,12 @@
+---
+title: TIC-FusionNet: Multimodal Fusion with Time-Frequency Decomposition
+type:
+  - forecasting
+  - deep-learning
+  - signal-processing
+domain:
+  - signal-processing
+---
 # TIC-FusionNet: Multimodal Fusion with Time-Frequency Decomposition
 
 - **Source**: Chen, L., & Fan, X. (2025). TIC-FusionNet: A multimodal deep learning framework with temporal decomposition and attention-based fusion for time series forecasting. *PLOS ONE*, 20(10), e0333379.

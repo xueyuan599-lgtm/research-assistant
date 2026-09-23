@@ -1,3 +1,12 @@
+---
+title: Enformer: Gene Expression Prediction from DNA Sequence via Long-Range Interactions
+type:
+  - deep-learning
+  - sequence-modeling
+  - biomolecular
+domain:
+  - computational-biology
+---
 # Enformer: Gene Expression Prediction from DNA Sequence via Long-Range Interactions
 
 **Source**: Avsec, Z., Agarwal, V., Visentin, D., Ledsam, J. R., Grabska-Barwinska, A., Taylor, K. R., Assael, Y., Jumper, J., Kohli, P., & Kelley, D. R. (2021). Effective gene expression prediction from sequence by integrating long-range interactions. *Nature Methods*, 18(10), 1196--1203. https://doi.org/10.1038/s41592-021-01252-x

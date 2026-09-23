@@ -1,3 +1,11 @@
+---
+title: FPCA 函数型主成分分析 / 函数型回归
+type:
+  - functional
+  - dimensionality-reduction
+domain:
+  - generic-ml
+---
 # FPCA 函数型主成分分析 / 函数型回归
 
 - **来源**: Ramsay, J. O., & Silverman, B. W. (2005). *Functional Data Analysis* (2nd ed.). Springer.

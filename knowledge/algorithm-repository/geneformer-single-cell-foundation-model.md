@@ -1,3 +1,12 @@
+---
+title: Geneformer: Transfer Learning for Single-Cell Network Biology
+type:
+  - deep-learning
+  - sequence-modeling
+  - biomolecular
+domain:
+  - computational-biology
+---
 # Geneformer: Transfer Learning for Single-Cell Network Biology
 
 **Source**: Theodoris, C. V., Xiao, L., Chopra, A., Chaffin, M. D., Al Sayed, Z. R., Hill, M. C., Mantineo, H., Brydon, E. M., Zeng, Z., Liu, X. S., & Ellinor, P. T. (2023). Transfer learning enables predictions in network biology. *Nature*, 618, 616--624. https://doi.org/10.1038/s41586-023-06139-9

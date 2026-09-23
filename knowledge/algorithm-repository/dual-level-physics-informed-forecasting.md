@@ -1,3 +1,12 @@
+---
+title: Dual-Level Physics-Informed LSTM for Multi-Step Time Series Forecasting
+type:
+  - forecasting
+  - physics-informed
+  - deep-learning
+domain:
+  - signal-processing
+---
 # Dual-Level Physics-Informed LSTM for Multi-Step Time Series Forecasting
 
 - **Source**: Jin, M., Zhou, Y., & Zheng, H. (2026). Dual-Level Models for Physics-Informed Multi-Step Time Series Forecasting. *arXiv preprint*, arXiv:2601.07640.

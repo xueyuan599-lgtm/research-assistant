@@ -1,3 +1,12 @@
+---
+title: Dynamic Optimization with Side Information
+type:
+  - optimization
+  - stochastic-process
+  - uncertainty-quantification
+domain:
+  - operations-research
+---
 # Dynamic Optimization with Side Information
 
 **Source**: Bertsimas, D., McCord, C., & Sturt, B. (2023). Dynamic optimization with side information. *European Journal of Operational Research*, 304(2), 634-651. https://doi.org/10.1016/j.ejor.2022.03.030

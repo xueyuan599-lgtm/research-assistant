@@ -1,3 +1,12 @@
+---
+title: Fusion ConvLSTM-Net: Convolutional LSTM with Multi-Scale Feature Fusion
+type:
+  - forecasting
+  - deep-learning
+  - sequence-modeling
+domain:
+  - energy-systems
+---
 # Fusion ConvLSTM-Net: Convolutional LSTM with Multi-Scale Feature Fusion
 
 ## Metadata

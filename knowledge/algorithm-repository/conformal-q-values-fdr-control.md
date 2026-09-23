@@ -1,3 +1,11 @@
+---
+title: "False Discovery Rate Control for Structured Multiple Testing: Asymmetric Rules and Conformal Q-values"
+type:
+  - statistical-inference
+  - uncertainty-quantification
+domain:
+  - generic-ml
+---
 # False Discovery Rate Control for Structured Multiple Testing: Asymmetric Rules and Conformal Q-values
 
 **Source**: Zhao, Z., & Sun, W. (2025). False discovery rate control for structured multiple testing: Asymmetric rules and conformal q-values. *Journal of the American Statistical Association*, 120(550), 805--817. https://doi.org/10.1080/01621459.2024.2359739

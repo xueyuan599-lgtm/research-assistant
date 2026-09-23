@@ -1,3 +1,12 @@
+---
+title: Learning for Spatial Branching: An Algorithm Selection Approach
+type:
+  - optimization
+  - deep-learning
+  - numerical
+domain:
+  - operations-research
+---
 # Learning for Spatial Branching: An Algorithm Selection Approach
 
 **Source**: Ghaddar, B., Gomez-Casares, I., Gonzalez-Diaz, J., Gonzalez-Rodriguez, B., Pateiro-Lopez, B., & Rodriguez-Ballesteros, S. (2023). Learning for spatial branching: An algorithm selection approach. *INFORMS Journal on Computing*, 35(5), 1024-1043. https://doi.org/10.1287/ijoc.2022.0090

@@ -1,3 +1,11 @@
+---
+title: Flow Matching for Generative Modeling
+type:
+  - generative-modeling
+  - deep-learning
+domain:
+  - generic-ml
+---
 # Flow Matching for Generative Modeling
 
 **Source**: Lipman, Y., Chen, R. T. Q., Ben-Hamu, H., Nickel, M., & Le, M. (2023). Flow matching for generative modeling. *International Conference on Learning Representations (ICLR)*. https://arxiv.org/abs/2210.02747

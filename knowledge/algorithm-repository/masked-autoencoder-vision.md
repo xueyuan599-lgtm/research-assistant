@@ -1,3 +1,12 @@
+---
+title: Masked Autoencoder (MAE): Scalable Self-Supervised Learning for Vision
+type:
+  - deep-learning
+  - generative-modeling
+  - computer-vision
+domain:
+  - computer-vision
+---
 # Masked Autoencoder (MAE): Scalable Self-Supervised Learning for Vision
 
 **Source**: He, K., Chen, X., Xie, S., Li, Y., Dollar, P., & Girshick, R. (2022). Masked autoencoders are scalable vision learners. *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)*, 16000-16009. https://arxiv.org/abs/2111.06377

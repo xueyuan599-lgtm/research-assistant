@@ -1,3 +1,12 @@
+---
+title: "CellRank: Directed Single-Cell Fate Mapping with RNA Velocity"
+type:
+  - graph
+  - deep-learning
+  - statistical-inference
+domain:
+  - computational-biology
+---
 # CellRank: Directed Single-Cell Fate Mapping with RNA Velocity
 
 **Source**: Lange, M., Bergen, V., Klein, M., Setty, M., Reuter, B., Bakhti, M., Lickert, H., Ansari, M., Schniering, J., Schiller, H. B., Pe'er, D., & Theis, F. J. (2022). CellRank for directed single-cell fate mapping. *Nature Methods*, 19, 159--170. https://doi.org/10.1038/s41592-021-01346-6

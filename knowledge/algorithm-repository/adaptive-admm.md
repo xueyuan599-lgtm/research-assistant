@@ -1,3 +1,11 @@
+---
+title: An Adaptive Alternating Direction Method of Multipliers
+type:
+  - optimization
+  - numerical
+domain:
+  - operations-research
+---
 # An Adaptive Alternating Direction Method of Multipliers
 
 **Source**: Bartz, S., Campoy, R., & Phan, H. M. (2022). An adaptive alternating direction method of multipliers. *Journal of Optimization Theory and Applications*, 195(3), 1019-1055. https://doi.org/10.1007/s10957-022-02098-9

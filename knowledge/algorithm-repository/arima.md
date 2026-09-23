@@ -1,3 +1,12 @@
+---
+title: ARIMA/SARIMA — 差分自回归移动平均模型
+type:
+  - forecasting
+  - time-series
+  - statistical-inference
+domain:
+  - generic-ml
+---
 # ARIMA/SARIMA — 差分自回归移动平均模型
 
 - **来源**: Box, G. E. P., Jenkins, G. M., Reinsel, G. C., & Ljung, G. M. (2015). *Time Series Analysis: Forecasting and Control* (5th ed.). Wiley.

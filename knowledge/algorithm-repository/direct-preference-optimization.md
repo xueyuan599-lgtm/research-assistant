@@ -1,3 +1,11 @@
+---
+title: Direct Preference Optimization (DPO)
+type:
+  - deep-learning
+  - optimization
+domain:
+  - nlp-llm
+---
 # Direct Preference Optimization (DPO)
 
 **Source**: Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C. D., & Finn, C. (2024). Direct preference optimization: Your language model is secretly a reward model. *Advances in Neural Information Processing Systems (NeurIPS), 36*. https://arxiv.org/abs/2305.18290

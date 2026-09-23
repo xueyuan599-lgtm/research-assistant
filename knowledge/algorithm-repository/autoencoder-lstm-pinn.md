@@ -1,3 +1,12 @@
+---
+title: Autoencoder-Enhanced LSTM-PINN for Physical Process Estimation
+type:
+  - deep-learning
+  - physics-informed
+  - forecasting
+domain:
+  - signal-processing
+---
 # Autoencoder-Enhanced LSTM-PINN for Physical Process Estimation
 
 - **Source**: Karran, D. J., Kelleher, C., & Wagener, T. (2024). Autoencoder-enhanced LSTM-PINN for hyporheic exchange flux estimation from streambed temperature time series. *Water Resources Research*, 60(9), e2024WR037901.

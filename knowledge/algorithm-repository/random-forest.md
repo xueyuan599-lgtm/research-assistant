@@ -1,3 +1,13 @@
+---
+title: Random Forest — 随机森林
+type:
+  - classification
+  - regression
+  - ensemble-learning
+domain:
+  - generic-ml
+---
+
 # Random Forest — 随机森林
 
 - **来源**: Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5–32.

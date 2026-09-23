@@ -1,3 +1,12 @@
+---
+title: scVI and scANVI: Deep Generative Models for Single-Cell Transcriptomics
+type:
+  - generative-modeling
+  - deep-learning
+  - statistical-inference
+domain:
+  - biostatistics
+---
 # scVI and scANVI: Deep Generative Models for Single-Cell Transcriptomics
 
 **Source**: Lopez, R., Regier, J., Cole, M. B., Jordan, M. I., & Yosef, N. (2018). Deep generative modeling for single-cell transcriptomics. *Nature Methods*, 15, 1053--1058. https://doi.org/10.1038/s41592-018-0229-2

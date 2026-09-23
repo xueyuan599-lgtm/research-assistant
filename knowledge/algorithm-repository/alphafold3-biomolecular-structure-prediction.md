@@ -1,3 +1,12 @@
+---
+title: "AlphaFold 3: Unified Biomolecular Structure Prediction via Diffusion"
+type:
+  - deep-learning
+  - generative-modeling
+  - biomolecular
+domain:
+  - structural-biology
+---
 # AlphaFold 3: Unified Biomolecular Structure Prediction via Diffusion
 
 **Source**: Abramson, J., Adler, J., Dunger, J., Evans, R., Green, T., Pritzel, A., Ronneberger, O., Willmore, L., Ballard, A. J., Bambrick, J., Bodenstein, S. W., Evans, D. A., Hung, C. C., O'Neill, M., Reiman, D., Tunyasuvunakool, K., Wu, Z., Zemgulyte, A., Arvaniti, E., ... Jumper, J. M. (2024). Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature*, 630(8016), 493--500. https://doi.org/10.1038/s41586-024-07487-w

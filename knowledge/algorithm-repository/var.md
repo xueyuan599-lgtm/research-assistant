@@ -1,3 +1,13 @@
+---
+title: VAR/VEC — 向量自回归 / 向量误差修正模型
+type:
+  - time-series
+  - forecasting
+  - statistical-inference
+  - financial
+domain:
+  - finance-econometrics
+---
 # VAR/VEC — 向量自回归 / 向量误差修正模型
 
 - **来源**: Sims, C. A. (1980). Macroeconomics and Reality. *Econometrica*, 48(1), 1–48.

@@ -1,3 +1,11 @@
+---
+title: SVM — 支持向量机
+type:
+  - classification
+  - regression
+domain:
+  - generic-ml
+---
 # SVM — 支持向量机
 
 - **来源**: Cortes, C. & Vapnik, V. (1995). Support-vector networks. *Machine Learning*, 20(3), 273–297; Vapnik, V. (1998). *Statistical Learning Theory*. Wiley.

@@ -1,3 +1,12 @@
+---
+title: Modelling Matrix Time Series via Tensor CP-Decomposition
+type:
+  - matrix-tensor
+  - time-series
+  - statistical-inference
+domain:
+  - signal-processing
+---
 # Modelling Matrix Time Series via Tensor CP-Decomposition
 
 **Source**: Chang, J., He, J., Yang, L., & Yao, Q. (2023). Modelling matrix time series via a tensor CP-decomposition. *Journal of the Royal Statistical Society Series B: Statistical Methodology*, 85(1), 127--148. https://doi.org/10.1093/jrsssb/qkac011

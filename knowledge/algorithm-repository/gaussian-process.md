@@ -1,3 +1,12 @@
+---
+title: Gaussian Process — 高斯过程
+type:
+  - regression
+  - uncertainty-quantification
+  - stochastic-process
+domain:
+  - generic-ml
+---
 # Gaussian Process — 高斯过程
 
 - **来源**: Rasmussen, C. E. & Williams, C. K. I. (2006). *Gaussian Processes for Machine Learning*. MIT Press.

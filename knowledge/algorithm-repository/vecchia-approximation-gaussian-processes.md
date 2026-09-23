@@ -1,3 +1,13 @@
+---
+title: A General Framework for Vecchia Approximations of Gaussian Processes
+type:
+  - spatial
+  - regression
+  - uncertainty-quantification
+  - numerical
+domain:
+  - generic-ml
+---
 # A General Framework for Vecchia Approximations of Gaussian Processes
 
 **Source**: Katzfuss, M., & Guinness, J. (2021). A general framework for Vecchia approximations of Gaussian processes. *Statistical Science*, 36(1), 124--141. https://doi.org/10.1214/19-STS755

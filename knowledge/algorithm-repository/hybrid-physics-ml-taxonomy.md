@@ -1,3 +1,12 @@
+---
+title: Hybrid Physics-ML Paradigms: Informed, Optimized, and Guided
+type:
+  - physics-informed
+  - forecasting
+  - deep-learning
+domain:
+  - signal-processing
+---
 # Hybrid Physics-ML Paradigms: Informed, Optimized, and Guided
 
 ## Metadata

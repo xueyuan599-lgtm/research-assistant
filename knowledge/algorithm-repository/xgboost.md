@@ -1,3 +1,12 @@
+---
+title: XGBoost / LightGBM — 梯度提升树
+type:
+  - ensemble-learning
+  - classification
+  - regression
+domain:
+  - generic-ml
+---
 # XGBoost / LightGBM — 梯度提升树
 
 - **来源**: Chen, T. & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. *KDD*.
@@ -213,6 +222,8 @@ $$
 - **Gain**：该特征在分裂中带来的平均增益（推荐，最可靠）
 - **Cover**：该特征覆盖的样本数（受影响的样本量）
 - **Frequency**：该特征被用于分裂的次数（可能有偏，偏向高基数特征）
+
+> gain/cover 是**模型内部**的全局重要性（无方向、非逐样本）；若需"方向 + 逐样本 + 交互"归因，在国赛"影响因子分析"节建议补用 SHAP（见 `shap.md` 条目），两者并列论证。
 
 ### 单调性约束（Monotone Constraints）
 

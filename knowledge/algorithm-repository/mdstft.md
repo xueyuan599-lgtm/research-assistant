@@ -1,3 +1,12 @@
+---
+title: MDSTFT — Multi-Dimensional Spatio-Temporal Fusion Transformer
+type:
+  - forecasting
+  - deep-learning
+  - spatial
+domain:
+  - signal-processing
+---
 # MDSTFT — Multi-Dimensional Spatio-Temporal Fusion Transformer
 
 ## Metadata

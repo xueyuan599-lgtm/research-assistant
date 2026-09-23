@@ -1,3 +1,11 @@
+---
+title: Conformal Prediction Beyond Exchangeability
+type:
+  - uncertainty-quantification
+  - statistical-inference
+domain:
+  - generic-ml
+---
 # Conformal Prediction Beyond Exchangeability
 
 **Source**: Barber, R. F., Candes, E. J., Ramdas, A., & Tibshirani, R. J. (2023). Conformal prediction beyond exchangeability. *The Annals of Statistics*, 51(2), 816--845. https://doi.org/10.1214/23-AOS2276

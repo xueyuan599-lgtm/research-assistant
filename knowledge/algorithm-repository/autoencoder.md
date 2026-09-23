@@ -1,3 +1,11 @@
+---
+title: Autoencoder / VAE — 自编码器与变分自编码器
+type:
+  - deep-learning
+  - generative-modeling
+domain:
+  - generic-ml
+---
 # Autoencoder / VAE — 自编码器与变分自编码器
 
 - **来源**: Rumelhart, D.E., Hinton, G.E., & Williams, R.J. (1986). Learning representations by back-propagating errors. *Nature*, 323(6088), 533–536. / Kingma, D.P. & Welling, M. (2014). Auto-Encoding Variational Bayes. *ICLR*.

@@ -1,3 +1,13 @@
+---
+title: GARCH — 广义自回归条件异方差模型
+type:
+  - forecasting
+  - time-series
+  - stochastic-process
+  - financial
+domain:
+  - finance-econometrics
+---
 # GARCH — 广义自回归条件异方差模型
 
 - **来源**: Bollerslev, T. (1986). Generalized Autoregressive Conditional Heteroskedasticity. *Journal of the Royal Statistical Society, Series B*, 48(2), 127–145.

@@ -1,3 +1,12 @@
+---
+title: Prophet — 时间序列预测
+type:
+  - forecasting
+  - time-series
+  - statistical-inference
+domain:
+  - generic-ml
+---
 # Prophet — 时间序列预测
 
 - **来源**: Taylor, S. J., & Letham, B. (2018). Forecasting at Scale. *The American Statistician*, 72(1), 37–45.

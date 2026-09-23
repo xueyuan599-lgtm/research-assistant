@@ -1,3 +1,12 @@
+---
+title: "Cell2location: Fine-Grained Cell Type Mapping in Spatial Transcriptomics"
+type:
+  - deep-learning
+  - spatial
+  - statistical-inference
+domain:
+  - biostatistics
+---
 # Cell2location: Fine-Grained Cell Type Mapping in Spatial Transcriptomics
 
 **Source**: Kleshchevnikov, V., Shmatko, A., Dann, E., Aivazidis, A., King, H. W., Li, T., Elmentaite, R., Lomakin, A., Kedlian, V., Gayoso, A., Jain, M. S., Park, J. S., Ramona, L., Tuck, E., Arutyunyan, A., Vento-Tormo, R., Gerstung, M., James, L., Stegle, O., & Bayraktar, O. A. (2022). Cell2location maps fine-grained cell types in spatial transcriptomics. *Nature Biotechnology*, 40(5), 661--671. https://doi.org/10.1038/s41587-021-01139-4

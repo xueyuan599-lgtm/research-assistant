@@ -1,3 +1,11 @@
+---
+title: Bayesian Distributionally Robust Optimization
+type:
+  - optimization
+  - uncertainty-quantification
+domain:
+  - operations-research
+---
 # Bayesian Distributionally Robust Optimization
 
 **Source**: Shapiro, A., Zhou, E., & Lin, Y. (2023). Bayesian distributionally robust optimization. *SIAM Journal on Optimization*, 33(2), 1279-1304. https://doi.org/10.1137/21M1465548

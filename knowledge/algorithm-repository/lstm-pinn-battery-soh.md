@@ -1,3 +1,12 @@
+---
+title: Temperature- and Impedance-Aware LSTM-PINN for Physically Consistent Battery SOH Prediction
+type:
+  - physics-informed
+  - deep-learning
+  - forecasting
+domain:
+  - energy-systems
+---
 # Temperature- and Impedance-Aware LSTM-PINN for Physically Consistent Battery SOH Prediction
 
 - **Source**: Kumar, P. N., Upadhya, P. R., Nischay, S., Pavan Kumar, G., Shobana, T. S., & Rashmi, K. B. (2026). A temperature- and impedance-aware LSTM–PINN framework for physically consistent battery SOH prediction. *Scientific Reports*, 16, Article 7568.

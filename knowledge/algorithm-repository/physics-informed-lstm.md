@@ -1,3 +1,12 @@
+---
+title: PI-LSTM — Physics-Informed LSTM for PDE-Constrained Dynamical Systems
+type:
+  - physics-informed
+  - deep-learning
+  - forecasting
+domain:
+  - engineering-mechanics
+---
 # PI-LSTM — Physics-Informed LSTM for PDE-Constrained Dynamical Systems
 
 - **Source**: Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics*, 378, 686–707.

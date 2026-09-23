@@ -1,3 +1,12 @@
+---
+title: Targeted Maximum Likelihood Estimation (TMLE)
+type:
+  - causal
+  - statistical-inference
+  - regression
+domain:
+  - finance-econometrics
+---
 # Targeted Maximum Likelihood Estimation (TMLE)
 
 **Source**: van der Laan, M. J., & Rose, S. (2011). *Targeted Learning: Causal Inference for Observational and Experimental Data*. Springer. https://doi.org/10.1007/978-1-4419-9782-1

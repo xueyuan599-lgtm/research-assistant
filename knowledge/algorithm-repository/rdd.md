@@ -1,3 +1,11 @@
+---
+title: Regression Discontinuity Design — 断点回归设计
+type:
+  - causal
+  - statistical-inference
+domain:
+  - finance-econometrics
+---
 # Regression Discontinuity Design — 断点回归设计
 
 - **来源**: Thistlethwaite, D. L., & Campbell, D. T. (1960). Regression-discontinuity analysis: An alternative to the ex post facto experiment. *Journal of Educational Psychology*, 51(6), 309–317.

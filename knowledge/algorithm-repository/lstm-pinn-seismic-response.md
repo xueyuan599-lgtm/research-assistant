@@ -1,3 +1,12 @@
+---
+title: LSTM-PINN for Seismic Response Prediction of Structures
+type:
+  - physics-informed
+  - deep-learning
+  - forecasting
+domain:
+  - engineering-mechanics
+---
 # LSTM-PINN for Seismic Response Prediction of Structures
 
 **Source:** Composite approach combining Physics-Informed Neural Networks (Raissi et al., 2019) with LSTM sequence modeling (Hochreiter & Schmidhuber, 1997), adapted for seismic structural dynamics.

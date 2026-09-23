@@ -1,3 +1,12 @@
+---
+title: Sensitivity Analysis for Omitted Variable Bias
+type:
+  - sensitivity
+  - causal
+  - uncertainty-quantification
+domain:
+  - finance-econometrics
+---
 # Sensitivity Analysis for Omitted Variable Bias
 
 **Source**: Cinelli, C., & Hazlett, C. (2020). Making sense of sensitivity: Extending omitted variable bias. *Journal of the Royal Statistical Society: Series B (Statistical Methodology)*, 82(1), 39–67. https://doi.org/10.1111/rssb.12348

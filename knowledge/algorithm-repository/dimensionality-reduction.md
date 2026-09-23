@@ -1,3 +1,11 @@
+---
+title: PCA / t-SNE / UMAP 降维
+type:
+  - dimensionality-reduction
+  - deep-learning
+domain:
+  - generic-ml
+---
 # PCA / t-SNE / UMAP 降维
 
 - **来源**: Pearson, K. (1901). On Lines and Planes of Closest Fit to Systems of Points in Space. *Philosophical Magazine*, 2(11), 559–572.; Hotelling, H. (1933). Analysis of a Complex of Statistical Variables into Principal Components. *Journal of Educational Psychology*, 24(6), 417–441.; Van der Maaten, L. & Hinton, G. (2008). Visualizing Data Using t-SNE. *Journal of Machine Learning Research*, 9, 2579–2605.; McInnes, L., Healy, J. & Melville, J. (2018). UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction. *arXiv preprint* arXiv:1802.03426.

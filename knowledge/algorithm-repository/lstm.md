@@ -1,3 +1,12 @@
+---
+title: LSTM/GRU — 长短期记忆网络 / 门控循环单元
+type:
+  - deep-learning
+  - sequence-modeling
+  - forecasting
+domain:
+  - generic-ml
+---
 # LSTM/GRU — 长短期记忆网络 / 门控循环单元
 
 - **来源**: Hochreiter, S. & Schmidhuber, J. (1997). Long Short-Term Memory. *Neural Computation*, 9(8), 1735–1780.

@@ -1,3 +1,11 @@
+---
+title: First-Order Penalty Methods for Bilevel Optimization
+type:
+  - optimization
+  - numerical
+domain:
+  - operations-research
+---
 # First-Order Penalty Methods for Bilevel Optimization
 
 **Source**: Lu, Z., & Mei, S. (2024). First-order penalty methods for bilevel optimization. *SIAM Journal on Optimization*, 34(2), 1937-1969. https://doi.org/10.1137/23M1566753

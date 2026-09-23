@@ -1,3 +1,12 @@
+---
+title: Causal Inference under Network Interference
+type:
+  - causal
+  - graph
+  - statistical-inference
+domain:
+  - finance-econometrics
+---
 # Causal Inference under Network Interference
 
 **Source**: Bargagli-Stoffi, F. J., Tortu, C., & Forastiere, L. (2025). Heterogeneous treatment and spillover effects under clustered network interference. *The Annals of Applied Statistics*, 19(1), 28–55. https://doi.org/10.1214/24-AOAS1913

@@ -1,3 +1,11 @@
+---
+title: Segment Anything Model (SAM): Foundation Model for Image Segmentation
+type:
+  - deep-learning
+  - computer-vision
+domain:
+  - computer-vision
+---
 # Segment Anything Model (SAM): Foundation Model for Image Segmentation
 
 **Source**: Kirillov, A., Mintun, E., Ravi, N., Mao, H., Rolland, C., Gustafson, L., Xiao, T., Whitehead, S., Berg, A. C., Lo, W.-Y., Dollar, P., & Girshick, R. (2023). Segment anything. *Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)*, 4015-4026. https://arxiv.org/abs/2304.02643

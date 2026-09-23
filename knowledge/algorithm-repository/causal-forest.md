@@ -1,3 +1,12 @@
+---
+title: Causal Forest and Generalized Random Forest
+type:
+  - causal
+  - regression
+  - ensemble-learning
+domain:
+  - generic-ml
+---
 # Causal Forest and Generalized Random Forest
 
 **Source**: Athey, S., Tibshirani, J., & Wager, S. (2019). Generalized random forests. *The Annals of Statistics*, 47(2), 1148–1178. https://doi.org/10.1214/18-AOS1709

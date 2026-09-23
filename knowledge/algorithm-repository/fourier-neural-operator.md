@@ -1,3 +1,12 @@
+---
+title: Fourier Neural Operator (FNO) for Learning PDE Solutions
+type:
+  - deep-learning
+  - numerical
+  - physics-informed
+domain:
+  - engineering-mechanics
+---
 # Fourier Neural Operator (FNO) for Learning PDE Solutions
 
 **Source**: Li, Z., Kovachki, N., Azizzadenesheli, K., Liu, B., Bhattacharya, K., Stuart, A., & Anandkumar, A. (2021). Fourier neural operator for parametric partial differential equations. *International Conference on Learning Representations (ICLR)*. https://arxiv.org/abs/2010.08895

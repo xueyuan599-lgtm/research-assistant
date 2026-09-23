@@ -1,3 +1,12 @@
+---
+title: Selective Inference for Effect Modification via the LASSO
+type:
+  - statistical-inference
+  - causal
+  - regression
+domain:
+  - generic-ml
+---
 # Selective Inference for Effect Modification via the LASSO
 
 **Source**: Zhao, Q., Small, D. S., & Ertefaie, A. (2022). Selective inference for effect modification via the lasso. *Journal of the Royal Statistical Society Series B: Statistical Methodology*, 84(2), 382--413. https://doi.org/10.1111/rssb.12483

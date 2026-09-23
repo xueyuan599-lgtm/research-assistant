@@ -1,3 +1,11 @@
+---
+title: Localized Conformal Prediction
+type:
+  - uncertainty-quantification
+  - statistical-inference
+domain:
+  - generic-ml
+---
 # Localized Conformal Prediction
 
 **Source**: Guan, L. (2023). Localized conformal prediction: a generalized inference framework for conformal prediction. *Biometrika*, 110(1), 33--50. https://doi.org/10.1093/biomet/asac040

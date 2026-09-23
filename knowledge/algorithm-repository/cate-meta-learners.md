@@ -1,3 +1,11 @@
+---
+title: "CATE Meta-Learners: X-Learner, R-Learner, and DR-Learner"
+type:
+  - causal
+  - regression
+domain:
+  - generic-ml
+---
 # CATE Meta-Learners: X-Learner, R-Learner, and DR-Learner
 
 **Source**: Kunzel, S. R., Sekhon, J. S., Bickel, P. J., & Yu, B. (2019). Metalearners for estimating heterogeneous treatment effects using machine learning. *Proceedings of the National Academy of Sciences*, 116(10), 4156–4165. https://doi.org/10.1073/pnas.1804597116

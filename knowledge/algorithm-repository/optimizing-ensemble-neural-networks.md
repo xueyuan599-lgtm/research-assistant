@@ -1,3 +1,11 @@
+---
+title: Optimizing over an Ensemble of Trained Neural Networks
+type:
+  - optimization
+  - deep-learning
+domain:
+  - operations-research
+---
 # Optimizing over an Ensemble of Trained Neural Networks
 
 **Source**: Wang, K., Lozano, L., Cardonha, C., & Bergman, D. (2023). Optimizing over an ensemble of trained neural networks. *INFORMS Journal on Computing*, 35(3), 652-674. https://doi.org/10.1287/ijoc.2023.1285

@@ -1,3 +1,11 @@
+---
+title: FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
+type:
+  - deep-learning
+  - numerical
+domain:
+  - generic-ml
+---
 # FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
 
 **Source**: Dao, T., Fu, D. Y., Ermon, S., Rudra, A., & Re, C. (2022). FlashAttention: Fast and memory-efficient exact attention with IO-awareness. *Advances in Neural Information Processing Systems (NeurIPS), 35*, 16344-16359. https://arxiv.org/abs/2205.14135

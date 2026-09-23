@@ -1,3 +1,12 @@
+---
+title: Physarum Network Optimizer (PNO-GWO v3.0) — 黏菌管网络-灰狼混合优化算法
+type:
+  - heuristic
+  - optimization
+  - graph
+domain:
+  - operations-research
+---
 # Physarum Network Optimizer (PNO-GWO v3.0) — 黏菌管网络-灰狼混合优化算法
 
 - **来源**: 基于黏菌（Physarum polycephalum）管状网络自适应机制 + GWO 等级包围 + 5 种 SOTA 自适应机制的原创混合设计

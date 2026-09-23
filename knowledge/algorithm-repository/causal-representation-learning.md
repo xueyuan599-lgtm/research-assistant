@@ -1,3 +1,12 @@
+---
+title: Causal Representation Learning
+type:
+  - causal
+  - deep-learning
+  - dimensionality-reduction
+domain:
+  - generic-ml
+---
 # Causal Representation Learning
 
 **Source**: Scholkopf, B., Locatello, F., Bauer, S., Ke, N. R., Kalchbrenner, N., Goyal, A., & Bengio, Y. (2021). Toward causal representation learning. *Proceedings of the IEEE*, 109(5), 612–634. https://doi.org/10.1109/JPROC.2021.3058954

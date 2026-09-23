@@ -1,3 +1,12 @@
+---
+title: MCMC — 马尔可夫链蒙特卡洛
+type:
+  - monte-carlo
+  - statistical-inference
+  - stochastic-process
+domain:
+  - generic-ml
+---
 # MCMC — 马尔可夫链蒙特卡洛
 
 - **来源**: Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H., & Teller, E. (1953). Equation of State Calculations by Fast Computing Machines. *The Journal of Chemical Physics*, 21(6), 1087–1092.

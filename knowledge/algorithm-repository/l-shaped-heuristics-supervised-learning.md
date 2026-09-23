@@ -1,3 +1,12 @@
+---
+title: Fast Continuous and Integer L-Shaped Heuristics Through Supervised Learning
+type:
+  - optimization
+  - heuristic
+  - stochastic-process
+domain:
+  - operations-research
+---
 # Fast Continuous and Integer L-Shaped Heuristics Through Supervised Learning
 
 **Source**: Larsen, E., Frejinger, E., Gendron, B., & Lodi, A. (2024). Fast continuous and integer L-shaped heuristics through supervised learning. *INFORMS Journal on Computing*, 36(1), 203-223. https://doi.org/10.1287/ijoc.2022.0175

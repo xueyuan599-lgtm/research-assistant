@@ -1,3 +1,11 @@
+---
+title: Deep Instrumental Variables (DeepIV) and Neural IV Methods
+type:
+  - causal
+  - deep-learning
+domain:
+  - finance-econometrics
+---
 # Deep Instrumental Variables (DeepIV) and Neural IV Methods
 
 **Source**: Hartford, J., Lewis, G., Leyton-Brown, K., & Taddy, M. (2017). Deep IV: A flexible approach for counterfactual prediction. *Proceedings of the 34th International Conference on Machine Learning (ICML)*, 1414–1423. https://proceedings.mlr.press/v70/hartford17a.html

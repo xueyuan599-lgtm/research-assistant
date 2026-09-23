@@ -1,3 +1,10 @@
+---
+title: K-Means / DBSCAN — 聚类
+type:
+  - clustering
+domain:
+  - generic-ml
+---
 # K-Means / DBSCAN — 聚类
 
 - **来源**: MacQueen, J. (1967). Some methods for classification and analysis of multivariate observations. *Proceedings of the 5th Berkeley Symposium on Mathematical Statistics and Probability*, 1, 281–297. Ester, M. et al. (1996). A density-based algorithm for discovering clusters in large spatial databases with noise. *KDD-96*, 226–231.

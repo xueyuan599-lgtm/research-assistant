@@ -1,3 +1,12 @@
+---
+title: Transformer — 自注意力机制
+type:
+  - deep-learning
+  - sequence-modeling
+  - forecasting
+domain:
+  - nlp-llm
+---
 # Transformer — 自注意力机制
 
 - **来源**: Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention Is All You Need. *Advances in Neural Information Processing Systems*, 30, 5998–6008.

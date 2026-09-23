@@ -1,3 +1,11 @@
+---
+title: Gray Langurs Optimizer (GLO) — 灰叶猴优化算法
+type:
+  - optimization
+  - heuristic
+domain:
+  - operations-research
+---
 # Gray Langurs Optimizer (GLO) — 灰叶猴优化算法
 
 - **来源**: Gray Langurs Optimizer: A Multi-group Bio-inspired Optimization Algorithm | Artificial Intelligence Review | 2026

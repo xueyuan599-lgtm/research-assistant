@@ -1,3 +1,12 @@
+---
+title: "Data-Model Hybrid-Driven Methods for Time Series: A Survey"
+type:
+  - forecasting
+  - physics-informed
+  - deep-learning
+domain:
+  - signal-processing
+---
 # Data-Model Hybrid-Driven Methods for Time Series: A Survey
 
 > **Source:** Guo, J. et al. (2025) IntechOpen chapter on Data-Model-Driven Time Series Prediction; Liu, Z. et al. (2025) IEEE ICDMW survey on AI paradigms for physical time series.

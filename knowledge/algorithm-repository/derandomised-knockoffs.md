@@ -1,3 +1,10 @@
+---
+title: Derandomised Knockoffs
+type:
+  - statistical-inference
+domain:
+  - generic-ml
+---
 # Derandomised Knockoffs
 
 **Source**: Ren, Z., & Barber, R. F. (2024). Derandomised knockoffs: leveraging e-values for false discovery rate control. *Journal of the Royal Statistical Society Series B: Statistical Methodology*, 86(1), 122--154. https://doi.org/10.1093/jrsssb/qkad085

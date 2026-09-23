@@ -1,3 +1,12 @@
+---
+title: MOFA+: Multi-Omics Factor Analysis for Integrative Data Analysis
+type:
+  - matrix-tensor
+  - dimensionality-reduction
+  - statistical-inference
+domain:
+  - biostatistics
+---
 # MOFA+: Multi-Omics Factor Analysis for Integrative Data Analysis
 
 **Source**: Argelaguet, R., Arnol, D., Bredikhin, D., Deloro, Y., Velten, B., Marioni, J. C., & Stegle, O. (2020). MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data. *Genome Biology*, 21, 111. https://doi.org/10.1186/s13059-020-02015-1

@@ -1,3 +1,12 @@
+---
+title: ProteinMPNN: Deep Learning for Protein Sequence Design
+type:
+  - deep-learning
+  - sequence-modeling
+  - biomolecular
+domain:
+  - structural-biology
+---
 # ProteinMPNN: Deep Learning for Protein Sequence Design
 
 **Source**: Dauparas, J., Anishchenko, I., Bennett, N., Bai, H., Ragotte, R. J., Milles, L. F., Wicky, B. I. M., Courbet, A., de Haas, R. J., Bethel, N., Leung, P. J. Y., Huddy, T. F., Pellock, S., Tischer, D., Chan, F., Koepnick, B., Nguyen, H., Kang, A., Sankaran, B., ... Baker, D. (2022). Robust deep learning-based protein sequence design using ProteinMPNN. *Science*, 378(6615), 49--56. https://doi.org/10.1126/science.add2187

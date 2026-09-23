@@ -1,3 +1,13 @@
+---
+title: State Space Model / Kalman Filter — 状态空间模型与卡尔曼滤波
+type:
+  - time-series
+  - forecasting
+  - stochastic-process
+  - statistical-inference
+domain:
+  - signal-processing
+---
 # State Space Model / Kalman Filter — 状态空间模型与卡尔曼滤波
 
 - **来源**: Kalman, R. E. (1960). A New Approach to Linear Filtering and Prediction Problems. *Journal of Basic Engineering*, 82(1), 35–45. / Durbin, J. & Koopman, S. J. (2012). *Time Series Analysis by State Space Methods* (2nd ed.). Oxford University Press.

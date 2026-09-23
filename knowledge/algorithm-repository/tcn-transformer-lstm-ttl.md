@@ -1,3 +1,12 @@
+---
+title: TCN-Transformer-LSTM (TTL): Triple-Network Fusion for Time Series
+type:
+  - forecasting
+  - deep-learning
+  - sequence-modeling
+domain:
+  - signal-processing
+---
 # TCN-Transformer-LSTM (TTL): Triple-Network Fusion for Time Series
 
 ## Metadata
