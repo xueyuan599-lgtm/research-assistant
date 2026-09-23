@@ -13,6 +13,7 @@
 | 实验流程优化 | 方案设计、参数调优、敏感性分析 | 模拟实验自动化 pipeline |
 | 算法创造 | 研究想法到新算法：形式化→设计→实现→基准→验证入库 | 设计一个异质性处理效应稳健估计量 |
 | 数学建模竞赛 | 选题评估→审题→模型→代码→论文全流程 | "国赛C题农作物种植策略" |
+| Kaggle 竞赛 | 数据探查→基线→特征工程→建模→集成→提交 | "用这份数据打 Kaggle 房价预测" |
 | 期刊论文结构写作 | 定尺子→标题→摘要→引言→方法→证据映射→讨论→结构审稿 | "投《管理世界》，按它的要求改这篇稿子" |
 | 论文格式与排版 | 模板适配、参考文献格式化、图表规范 | 期刊模板一键排版、LaTeX 编译辅助 |
 
@@ -41,7 +42,8 @@ T2 秘书分解 + 一次确认；T3 走专用赛道规则（MCM 赛道为**逐�
 
 ## 架构
 
-> 下方目录树已按**磁盘实际状态**核对（2026-09-20）。括号内数字为文件/条目计数，改动目录结构时请同步更新。
+> 下方目录树计数已于 2026-09-23 复核（**已入库**口径）。括号内为**文件数**，标「个目录」者为**子目录数**
+> （`.claude/skills/`、`outputs/`）；改动目录结构时请同步更新。
 
 ```yaml
 research-assistant/
@@ -87,10 +89,10 @@ research-assistant/
 │   ├── dynamic-workflow.md         # 动态管线协议
 │   ├── codex-claude-collaboration.md  # Codex ↔ Claude Worker 调度协议（执行器缺失，见 secretary.md ⚠️）
 │   └── schemas/                    # 交接 JSON Schema
-├── knowledge/          (130 个 .md) # 知识库（按需读，不预加载）
+├── knowledge/          (133 个 .md) # 知识库（按需读，不预加载）
 │   ├── _index.md                   # 知识库索引
-│   ├── algorithm-repository/ (84)  # 顶刊算法实现库
-│   ├── algorithms/           (17)  # 新算法条目（index + physarum-network-optimizer 等）
+│   ├── algorithm-repository/ (82)  # 顶刊算法实现库（80 条目 + _index/_SCHEMA）
+│   ├── algorithms/           (22)  # 自创算法库（2 个算法：physarum-network-optimizer、functional-ensemble-regression；含源码/测试/实验报告）
 │   ├── kaggle/               (12)  # 竞赛模式库
 │   ├── mcm/                  (10)  # 数学建模知识库（含 templates/format2026）
 │   ├── writing/               (4)  # 写作判据：正面范式 / 01–06 论证结构 / 期刊尺子 / 07 结构审稿口径
@@ -98,7 +100,7 @@ research-assistant/
 │   ├── outputs/                    # PNO 实验 JSON（历史产物，非知识条目）
 │   └── optimization-validation-framework.md
 ├── staging/                        # 临时暂存（未纳入 git；CUMCM 重构中间件，可清）
-└── outputs/            (30 个目录)  # 所有输出落在此处
+└── outputs/            (28 个目录)  # 所有输出落在此处（其中 15 个已入库）
 ```
 
 **入库完整性提醒**：规则层、技能层与命令层**必须随仓库提交**，否则新克隆拿不到它们，

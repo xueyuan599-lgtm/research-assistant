@@ -1,6 +1,6 @@
 # Research Assistant — 科研全流程智能辅助助手
 
-> 面向科学研究全过程的智能辅助系统 | Multi-Agent 架构 | 9大功能模块 | 84个算法文档
+> 面向科学研究全过程的智能辅助系统 | Multi-Agent 架构 | 10大功能模块 | 80个算法条目
 
 ---
 
@@ -23,12 +23,13 @@
 | 🧠 算法创造 | 形式化 → 设计 → 编码 → 基准 → 验证入库 |
 | 🏆 Kaggle 竞赛 | 数据探查 → 基线 → 特征工程 → 模型 → 集成 → 提交 |
 | 🏆 数学建模竞赛 | 选题评估 → 审题 → 模型 → 代码 → 检验 → 论文（国赛/美赛） |
+| 📄 期刊论文 | 固定尺子 → 逐步骤结构写作 → 结构审稿 → 格式合规 |
 
 ## 🏗️ 系统架构
 
 ```
 用户输入 → 秘书Agent(任务分解) → Orchestrator(协调调度)
-           → 10大领域Agent并行/串行执行
+           → 11大领域Agent并行/串行执行
            → 共享记忆传递
            → Critic对抗式审查
            → 交付(代码+结果+报告)
@@ -79,9 +80,10 @@ claude
 
 ```
 research-assistant/
-├── agents/                    # 56个Agent定义（核心）
+├── agents/                    # 58个 .md（55个领域Agent + 2个元Agent + 1个共享记忆模板）
 │   ├── secretary.md           # 任务分解守门人
 │   ├── orchestrator.md        # 协调器
+│   ├── shared-memory-template.md # 跨 Agent 共享记忆模板
 │   ├── literature/            # 文献检索（4个Agent）
 │   ├── topic-analysis/        # 选题分析（4个Agent）
 │   ├── data-viz/              # 数据可视化（9个Agent）
@@ -91,29 +93,33 @@ research-assistant/
 │   ├── algorithm/             # 算法创造（6个Agent）
 │   ├── kaggle/                # Kaggle竞赛（8个Agent）
 │   ├── mcm/                   # 数学建模竞赛（9个Agent）
+│   ├── journal/               # 期刊论文结构写作（2个Agent）
 │   └── knowledge/             # 知识检索（1个Agent）
 ├── .claude/
-│   ├── rules/                 # 10条工作流规则（沙箱/Agent规范/写作标准/赛道/成本纪律/工具选型…）
+│   ├── rules/                 # 11条工作流规则（沙箱/Agent规范/写作标准/赛道/成本纪律/工具选型…）
 │   ├── skills/                # 17个专业技能（matlab/matplotlib/scikit-learn/数据预处理/数模写作…）
 │   ├── agents/                # 3个子Agent工具分档（ra-scan / ra-write / ra-build）
-│   ├── commands/              # 5个斜杠命令（research / implement / preprocess / pathplan / research-prompt-refiner）
+│   ├── commands/              # 6个斜杠命令（research / implement / preprocess / pathplan / paper / research-prompt-refiner）
 │   └── settings.template.json # 配置模板（`settings.local.json` 已 gitignore）
-├── knowledge/                 # 知识库（127个 .md）
-│   ├── algorithm-repository/  # 84个算法文档
-│   ├── algorithms/            # 17个新算法条目
+├── knowledge/                 # 知识库（133个 .md）
+│   ├── _index.md              # 知识库索引
+│   ├── algorithm-repository/  # 顶刊算法实现库（80个条目 + _index/_SCHEMA）
+│   ├── algorithms/            # 自创算法库（2个算法 + 索引与实验报告）
 │   ├── kaggle/                # 12个竞赛模式库
-│   ├── mcm/                   # 10个数学建模竞赛知识
-│   ├── writing/               # 正面写作范式
-│   └── project-experience/    # 项目经验沉淀
-├── workflows/                 # 工作流协议（动态管线 + Codex 协作 + 交接 Schema）
+│   ├── mcm/                   # 10个数学建模知识（含 templates/format2026）
+│   ├── writing/               # 4个写作判据（正面范式/论证结构/期刊尺子/结构审稿）
+│   ├── project-experience/    # 项目经验沉淀
+│   ├── outputs/               # PNO 实验 JSON（历史产物）
+│   └── optimization-validation-framework.md
+├── workflows/                 # 工作流协议（3个：动态管线 + Codex 协作 + 交接 Schema）
 ├── scripts/                   # 辅助脚本（round_gate / context_monitor / checkpoint 等）
-├── outputs/                   # 实战案例输出（30个目录）
-│   ├── cumcm2024c/            # 数学建模竞赛
-│   ├── 2026_7_25/             # CUMCM 2025 A题（烟幕干扰弹）
-│   ├── ftz-did/               # DID因果推断论文
-│   ├── kaggle_titanic/        # Kaggle竞赛
+├── outputs/                   # 实战案例输出（15个已入库案例目录）
+│   ├── cumcm2024c/            # 数学建模竞赛（CUMCM 2024 C 题）
+│   ├── ftz-did/               # DID 因果推断
+│   ├── kaggle_titanic/        # Kaggle 竞赛
 │   ├── worldcup-prediction/   # 世界杯预测
-│   └── ...
+│   ├── project-webpage/       # 项目主页
+│   └── ...                    # 另有 13 个大体量产出目录仅存本地（已 gitignore）
 ├── CLAUDE.md                  # 项目配置
 └── AGENTS.md                  # 架构总览（跨工具，含完整目录树与入库状态）
 ```
@@ -122,15 +128,17 @@ research-assistant/
 
 | 指标 | 数值 |
 |------|------|
-| Agent 定义 | 56个（10个领域 + secretary / orchestrator 元 Agent） |
+| 领域 Agent | 55个（11个领域）+ 2个元 Agent（secretary / orchestrator） |
 | 专业技能 | 17个 |
-| 斜杠命令 | 5个 |
-| 工作流规则 | 10条 |
-| 代码文件 | 105个（Python / MATLAB / R） |
-| 算法知识库 | 84个算法文档 + 17个新算法条目 |
-| 实战案例 | 30个案例目录（含 2024 C 题、2025 A 题数学建模） |
-| 图形文件 | 249个（outputs/，png/pdf/svg） |
+| 斜杠命令 | 6个 |
+| 工作流规则 | 11条 |
+| 代码文件 | 171个（Python 170 · MATLAB 1；全仓 `.py`/`.m`/`.R` 口径） |
+| 算法知识库 | 顶刊算法实现库 80个条目 · 自创算法库 2个（含源码、测试与实验报告） |
+| 实战案例 | 15个已入库案例目录（含 CUMCM 2024 C 题） |
+| 图形文件 | 75个（png/pdf/svg；其中 outputs/ 内 52个） |
 
-> 以上数字经磁盘核对（2026-09-20）。改动目录结构时请同步**本节**与上方**项目结构**树；
-> 架构的权威描述见 `AGENTS.md`。
+> 以上数字以**已入库文件**为准（2026-09-23 复核，口径 = `git ls-files` 可见文件 + 本次提交
+> 纳入的新文件）——本地未入库的实验产出（约 434MB，见 `.gitignore`）不计入，故与磁盘实况
+> 不同。**代码文件**与**图形文件**为全仓扩展名计数，可用一条 `git ls-files` 复现。改动目录
+> 结构时请同步**本节**与上方**项目结构**树；架构的权威描述见 `AGENTS.md`。
 
