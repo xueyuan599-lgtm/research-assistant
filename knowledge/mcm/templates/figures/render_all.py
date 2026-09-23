@@ -21,7 +21,8 @@ TEMPLATES = [
     'template_diagnostics', 'template_classification', 'template_pareto',
     'template_convergence', 'template_waterfall', 'template_multicriteria',
     'template_schedule', 'template_network', 'template_flow', 'template_map',
-    'template_radar', 'template_pca',
+    'template_radar', 'template_pca', 'template_sobol', 'template_searchpath',
+    'template_phase', 'template_spacetime', 'template_scenario',
 ]
 RASTER_ONLY = {'template_bar_timeseries'}
 COMPILE_MODULES = [

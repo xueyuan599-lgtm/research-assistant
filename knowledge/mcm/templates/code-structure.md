@@ -53,7 +53,7 @@ project/
 - **格式**：矢量 PDF + 位图 PNG（300dpi, bbox tight）；尺寸：单栏 89mm / 双栏 183mm
 - **配色**：Okabe-Ito 色盲安全；热图用 viridis/RdBu；无网格线；tick 朝外；轴框仅左+下
 - **字号**：正文 7pt / 轴标签 8pt / 刻度 6pt / 图例 6pt（不描边）
-- **选型**：按 `figures/README.md` 图表选型表（灵敏度→龙卷风图、相关→热图、轨迹→3D 等）
+- **选型**：按 `knowledge/mcm/templates/figures/README.md` 的图表选型表选型（**唯一出处**，此处不复述映射）
 - **编号**：图下表上、三线表、坐标轴带单位、合理有效数字
 
 ### 运行规范

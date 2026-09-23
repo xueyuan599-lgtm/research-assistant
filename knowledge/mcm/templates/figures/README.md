@@ -69,6 +69,8 @@ save_figure(fig, 'outputs/figures/forecast')
 - `classification_curves()`：ROC/PR 曲线与 AUC/AP。
 - `pareto_mask()`：非支配解判定。
 - `standardize_matrix()`：多指标 z-score/min-max 标准化。
+- `five_number_summary()`：min/Q1/中位数/Q3/max 五数概括。
+- `density_profile()`：Gaussian KDE 的 (grid, pdf) 密度剖面。
 
 ## 多面板与质量审查
 

@@ -14,11 +14,26 @@
 | action | string | `write` / `search` / `list` / `update` |
 | type | string | `project-experience` / `algorithm-repository` |
 | query | string | 检索关键词（search 模式） |
+| labels | string[] | **多标签联合检索条件（search 模式，推荐）**——来自调用方题型谱系三层标签 |
 | content | string | 要写入的内容（write 模式） |
 | entry_name | string | 条目文件名（write/update 模式） |
 
+## 多标签联合检索协议（algorithm-repository）
+
+> 条目已统一为 YAML frontmatter（见 `knowledge/algorithm-repository/_SCHEMA.md`），`type` 为多标签数组。
+> search 模式优先使用 `labels` 做联合匹配，而非仅 `query` 关键词。
+
+1. **读取索引**：以 `_index.md`（机器可读多标签索引）为快速入口，必要时回读条目 frontmatter 复核。
+2. **层内命中**：调用方 `labels` 常带谱系分层（决策层/计算层/物理层）。某层任一标签出现在条目 `type` 中即该层命中。
+3. **联合优先级**（从强到弱）：
+   - 三层全中 → 最强
+   - 两层命中 → 重点候选
+   - 单层命中（物理层/机理层优先）→ 基础参考
+4. **语义等价**：除精确匹配受控标签外，允许对标签含义做同族等价判断（如 `optimization` ↔ 相关求解族）。
+5. 返回时标注每条目的：命中 tags、命中层、文件路径，供调用方注入建模。
+
 ## 输出
-- 写入成功确认 / 检索结果列表 / 条目内容
+- 写入成功确认 / 检索结果列表（含命中标签、命中层、路径）/ 条目内容
 - 更新后的索引
 
 ## 可用工具

@@ -60,7 +60,7 @@
 ## 可用工具
 | 类别 | 工具 | 用途 |
 |------|------|------|
-| MCP | `mcp-overleaf` | 期刊合规规则库（NeurIPS/ICML/ACL等） |
+| ⚠️ | ~~`mcp-overleaf`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。期刊合规规则改用下方 WebSearch |
 | CLI | WebSearch, WebFetch | 查询期刊最新投稿指南 |
 
 ## 错误处理

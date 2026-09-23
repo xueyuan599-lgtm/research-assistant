@@ -61,7 +61,7 @@ project/
 - **推荐复用模板库 `knowledge/mcm/templates/figures/`**（mcm_nature.mplstyle + palette.py + export_figure.py + 各 template_*.py），可显著提升图表质量、减少调参时间
 - **每个小问的图表类型与定制方式由团队在方案确认时决定**（planner 输出图表方案 → 用户确认），模板仅作首选参考
 - **具体题目具体分析**：模板不适用时允许定制 matplotlib 绘图，但保持基本规范（中文标签、PDF+PNG 300dpi、色盲友好配色）
-- 按 [figures/README.md](../knowledge/mcm/templates/figures/README.md) 图表选型表选择图型（灵敏度→龙卷风图、相关→热图、轨迹→3D 等）
+- 选型依据 `knowledge/mcm/templates/figures/README.md` 的图表选型表（**唯一出处**，此处不复述映射）
 - 子图布局灵活：`make_*` 接受 `ax` 参数，可放入任意 `subplots`/`GridSpec` 布局
 
 ### 2. 完整可运行代码
@@ -76,6 +76,7 @@ project/
 
 ### 3. 运行说明
 - Python 版本、依赖库、pip 安装命令
+- 本机 PyTorch 均为 GPU 版（cu126）：**系统默认 python** `D:\py\Python3\python.exe`（torch 2.13.0+cu126，CUDA 可用，RTX 4060）直接可用；备用 conda 环境 `pytorch`（`D:\software\anocanda\envs\pytorch\python.exe`，2.11.0+cu126）；无需重复安装，换环境时按需 `pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126`
 - 逐步骤运行顺序
 - 常见报错对照表（零基础团队附加）
 
@@ -84,6 +85,14 @@ project/
 - 未确认处标注 `[待替换]`
 - 固定随机种子确保可复现
 - 模块独立测试方法：正常输入、缺失文件、缺失字段、非法数值
+
+## 可用工具（本机环境）
+| 类别 | 工具 | 用途 | 备注 |
+|------|------|------|------|
+| 深度学习/神经网络 | **PyTorch（GPU 版，cu126）** | MLP/CNN/RNN/LSTM/Transformer 等网络模型 | **系统默认 python `D:\py\Python3\python.exe`（torch 2.13.0+cu126，CUDA 可用，RTX 4060）直接可用**；备用 conda 环境 `pytorch`（`D:\software\anocanda\envs\pytorch\python.exe`，2.11.0+cu126）；数据加载用 DataLoader、`.to('cuda')` 迁移 GPU；训练量控制在单问 < 30 分钟内 |
+| 常规机器学习 | scikit-learn | 树模型/线性/聚类/特征工程 | 与 `.claude/rules/08-tool-selection.md` 一致 |
+| 数值与优化 | numpy, scipy, pulp, ortools, cvxpy | 数值计算、优化求解 | |
+| 验证 | MCP matlab | 工程/优化类算法交叉验证 | 非必需 |
 
 ## 调用方式
 由 MCM 主控在环节②~⑥（问题N 建模与求解）内调用，携带 `question_scope`（缺省=主控按环节清单注入的当前一问；未注入则默认问题一）。
@@ -94,6 +103,7 @@ project/
 - 未运行时一律标记 `[待运行]`，不得编造结果
 - 代码必须实际运行验证（物理验证协议）
 - 模块化实施，每次生成一个模块及其直接依赖
+- 机器学习/神经网络任务**优先使用 PyTorch**（GPU 版，cu126）：用系统默认 python 或 conda `pytorch` 环境运行、模型与张量 `.to('cuda')`；网络规模、batch size 与 epoch 控制在单问运行时间 < 30 分钟内，数据加载用 DataLoader 与向量化，避免手写循环
 - 图表表格生成时即按规范设计（三线表、编号、图题表题）
 - **图表按团队确认的方案实施**（planner §4.2）；模板库 `knowledge/mcm/templates/figures/` 为首选参考，具体题目具体分析，允许定制
 

@@ -73,6 +73,9 @@
 | `There is no doubt that` | 过度自信 | `Our results suggest that` |
 | `As can be seen from...` | 赘词 | `Figure 1 shows` |
 
+> **本表是英文表。** 中文写作的 AI 痕迹词与降痕改写引用户级技能 `aigc-reduce`（**只写逻辑名**，
+> 依据 `.claude/rules/01-agent-standards.md` §1 沙箱外不写路径）。**本文件不复制其中文词表**，避免双源漂移。
+
 ---
 
 ## 2. 自检协议（Agent 输出前必须执行）
@@ -86,6 +89,9 @@
 5. **自然度检查**：读一遍，是否有任何句子听起来像"模板"→ 改掉
 
 **评分**：写作质量 10 分，每违反一项扣 2 分。**< 6 分 → 不能交付，需要重写。**
+
+> **本文件只管句子与词，不管结构与论证。** 标题 / 摘要 / 引言问题链 / 方法复现 / 证据映射 / 讨论的判据，
+> 唯一源见 `knowledge/writing/paper-argument-structure.md`——**非赛道 T1/T2 的写作任务在此接入结构层**。
 
 > **正面范式**（顶刊写法示例、句法标准、计量/ML 领域对照表、各输出类型要求）见
 > `knowledge/writing/academic-writing-patterns.md`。写文献综述、方法论描述、结果报告、论文段落前**读该文件**——

@@ -30,7 +30,7 @@
 | 面板 | pandas, linearmodels | 个体/时间效应分解 |
 
 ## 执行流程
-1. 加载 `.claude/rules/00-data-preprocessing.md`
-2. 按阶段调度 `research-assistant/agents/data-viz/` 下的 preprocessing-inspector → preprocessing-cleaner → preprocessing-transformer → preprocessing-validator
+1. 加载 `.claude/rules/07-data-preprocessing.md`
+2. 按阶段调度 `agents/data-viz/` 下的 preprocessing-inspector → preprocessing-cleaner → preprocessing-transformer → preprocessing-validator
 3. 交付：预处理后数据 + 完整脚本 + 质量报告（含 SCI 级可视化）
 4. 任务规模属于 T1（常规单任务）时可直接执行，无需秘书分解停点；T2/T3 先经秘书分解

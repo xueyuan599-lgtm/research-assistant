@@ -69,8 +69,7 @@
 |------|------|------|
 | Skill | 所有可用 skills | 按需调用各领域技能 |
 | MCP | `matlab` | MATLAB 公式验证与计算 |
-| MCP | `openalex-mcp` | 论文检索与引用 |
-| MCP | `arxiv-latex-mcp` | LaTeX 公式源码获取 |
+| ⚠️ | ~~`openalex-mcp` / `arxiv-latex-mcp`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。论文检索改用下方 WebSearch |
 | CLI | Python (sympy) | 符号数学验证 |
 | CLI | WebSearch, WebFetch | 知识查询与验证 |
 

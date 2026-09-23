@@ -52,8 +52,7 @@
 ## 可用工具
 | 类别 | 工具 | 用途 |
 |------|------|------|
-| MCP | `latex-mcp-server` | BibTeX 解析、DOI 下载 |
-| MCP | `mcp-research` | Zotero 参考文献管理 |
+| ⚠️ | ~~`latex-mcp-server` / `mcp-research`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。BibTeX 走下方 CLI |
 | CLI | biber, bibtex | 本地参考文献编译 |
 | CLI | WebSearch, WebFetch | DOI 查询与验证（fallback） |
 

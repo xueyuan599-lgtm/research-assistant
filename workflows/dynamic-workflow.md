@@ -2,7 +2,7 @@
 
 不预设固定流水线，根据用户输入动态识别需求、构建管线。
 
-**核心新增：每完成一个步骤检查上下文饱和度，超过 50% 自动切割调度新 Agent。**
+**上下文管理：产生大体积输出的步骤后检查饱和度；超过 50% 优先压缩该步输出摘要并打检查点，仍高于 70% 才切割调度新 Agent（数值以 `scripts/context_monitor.py` 为准）。**
 
 ---
 
@@ -11,11 +11,11 @@
 ```
 用户输入 → orchestrator 意图识别 → 匹配已有 Agent → 动态组装管线 → 执行
                                                               │
-                                                   每步检查 auto_split()
+                                            大体积输出后查饱和度
                                                       │
                                           ┌───────────┴───────────┐
-                                          ≤50% 继续         >50% 写检查点
-                                            │                  spawn 新 Agent
+                                          ≤50% 继续      >50% 压缩摘要
+                                            │            +检查点，仍>70% 切割
                                             ↓                       │
                                         下一步 → ...          从断点继续
                                                                   ↓
@@ -43,6 +43,9 @@ Secretary + 用户确认
 `workflows/codex-claude-collaboration.md` 为准。只有通过
 `scripts/claude_worker.py` 启动的 Claude Worker 才进入该管线；用户直接在终端运行 Claude Code 不受影响。
 
+> **⚠️ 该管线当前不可执行（2026-09-19 核实）**：执行器 `scripts/claude_worker.py` 在本仓库从未提交过。
+> 上面的协作门为设计意图，补齐执行器前不要据此规划任务。
+
 ---
 
 ## 步骤
@@ -50,7 +53,7 @@ Secretary + 用户确认
 ### 1. 意图识别
 orchestrator 分析用户输入，判断所属领域和任务类型。
 
-**领域**：literature / topic-analysis / data-viz / experiment / paper-format / research-qa / kaggle / algorithm / 综合
+**领域**：literature / topic-analysis / data-viz / experiment / paper-format / journal / research-qa / kaggle / mcm / algorithm / knowledge / 综合
 
 **任务类型**：检索 / 分析 / 生成 / 优化 / 问答 / 可视化 / 竞赛
 
@@ -89,7 +92,9 @@ if auto_split(stage, output_text):
 - 子 Agent 执行任务，输出结果到 `outputs/`
 - 主控验证子 Agent 输出（完整性 + 合理性）
 - 验证 FAIL → 重试或上报 orchestrator
-- 复杂任务启用 critic 对抗（最多 3 轮）
+- 复杂任务启用 critic 对抗（最多 3 轮；3 轮后仍不通过 → 升级用户 + 交付当前最佳版本 + FAIL 清单）
+  - **轮次口径的唯一源**：`.claude/rules/06-cost-discipline.md`「审查轮次封顶」
+    （全局上限 3 轮，终稿自收为 1 轮）——本行与之同口径，不另设数
 
 ### 5. 交付
 - 结果文件 → `outputs/` 目录

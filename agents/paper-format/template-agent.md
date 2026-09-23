@@ -54,8 +54,7 @@
 ## 可用工具
 | 类别 | 工具 | 用途 |
 |------|------|------|
-| MCP | `latex-mcp-server` | LaTeX 模板编译 |
-| MCP | `mcp-overleaf` | Overleaf 模板应用 |
+| ⚠️ | ~~`latex-mcp-server` / `mcp-overleaf`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。模板编译走下方 CLI |
 | CLI | pandoc | 格式转换（Markdown ↔ LaTeX ↔ DOCX） |
 | CLI | latexmk, xelatex | LaTeX 编译链 |
 

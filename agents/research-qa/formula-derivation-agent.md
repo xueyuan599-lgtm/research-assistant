@@ -68,7 +68,7 @@
 |------|------|------|
 | CLI | Python (sympy) | 符号推导验证 |
 | MCP | `matlab` | MATLAB Symbolic Math Toolbox 验证 |
-| MCP | `arxiv-latex-mcp` | 获取标准 LaTeX 公式源码 |
+| ⚠️ | ~~`arxiv-latex-mcp`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。公式源码改用 WebFetch 取 arXiv 页面 |
 
 ## 错误处理
 - 公式名模糊 → 列出可能的候选，让用户确认

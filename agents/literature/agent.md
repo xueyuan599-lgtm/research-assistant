@@ -12,7 +12,7 @@
 | 参数 | 类型 | 说明 |
 |------|------|------|
 | research_question | string | 研究问题或关键词 |
-| depth | string | quick / thorough / exhaustive |
+| depth | string | **分发前由用户选定**（quick / standard / thorough），档位数字见 `.claude/rules/05-exploration-budget.md` §1 |
 | output_format | string | summary / review / annotated_bibliography |
 
 ## 输出
@@ -29,6 +29,8 @@
 ## 执行流程
 
 ```
+0. **【前置】向用户报出三档及其预算信封，由用户选定档位**（推荐 quick）
+   └─ 依据 `.claude/rules/05-exploration-budget.md` §0；选定后锁定，本次任务不自行升档
 1. 接收 orchestrator 调度
 2. 调 search-agent 执行检索
    ├─→ auto_split("literature.search", 检索结果文本)
@@ -47,7 +49,7 @@
 ```
 
 ## 验证标准
-- search 结果 ≥ 5 篇高质量文献（非空）
+- search 结果非空，且文献数与探头数 **≤ 当前档位上限**（见 `.claude/rules/05-exploration-budget.md` §1）
 - screening 剔除/保留理由明确
 - synthesis 有主题结构（非简单罗列）
 - 综述包含共识与争议点
@@ -61,10 +63,8 @@
 | 类别 | 工具 | 用途 |
 |------|------|------|
 | Skill | `research`, `deep-research` | 文献检索与深度调研 |
-| MCP | `lit-mcp` | arXiv + DBLP 检索 |
-| MCP | `mcp-research` | 多源文献 + Zotero 管理 |
-| MCP | `openalex-mcp-server` | OpenAlex 学术数据库 |
-| CLI | WebSearch, WebFetch | 通用网络检索与抓取 |
+| CLI | WebSearch, WebFetch | **检索主力**：arXiv / DBLP / Semantic Scholar / OpenAlex 公开页面 |
+| ⚠️ | ~~`lit-mcp` / `mcp-research` / `openalex-mcp-server`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实：任何 `.mcp.json` 均未声明）。恢复属独立任务 |
 
 ## 调用方式
 由 orchestrator 在 LITERATURE 意图时调用。

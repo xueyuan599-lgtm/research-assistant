@@ -120,9 +120,8 @@ outputs/kaggle_{comp}/experiment_log.md
 | 类别 | 工具 | 用途 |
 |------|------|------|
 | MCP | kaggle-skill | 竞赛信息、数据下载、提交、LB 查询 |
-| MCP | mcp-research | Kaggle 论坛讨论、公开 Kernel |
+| CLI | WebSearch, WebFetch | Kaggle 论坛讨论、公开 Kernel（原写的 `mcp-research` **未安装，勿调用**） |
 | CLI | Python 生态 | 建模 (sklearn, xgboost, lgbm, catboost, optuna, autogluon, flaml) |
-| Skill | dataviz | 竞赛级可视化 |
 
 ## kaggle-skill 安装
 

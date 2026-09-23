@@ -1,0 +1,1738 @@
+{
+ "Full::Sphere": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 55.373824063131146,
+   "median": 58.03998406854138,
+   "mean": 58.03998406854138,
+   "std": 2.6661600054102337,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3764688968658447,
+   "n_dim": 30
+  },
+  "best_fits": [
+   60.70614407395161,
+   55.373824063131146
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.37113475799560547,
+   0.381803035736084
+  ]
+ },
+ "Full::Rastrigin": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 72.15113254991181,
+   "median": 75.30757715327528,
+   "mean": 75.30757715327528,
+   "std": 3.156444603363468,
+   "feasible_rate": 1.0,
+   "mean_time": 0.39837706089019775,
+   "n_dim": 30
+  },
+  "best_fits": [
+   78.46402175663874,
+   72.15113254991181
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4044475555419922,
+   0.3923065662384033
+  ]
+ },
+ "Full::Rosenbrock": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 1129.2079628716378,
+   "median": 2051.0771964840646,
+   "mean": 2051.0771964840646,
+   "std": 921.8692336124268,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4007366895675659,
+   "n_dim": 30
+  },
+  "best_fits": [
+   2972.9464300964914,
+   1129.2079628716378
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4061601161956787,
+   0.3953132629394531
+  ]
+ },
+ "Full::Ackley": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 1.8794617038059376,
+   "median": 1.8871345744210317,
+   "mean": 1.8871345744210317,
+   "std": 0.007672870615094141,
+   "feasible_rate": 1.0,
+   "mean_time": 0.41343843936920166,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.8948074450361259,
+   1.8794617038059376
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.408444881439209,
+   0.41843199729919434
+  ]
+ },
+ "Full::Griewank": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 1.1105611468414274,
+   "median": 1.252251040057936,
+   "mean": 1.252251040057936,
+   "std": 0.1416898932165087,
+   "feasible_rate": 1.0,
+   "mean_time": 0.42227280139923096,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.1105611468414274,
+   1.3939409332744448
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.42365360260009766,
+   0.42089200019836426
+  ]
+ },
+ "Full::welded_beam": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.7222317449656783,
+   "median": 1.7862423545028892,
+   "mean": 1.7862423545028892,
+   "std": 0.06401060953721083,
+   "feasible_rate": 1.0,
+   "mean_time": 0.38073015213012695,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.7222317449656783,
+   1.8502529640401
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3849160671234131,
+   0.3765442371368408
+  ]
+ },
+ "Full::pressure_vessel": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 5885.629049803175,
+   "median": 5931.7838312386375,
+   "mean": 5931.7838312386375,
+   "std": 46.15478143546261,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3474539518356323,
+   "n_dim": 4
+  },
+  "best_fits": [
+   5885.629049803175,
+   5977.9386126741
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.33812975883483887,
+   0.3567781448364258
+  ]
+ },
+ "Full::spring": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.01308592934930585,
+   "median": 0.013480175414921164,
+   "mean": 0.013480175414921164,
+   "std": 0.00039424606561531354,
+   "feasible_rate": 1.0,
+   "mean_time": 0.34862685203552246,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.013874421480536477,
+   0.01308592934930585
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.35138988494873047,
+   0.34586381912231445
+  ]
+ },
+ "w/o_SHCA::Sphere": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 53.545828243195785,
+   "median": 58.139429474241744,
+   "mean": 58.139429474241744,
+   "std": 4.593601231045959,
+   "feasible_rate": 1.0,
+   "mean_time": 0.333010196685791,
+   "n_dim": 30
+  },
+  "best_fits": [
+   62.7330307052877,
+   53.545828243195785
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.33542346954345703,
+   0.330596923828125
+  ]
+ },
+ "w/o_SHCA::Rastrigin": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 63.830114406922036,
+   "median": 129.24027471359432,
+   "mean": 129.24027471359432,
+   "std": 65.41016030667227,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3483922481536865,
+   "n_dim": 30
+  },
+  "best_fits": [
+   194.65043502026657,
+   63.830114406922036
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.33933353424072266,
+   0.3574509620666504
+  ]
+ },
+ "w/o_SHCA::Rosenbrock": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 472.46469017433816,
+   "median": 564.2451834992186,
+   "mean": 564.2451834992186,
+   "std": 91.78049332488038,
+   "feasible_rate": 1.0,
+   "mean_time": 0.33912038803100586,
+   "n_dim": 30
+  },
+  "best_fits": [
+   656.0256768240989,
+   472.46469017433816
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3374948501586914,
+   0.3407459259033203
+  ]
+ },
+ "w/o_SHCA::Ackley": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 1.9044515737825063,
+   "median": 2.474666582966654,
+   "mean": 2.474666582966654,
+   "std": 0.5702150091841478,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3500155210494995,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.9044515737825063,
+   3.044881592150802
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3519890308380127,
+   0.34804201126098633
+  ]
+ },
+ "w/o_SHCA::Griewank": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 1.0783013896380544,
+   "median": 1.1814660400746886,
+   "mean": 1.1814660400746886,
+   "std": 0.10316465043663414,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3528019189834595,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.2846306905113227,
+   1.0783013896380544
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.34834742546081543,
+   0.3572564125061035
+  ]
+ },
+ "w/o_SHCA::welded_beam": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.672629698277158,
+   "median": 1.6953587210629038,
+   "mean": 1.6953587210629038,
+   "std": 0.022729022785745734,
+   "feasible_rate": 1.0,
+   "mean_time": 0.32738614082336426,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.672629698277158,
+   1.7180877438486495
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.33345508575439453,
+   0.321317195892334
+  ]
+ },
+ "w/o_SHCA::pressure_vessel": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 6063.062684691305,
+   "median": 6175.465077847963,
+   "mean": 6175.465077847963,
+   "std": 112.40239315665758,
+   "feasible_rate": 1.0,
+   "mean_time": 0.2938060760498047,
+   "n_dim": 4
+  },
+  "best_fits": [
+   6287.86747100462,
+   6063.062684691305
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.290621280670166,
+   0.29699087142944336
+  ]
+ },
+ "w/o_SHCA::spring": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.012725834567448625,
+   "median": 0.013405881197333897,
+   "mean": 0.013405881197333897,
+   "std": 0.0006800466298852717,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3020068407058716,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.014085927827219168,
+   0.012725834567448625
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3035147190093994,
+   0.30049896240234375
+  ]
+ },
+ "w/o_Archive::Sphere": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 64.82029711213185,
+   "median": 64.98355279588513,
+   "mean": 64.98355279588513,
+   "std": 0.16325568375327748,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3605196475982666,
+   "n_dim": 30
+  },
+  "best_fits": [
+   65.14680847963841,
+   64.82029711213185
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.363675594329834,
+   0.3573637008666992
+  ]
+ },
+ "w/o_Archive::Rastrigin": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 71.2830634140796,
+   "median": 80.3911876792247,
+   "mean": 80.3911876792247,
+   "std": 9.108124265145094,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3574308156967163,
+   "n_dim": 30
+  },
+  "best_fits": [
+   89.4993119443698,
+   71.2830634140796
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3573606014251709,
+   0.3575010299682617
+  ]
+ },
+ "w/o_Archive::Rosenbrock": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 781.2894241802411,
+   "median": 974.4094595522988,
+   "mean": 974.4094595522988,
+   "std": 193.12003537205766,
+   "feasible_rate": 1.0,
+   "mean_time": 0.369701623916626,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1167.5294949243564,
+   781.2894241802411
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.36438703536987305,
+   0.3750162124633789
+  ]
+ },
+ "w/o_Archive::Ackley": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 2.893223974500416,
+   "median": 3.001968185838074,
+   "mean": 3.001968185838074,
+   "std": 0.10874421133765821,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3820441961288452,
+   "n_dim": 30
+  },
+  "best_fits": [
+   2.893223974500416,
+   3.1107123971757322
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.38071131706237793,
+   0.3833770751953125
+  ]
+ },
+ "w/o_Archive::Griewank": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 1.2128060338184856,
+   "median": 1.228961442337638,
+   "mean": 1.228961442337638,
+   "std": 0.016155408519152425,
+   "feasible_rate": 1.0,
+   "mean_time": 0.36062872409820557,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.2451168508567905,
+   1.2128060338184856
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3578345775604248,
+   0.36342287063598633
+  ]
+ },
+ "w/o_Archive::welded_beam": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.5886928465250738,
+   "median": 1.5941190120256885,
+   "mean": 1.5941190120256885,
+   "std": 0.00542616550061481,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3453195095062256,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.5995451775263034,
+   1.5886928465250738
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.34531736373901367,
+   0.3453216552734375
+  ]
+ },
+ "w/o_Archive::pressure_vessel": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 5854.599693940247,
+   "median": 5917.946784245769,
+   "mean": 5917.946784245769,
+   "std": 63.34709030552267,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3286548852920532,
+   "n_dim": 4
+  },
+  "best_fits": [
+   5854.599693940247,
+   5981.293874551292
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3215608596801758,
+   0.33574891090393066
+  ]
+ },
+ "w/o_Archive::spring": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": false,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.012772415911823709,
+   "median": 0.013219683829598674,
+   "mean": 0.013219683829598674,
+   "std": 0.000447267917774964,
+   "feasible_rate": 1.0,
+   "mean_time": 0.32189059257507324,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.013666951747373637,
+   0.012772415911823709
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.32316017150878906,
+   0.3206210136413574
+  ]
+ },
+ "w/o_Strategy::Sphere": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 970.9966876252398,
+   "median": 1076.3630843344938,
+   "mean": 1076.3630843344938,
+   "std": 105.36639670925393,
+   "feasible_rate": 1.0,
+   "mean_time": 0.40597665309906006,
+   "n_dim": 30
+  },
+  "best_fits": [
+   970.9966876252398,
+   1181.7294810437477
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3999340534210205,
+   0.4120192527770996
+  ]
+ },
+ "w/o_Strategy::Rastrigin": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 135.28699046279556,
+   "median": 150.75240894060653,
+   "mean": 150.75240894060653,
+   "std": 15.465418477810957,
+   "feasible_rate": 1.0,
+   "mean_time": 0.41815948486328125,
+   "n_dim": 30
+  },
+  "best_fits": [
+   135.28699046279556,
+   166.21782741841747
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.40876173973083496,
+   0.42755722999572754
+  ]
+ },
+ "w/o_Strategy::Rosenbrock": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 35866.77237191349,
+   "median": 61674.63563136369,
+   "mean": 61674.63563136369,
+   "std": 25807.86325945021,
+   "feasible_rate": 1.0,
+   "mean_time": 0.40889573097229004,
+   "n_dim": 30
+  },
+  "best_fits": [
+   35866.77237191349,
+   87482.4988908139
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.41105008125305176,
+   0.4067413806915283
+  ]
+ },
+ "w/o_Strategy::Ackley": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 8.395670267163897,
+   "median": 8.5570099668534,
+   "mean": 8.5570099668534,
+   "std": 0.16133969968950268,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4204871654510498,
+   "n_dim": 30
+  },
+  "best_fits": [
+   8.718349666542903,
+   8.395670267163897
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4264659881591797,
+   0.4145083427429199
+  ]
+ },
+ "w/o_Strategy::Griewank": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 10.884186501261688,
+   "median": 11.373011592314612,
+   "mean": 11.373011592314612,
+   "std": 0.4888250910529228,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4118626117706299,
+   "n_dim": 30
+  },
+  "best_fits": [
+   11.861836683367533,
+   10.884186501261688
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.41164398193359375,
+   0.412081241607666
+  ]
+ },
+ "w/o_Strategy::welded_beam": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.588842464867353,
+   "median": 1.596008806898055,
+   "mean": 1.596008806898055,
+   "std": 0.007166342030701878,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4281710386276245,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.6031751489287567,
+   1.588842464867353
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4273521900177002,
+   0.42898988723754883
+  ]
+ },
+ "w/o_Strategy::pressure_vessel": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 5875.776208992695,
+   "median": 5877.416850026916,
+   "mean": 5877.416850026916,
+   "std": 1.6406410342215167,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3883548974990845,
+   "n_dim": 4
+  },
+  "best_fits": [
+   5879.057491061138,
+   5875.776208992695
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.39215564727783203,
+   0.3845541477203369
+  ]
+ },
+ "w/o_Strategy::spring": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": false,
+   "use_cauchy": true,
+   "use_nm": true
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.012668788032476347,
+   "median": 0.01269392145360938,
+   "mean": 0.01269392145360938,
+   "std": 2.513342113303306e-05,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4240262508392334,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.012719054874742413,
+   0.012668788032476347
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.42383599281311035,
+   0.42421650886535645
+  ]
+ },
+ "w/o_Cauchy::Sphere": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 31.29552254398168,
+   "median": 48.14860089169767,
+   "mean": 48.14860089169767,
+   "std": 16.85307834771599,
+   "feasible_rate": 1.0,
+   "mean_time": 0.36350929737091064,
+   "n_dim": 30
+  },
+  "best_fits": [
+   65.00167923941366,
+   31.29552254398168
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.36744046211242676,
+   0.35957813262939453
+  ]
+ },
+ "w/o_Cauchy::Rastrigin": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 62.579376933728554,
+   "median": 75.37711192628235,
+   "mean": 75.37711192628235,
+   "std": 12.7977349925538,
+   "feasible_rate": 1.0,
+   "mean_time": 0.37560904026031494,
+   "n_dim": 30
+  },
+  "best_fits": [
+   88.17484691883615,
+   62.579376933728554
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3636918067932129,
+   0.387526273727417
+  ]
+ },
+ "w/o_Cauchy::Rosenbrock": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 1281.9684305886349,
+   "median": 2127.4574303425634,
+   "mean": 2127.4574303425634,
+   "std": 845.4889997539283,
+   "feasible_rate": 1.0,
+   "mean_time": 0.38366520404815674,
+   "n_dim": 30
+  },
+  "best_fits": [
+   2972.9464300964914,
+   1281.9684305886349
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.38561582565307617,
+   0.3817145824432373
+  ]
+ },
+ "w/o_Cauchy::Ackley": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 1.8826343044640628,
+   "median": 1.88518038462164,
+   "mean": 1.88518038462164,
+   "std": 0.0025460801575771796,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3968062400817871,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.8877264647792171,
+   1.8826343044640628
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.40223264694213867,
+   0.39137983322143555
+  ]
+ },
+ "w/o_Cauchy::Griewank": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 1.1139893097736173,
+   "median": 1.253965121524031,
+   "mean": 1.253965121524031,
+   "std": 0.13997581175041374,
+   "feasible_rate": 1.0,
+   "mean_time": 0.39308083057403564,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.1139893097736173,
+   1.3939409332744448
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3861353397369385,
+   0.4000263214111328
+  ]
+ },
+ "w/o_Cauchy::welded_beam": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.6769554038098011,
+   "median": 1.70038156714443,
+   "mean": 1.70038156714443,
+   "std": 0.02342616333462888,
+   "feasible_rate": 1.0,
+   "mean_time": 0.35882043838500977,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.7238077304790589,
+   1.6769554038098011
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3573591709136963,
+   0.36028170585632324
+  ]
+ },
+ "w/o_Cauchy::pressure_vessel": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 6037.562146096943,
+   "median": 6138.969592530848,
+   "mean": 6138.969592530848,
+   "std": 101.40744643390417,
+   "feasible_rate": 1.0,
+   "mean_time": 0.32066023349761963,
+   "n_dim": 4
+  },
+  "best_fits": [
+   6037.562146096943,
+   6240.377038964752
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3211174011230469,
+   0.3202030658721924
+  ]
+ },
+ "w/o_Cauchy::spring": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": false,
+   "use_nm": true
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.013198389271307228,
+   "median": 0.013536684578642055,
+   "mean": 0.013536684578642055,
+   "std": 0.00033829530733482747,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3243216276168823,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.013874979885976883,
+   0.013198389271307228
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3146195411682129,
+   0.33402371406555176
+  ]
+ },
+ "w/o_NM::Sphere": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 55.373824063131146,
+   "median": 58.03998406854138,
+   "mean": 58.03998406854138,
+   "std": 2.6661600054102337,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3812023401260376,
+   "n_dim": 30
+  },
+  "best_fits": [
+   60.70614407395161,
+   55.373824063131146
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3870820999145508,
+   0.3753225803375244
+  ]
+ },
+ "w/o_NM::Rastrigin": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 72.15113254991181,
+   "median": 75.30757715327528,
+   "mean": 75.30757715327528,
+   "std": 3.156444603363468,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3734891414642334,
+   "n_dim": 30
+  },
+  "best_fits": [
+   78.46402175663874,
+   72.15113254991181
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.36969733238220215,
+   0.37728095054626465
+  ]
+ },
+ "w/o_NM::Rosenbrock": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 1129.2079628716378,
+   "median": 2051.0771964840646,
+   "mean": 2051.0771964840646,
+   "std": 921.8692336124268,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3940824270248413,
+   "n_dim": 30
+  },
+  "best_fits": [
+   2972.9464300964914,
+   1129.2079628716378
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.38738346099853516,
+   0.40078139305114746
+  ]
+ },
+ "w/o_NM::Ackley": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 1.8794617038059376,
+   "median": 1.8871345744210317,
+   "mean": 1.8871345744210317,
+   "std": 0.007672870615094141,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4084879159927368,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.8948074450361259,
+   1.8794617038059376
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4147987365722656,
+   0.402177095413208
+  ]
+ },
+ "w/o_NM::Griewank": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 1.1105611468414274,
+   "median": 1.252251040057936,
+   "mean": 1.252251040057936,
+   "std": 0.1416898932165087,
+   "feasible_rate": 1.0,
+   "mean_time": 0.4102112054824829,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1.1105611468414274,
+   1.3939409332744448
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.4205937385559082,
+   0.3998286724090576
+  ]
+ },
+ "w/o_NM::welded_beam": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.8468258762354397,
+   "median": 1.9297377875307467,
+   "mean": 1.9297377875307467,
+   "std": 0.08291191129530695,
+   "feasible_rate": 1.0,
+   "mean_time": 0.35529541969299316,
+   "n_dim": 4
+  },
+  "best_fits": [
+   2.0126496988260536,
+   1.8468258762354397
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.347973108291626,
+   0.36261773109436035
+  ]
+ },
+ "w/o_NM::pressure_vessel": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 6026.286633973758,
+   "median": 6168.116662251115,
+   "mean": 6168.116662251115,
+   "std": 141.83002827735618,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3248577117919922,
+   "n_dim": 4
+  },
+  "best_fits": [
+   6026.286633973758,
+   6309.946690528471
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.32122015953063965,
+   0.3284952640533447
+  ]
+ },
+ "w/o_NM::spring": {
+  "config": {
+   "use_shca": true,
+   "use_cmea": true,
+   "use_strategy_pool": true,
+   "use_cauchy": true,
+   "use_nm": false
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.013766096001989584,
+   "median": 0.014310398259899014,
+   "mean": 0.014310398259899014,
+   "std": 0.000544302257909429,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3265451192855835,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.014854700517808442,
+   0.013766096001989584
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3315162658691406,
+   0.32157397270202637
+  ]
+ },
+ "Baseline::Sphere": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "Sphere",
+  "stats": {
+   "best": 3965.096268106718,
+   "median": 4131.866103294494,
+   "mean": 4131.866103294494,
+   "std": 166.76983518777593,
+   "feasible_rate": 1.0,
+   "mean_time": 0.26351749897003174,
+   "n_dim": 30
+  },
+  "best_fits": [
+   3965.096268106718,
+   4298.63593848227
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.2664179801940918,
+   0.2606170177459717
+  ]
+ },
+ "Baseline::Rastrigin": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "Rastrigin",
+  "stats": {
+   "best": 164.10325658227927,
+   "median": 168.76685587044977,
+   "mean": 168.76685587044977,
+   "std": 4.663599288170488,
+   "feasible_rate": 1.0,
+   "mean_time": 0.2966271638870239,
+   "n_dim": 30
+  },
+  "best_fits": [
+   164.10325658227927,
+   173.43045515862025
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.30823850631713867,
+   0.2850158214569092
+  ]
+ },
+ "Baseline::Rosenbrock": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "Rosenbrock",
+  "stats": {
+   "best": 608799.583462703,
+   "median": 1042685.5003966638,
+   "mean": 1042685.5003966638,
+   "std": 433885.91693396075,
+   "feasible_rate": 1.0,
+   "mean_time": 0.29013490676879883,
+   "n_dim": 30
+  },
+  "best_fits": [
+   1476571.4173306245,
+   608799.583462703
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.28935813903808594,
+   0.2909116744995117
+  ]
+ },
+ "Baseline::Ackley": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "Ackley",
+  "stats": {
+   "best": 10.848924443394068,
+   "median": 11.020464870825176,
+   "mean": 11.020464870825176,
+   "std": 0.17154042743110676,
+   "feasible_rate": 1.0,
+   "mean_time": 0.312076210975647,
+   "n_dim": 30
+  },
+  "best_fits": [
+   11.192005298256282,
+   10.848924443394068
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3151395320892334,
+   0.30901288986206055
+  ]
+ },
+ "Baseline::Griewank": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "Griewank",
+  "stats": {
+   "best": 32.73783069068389,
+   "median": 36.32289403255663,
+   "mean": 36.32289403255663,
+   "std": 3.5850633418727433,
+   "feasible_rate": 1.0,
+   "mean_time": 0.32217276096343994,
+   "n_dim": 30
+  },
+  "best_fits": [
+   39.90795737442938,
+   32.73783069068389
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3153684139251709,
+   0.328977108001709
+  ]
+ },
+ "Baseline::welded_beam": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "welded_beam",
+  "stats": {
+   "best": 1.7509230254780175,
+   "median": 1.7688702316382772,
+   "mean": 1.7688702316382772,
+   "std": 0.0179472061602598,
+   "feasible_rate": 1.0,
+   "mean_time": 0.3009072542190552,
+   "n_dim": 4
+  },
+  "best_fits": [
+   1.786817437798537,
+   1.7509230254780175
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.3035776615142822,
+   0.2982368469238281
+  ]
+ },
+ "Baseline::pressure_vessel": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "pressure_vessel",
+  "stats": {
+   "best": 5865.427883528939,
+   "median": 5956.925349559259,
+   "mean": 5956.925349559259,
+   "std": 91.49746603032054,
+   "feasible_rate": 1.0,
+   "mean_time": 0.28451812267303467,
+   "n_dim": 4
+  },
+  "best_fits": [
+   5865.427883528939,
+   6048.42281558958
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.29015064239501953,
+   0.2788856029510498
+  ]
+ },
+ "Baseline::spring": {
+  "config": {
+   "use_shca": false,
+   "use_cmea": false,
+   "use_strategy_pool": false,
+   "use_cauchy": false,
+   "use_nm": false
+  },
+  "problem": "spring",
+  "stats": {
+   "best": 0.012703484641126535,
+   "median": 0.012747135314657404,
+   "mean": 0.012747135314657404,
+   "std": 4.365067353087008e-05,
+   "feasible_rate": 1.0,
+   "mean_time": 0.2774466276168823,
+   "n_dim": 3
+  },
+  "best_fits": [
+   0.012790785988188275,
+   0.012703484641126535
+  ],
+  "feasible_flags": [
+   1,
+   1
+  ],
+  "times": [
+   0.2745964527130127,
+   0.28029680252075195
+  ]
+ }
+}

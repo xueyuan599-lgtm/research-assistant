@@ -1,0 +1,9 @@
+{
+  "welded_beam": {
+    "adaptive_penalty": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 

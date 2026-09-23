@@ -1,0 +1,267 @@
+{
+  "welded_beam": {
+    "adaptive_penalty": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 7,
+        "feasible_rate": 0.7,
+        "best_obj": 1.5871651952744903,
+        "median_obj": 1.600060131950716,
+        "mean_obj": 1.6047346136525709,
+        "std_obj": 0.018008256723518926,
+        "mean_time": 4.206225061416626,
+        "mean_violation": 9.564728608625617e-05,
+        "gap_to_optimum": -7.979754448371394
+      }
+    },
+    "feasibility_rule": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 1.587257131478313,
+        "median_obj": 1.6028001323208065,
+        "mean_obj": 1.6189687519881577,
+        "std_obj": 0.03440869649669045,
+        "mean_time": 4.092414498329163,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -7.974424195366829
+      }
+    },
+    "epsilon_constraint": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "epsilon_constraint",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 1.5930973568442184,
+        "median_obj": 1.606617743448527,
+        "mean_obj": 1.6122126671266368,
+        "std_obj": 0.018440783431581932,
+        "mean_time": 4.052015113830566,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -7.635821147714618
+      }
+    }
+  },
+  "pressure_vessel": {
+    "adaptive_penalty": {
+      "problem": "pressure_vessel",
+      "n_dim": 4,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": 3.4182124853134157,
+        "mean_violation": 1.3659927889301784,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "pressure_vessel",
+      "n_dim": 4,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 5817.574526351241,
+        "median_obj": 5888.6506132804025,
+        "mean_obj": 5950.361463327003,
+        "std_obj": 265.075404184535,
+        "mean_time": 3.7210887670516968,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -3.99582609809313
+      }
+    },
+    "epsilon_constraint": {
+      "problem": "pressure_vessel",
+      "n_dim": 4,
+      "constraint_method": "epsilon_constraint",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 5806.030773277631,
+        "median_obj": 5849.579001356493,
+        "mean_obj": 5849.082561947277,
+        "std_obj": 24.94802209211145,
+        "mean_time": 3.636852526664734,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -4.18632618924617
+      }
+    }
+  },
+  "spring": {
+    "adaptive_penalty": {
+      "problem": "spring",
+      "n_dim": 3,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 0.012697405834838004,
+        "median_obj": 0.01271905436274487,
+        "mean_obj": 0.01278692850616027,
+        "std_obj": 0.00014251205653117012,
+        "mean_time": 2.7856618881225588,
+        "mean_violation": 0.0,
+        "gap_to_optimum": 0.25586920519546197
+      }
+    },
+    "feasibility_rule": {
+      "problem": "spring",
+      "n_dim": 3,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 0.01267049910700095,
+        "median_obj": 0.012719054389822303,
+        "mean_obj": 0.012757325257677204,
+        "std_obj": 8.729292271808773e-05,
+        "mean_time": 2.7190857410430906,
+        "mean_violation": 0.0,
+        "gap_to_optimum": 0.04341971575957829
+      }
+    },
+    "epsilon_constraint": {
+      "problem": "spring",
+      "n_dim": 3,
+      "constraint_method": "epsilon_constraint",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 3,
+        "feasible_rate": 0.3,
+        "best_obj": 0.012699293153573774,
+        "median_obj": 0.012703414493869265,
+        "mean_obj": 0.012784870893077296,
+        "std_obj": 0.00011812295566566954,
+        "mean_time": 2.875132608413696,
+        "mean_violation": 6.218367920585166e-09,
+        "gap_to_optimum": 0.2707710507206846
+      }
+    }
+  },
+  "speed_reducer": {
+    "adaptive_penalty": {
+      "problem": "speed_reducer",
+      "n_dim": 7,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": 8.093842387199402,
+        "mean_violation": 1.4098577170910531,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "speed_reducer",
+      "n_dim": 7,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 2994.376054920109,
+        "median_obj": 2994.54090622094,
+        "mean_obj": 2995.2027682504367,
+        "std_obj": 1.460820266874029,
+        "mean_time": 6.982963252067566,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -0.001467565668519214
+      }
+    },
+    "epsilon_constraint": {
+      "problem": "speed_reducer",
+      "n_dim": 7,
+      "constraint_method": "epsilon_constraint",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 2994.400082991523,
+        "median_obj": 2994.5019254776826,
+        "mean_obj": 2994.8011349617473,
+        "std_obj": 0.5944801242703018,
+        "mean_time": 7.27027690410614,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -0.0006651374382024914
+      }
+    }
+  },
+  "three_bar_truss": {
+    "adaptive_penalty": {
+      "problem": "three_bar_truss",
+      "n_dim": 2,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": 2.958290767669678,
+        "mean_violation": 19.16450273162064,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "three_bar_truss",
+      "n_dim": 2,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 10,
+        "feasible_rate": 1.0,
+        "best_obj": 263.89584791592705,
+        "median_obj": 263.8961893196622,
+        "mean_obj": 263.89641761793246,
+        "std_obj": 0.0007692536187081558,
+        "mean_time": 2.996261739730835,
+        "mean_violation": 0.0,
+        "gap_to_optimum": -5.763030624390224e-05
+      }
+    },
+    "epsilon_constraint": {
+      "problem": "three_bar_truss",
+      "n_dim": 2,
+      "constraint_method": "epsilon_constraint",
+      "n_runs": 10,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": 3.006599450111389,
+        "mean_violation": 2.4673728260538043e-08,
+        "gap_to_optimum": null
+      }
+    }
+  }
+}

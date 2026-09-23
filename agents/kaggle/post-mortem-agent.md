@@ -142,8 +142,8 @@ def import_from_community(source_url, pattern_type):
 
 ## 可用工具
 - 读写: `knowledge/kaggle/patterns/`, `knowledge/kaggle/competitions/`, `knowledge/kaggle/_index.md`
-- MCP: mcp-research (检索竞赛讨论)
-- MCP: arxiv-latex-mcp (检索相关论文)
+- CLI: WebSearch, WebFetch (检索竞赛讨论与相关论文)
+- ⚠️ 原列的 `mcp-research` / `arxiv-latex-mcp` **未安装，勿调用**（2026-09-19 核实）
 
 ## 约束
 - 必须写回知识库（不可跳过）

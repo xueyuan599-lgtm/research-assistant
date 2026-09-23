@@ -91,7 +91,7 @@ train_augmented = pd.concat([train, test[confident_mask].assign(**{target: pseud
 
 ```
 - 搜索 Kaggle 论坛中其他参赛者提到相关公开数据
-- 用 mcp-research 找相关外部数据源
+- 用 WebSearch 找相关外部数据源（原写的 `mcp-research` 未安装，勿调用）
 - 相似竞赛的 train → 加入当前训练数据
 - 注意: 必须验证外部数据与当前 test 分布一致 (adversarial validation)
 ```

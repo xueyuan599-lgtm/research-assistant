@@ -89,3 +89,30 @@ def standardize_matrix(values, method='zscore'):
         span[span == 0] = 1
         return (matrix - matrix.min(axis=0)) / span
     raise ValueError("method 必须是 'zscore' 或 'minmax'")
+
+
+def five_number_summary(values):
+    """Return (min, Q1, median, Q3, max) with linear-interpolation quartiles."""
+    array = _finite_1d(values, minimum=2)
+    quartiles = np.percentile(array, [25, 50, 75])
+    return (float(array.min()), float(quartiles[0]), float(quartiles[1]),
+            float(quartiles[2]), float(array.max()))
+
+
+def density_profile(values, n=128, bw_method=None):
+    """Return `(grid, pdf)` of a Gaussian KDE over the value range."""
+    from scipy import stats
+
+    array = _finite_1d(values, minimum=2)
+    low, high = float(array.min()), float(array.max())
+    pad = 0.02 * (high - low) if high > low else 1.0
+    grid = np.linspace(low - pad, high + pad, n)
+    try:
+        pdf = stats.gaussian_kde(array, bw_method=bw_method)(grid)
+    except np.linalg.LinAlgError:
+        # Zero-variance group: KDE is singular; leave an all-zero profile so the
+        # caller can fall back to a thin-bar representation.
+        pdf = np.zeros(n)
+    pdf[grid < low] = 0.0
+    pdf[grid > high] = 0.0
+    return grid, pdf

@@ -278,4 +278,4 @@ Pipeline([("scl", StandardScaler()), ("clf", RandomForestClassifier())])
 
 - [scikit-learn 预处理参考](../scikit-learn/references/preprocessing.md)
 - [scikit-learn 流水线参考](../scikit-learn/references/pipelines_and_composition.md)
-- [00-data-preprocessing 管线规则](../../rules/00-data-preprocessing.md)
+- [数据预处理管线规则](../../../.claude/rules/07-data-preprocessing.md)

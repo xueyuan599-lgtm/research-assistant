@@ -1,0 +1,182 @@
+{
+  "welded_beam": {
+    "adaptive_penalty": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "welded_beam",
+      "n_dim": 4,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    }
+  },
+  "pressure_vessel": {
+    "adaptive_penalty": {
+      "problem": "pressure_vessel",
+      "n_dim": 4,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "pressure_vessel",
+      "n_dim": 4,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    }
+  },
+  "spring": {
+    "adaptive_penalty": {
+      "problem": "spring",
+      "n_dim": 3,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "spring",
+      "n_dim": 3,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    }
+  },
+  "speed_reducer": {
+    "adaptive_penalty": {
+      "problem": "speed_reducer",
+      "n_dim": 7,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "speed_reducer",
+      "n_dim": 7,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    }
+  },
+  "three_bar_truss": {
+    "adaptive_penalty": {
+      "problem": "three_bar_truss",
+      "n_dim": 2,
+      "constraint_method": "adaptive_penalty",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    },
+    "feasibility_rule": {
+      "problem": "three_bar_truss",
+      "n_dim": 2,
+      "constraint_method": "feasibility_rule",
+      "n_runs": 3,
+      "stats": {
+        "feasible_count": 0,
+        "feasible_rate": 0.0,
+        "best_obj": null,
+        "median_obj": null,
+        "mean_obj": null,
+        "std_obj": null,
+        "mean_time": NaN,
+        "mean_violation": NaN,
+        "gap_to_optimum": null
+      }
+    }
+  }
+}

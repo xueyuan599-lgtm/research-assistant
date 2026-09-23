@@ -95,7 +95,7 @@ const I18N_DATA = {
         {
           title: '对抗式 QA',
           titleEn: 'Adversarial QA',
-          desc: '独立的 Critic Agent 对结果进行严格审查。最多 5 轮循环，Critic 输出 APPROVED 则终止。',
+          desc: '独立的 Critic Agent 对结果进行严格审查。最多 3 轮循环，Critic 输出 APPROVED 则终止；仍不通过则交付当前最佳 + FAIL 清单升级。',
           agents: ['algorithm/validator-agent (critic)']
         },
         {

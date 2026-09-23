@@ -59,9 +59,7 @@
 ## 可用工具
 | 类别 | 工具 | 用途 |
 |------|------|------|
-| MCP | `latex-mcp-server` | LaTeX 编译、BibTeX 管理、DOI 解析 |
-| MCP | `mcp-overleaf` | Overleaf 项目操作、期刊合规规则 |
-| MCP | `arxiv-latex-mcp` | arXiv LaTeX 源码获取、公式解析 |
+| ⚠️ | ~~`latex-mcp-server` / `mcp-overleaf` / `arxiv-latex-mcp`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。本地排版能力见下方 CLI 行 |
 | CLI | pandoc, latexmk, xelatex | 本地排版编译 |
 | CLI | biber, bibtex | 参考文献处理 |
 

@@ -28,7 +28,14 @@ except Exception:
 # 默认上下文窗口（Claude Code 典型值，可通过环境变量覆盖）
 MAX_CONTEXT_TOKENS = int(os.environ.get("MAX_CONTEXT_TOKENS", "1000000"))
 # 饱和度阈值（超过此比例触发切割）
-SATURATION_THRESHOLD = float(os.environ.get("SATURATION_THRESHOLD", "0.50"))
+#
+# 2026-09 下调 0.50 → 0.30。原值意味着要烧掉 50 万 token 才报警——
+# 等它响时预算已经花完了。0.30 在 1M 窗口下约 30 万处提示，留出反应余量。
+SATURATION_THRESHOLD = float(os.environ.get("SATURATION_THRESHOLD", "0.30"))
+
+# 单环节预算（token）。逐环节停止模式下，真正该防的是单个环节跑飞，
+# 而不是整场上下文塞满。超预算时主控应在状态记录里标出并考虑压缩该步输出。
+STAGE_BUDGET_TOKENS = int(os.environ.get("STAGE_BUDGET_TOKENS", "80000"))
 
 
 def estimate_tokens(text: str) -> int:
@@ -90,6 +97,26 @@ def check_saturation(checkpoint_dir: str = "outputs/checkpoints/") -> tuple[bool
     consumed = total_consumed_tokens(checkpoint_dir)
     pct = consumed / MAX_CONTEXT_TOKENS if MAX_CONTEXT_TOKENS > 0 else 0
     return pct >= SATURATION_THRESHOLD, pct
+
+
+def check_stage_budget(
+    stage: str, token_count: int, budget: int | None = None
+) -> tuple[bool, float]:
+    """检查单个环节是否超出预算。
+
+    逐环节停止模式下，单环节跑飞比整场塞满更值得防。主控在环节收尾时调用：
+
+        ok, ratio = check_stage_budget("S② 问题一建模求解", tokens)
+        # ratio > 1.0 → 在节点状态记录里标出，并考虑压缩该步输出
+
+    Returns:
+        (over_budget, ratio)  ratio = token_count / budget
+    """
+    budget = budget if budget is not None else STAGE_BUDGET_TOKENS
+    if budget <= 0:
+        return False, 0.0
+    ratio = token_count / budget
+    return ratio > 1.0, ratio
 
 
 def auto_split(

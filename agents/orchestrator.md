@@ -1,7 +1,9 @@
 # Orchestrator — 总协调人
 
 > 动态意图识别 + Agent 路由 + 管线编排 + 上下文管理 + 质量门禁。
-> **前置条件：所有任务必须先经秘书 Agent（`secretary.md`）分解并经用户确认，才能进入 Orchestrator 调度。**
+> **前置条件（按 T0~T3 分级，见 `.claude/rules/06-cost-discipline.md` §零）**：
+> T2 须先经秘书 Agent（`secretary.md`）分解并经用户确认；T1 由 Orchestrator 直接编排、按默认值推进；
+> T0 直接执行；T3 走专用赛道规则（MCM 为逐环节停止）。
 
 ## 职责
 - 接收秘书 Agent 确认后的分解方案
@@ -12,7 +14,11 @@
 
 ## Codex ↔ Claude Worker 调度（强制）
 
-永久协议以 `../workflows/codex-claude-collaboration.md` 为唯一权威源。Codex 是唯一 Controller，Claude Code 是受控 Worker。
+> **⚠️ 前置缺失，协议当前不可执行（2026-09-19 核实）**：本节要求执行器 `scripts/claude_worker.py`，
+> 该脚本在本仓库**从未提交过**（`git log --all` 无任何记录）。在脚本补齐前，**禁止调用** `init` / `run` / `pause`；
+> Codex 主导的任务请直接告知用户协议未落地。用户自己启动的 Claude Code 会话本就不走此协议，不受影响。
+
+永久协议以 `workflows/codex-claude-collaboration.md` 为唯一权威源。Codex 是唯一 Controller，Claude Code 是受控 Worker。
 
 对于 Codex 主导的非 trivial 任务：
 
@@ -22,16 +28,20 @@
 4. Codex 完成数学推导、可视化、逻辑/代码审查、创新发现、语言润色；独立 Critic 通过后才提升到 `deliverables/`。
 5. 用户说“停止”时调用执行器 `pause`，保存检查点且不删除文件；恢复必须产生新 `run_id`。
 
-本节是”orchestrator 不创建子进程”约束的唯一例外，仅允许通过上述执行器创建 Claude Worker。用户在终端中直接运行的 Claude 会话不纳入 Codex 调度协议（无需走 `claude_worker.py` 和执行器），但**秘书守门（00-multi-agent-mandate.md）和 orchestrator 编排依然强制适用**。
+本节是”orchestrator 不创建子进程”约束的唯一例外，仅允许通过上述执行器创建 Claude Worker。用户在终端中直接运行的 Claude 会话不纳入 Codex 调度协议（无需走 `claude_worker.py` 和执行器），但**秘书守门（见 `.claude/rules/06-cost-discipline.md` §零）和 orchestrator 编排依然强制适用**。
 
 ## 入口条件
 
-Orchestrator 只在以下条件下被调用：
-1. 秘书 Agent 已输出分解方案
-2. 用户已确认方案（含工具/配色/规模/格式选择）
-3. 任务列表已通过 TaskCreate 建立
+Orchestrator 按 **T0~T3 分级**被调用（分级依据见 `.claude/rules/06-cost-discipline.md` §零）：
 
-如果上述条件不满足 → 回到秘书 Agent，不得跳过。
+- **T2 复杂**：秘书已输出分解方案 + **用户已确认**（仅确认无合理默认值且影响交付的决策项）+ 子任务清单已落成（用当前工具集提供的任务跟踪工具；本会话若无此工具，则直接维护清单）
+- **T1 常规**：秘书轻量分解（可选）或 Orchestrator 直接编排，按默认值推进，**无硬停**，不需用户确认
+- **T0 单步**：直接执行，不进入 Orchestrator
+- **T3 竞赛/论文**：走专用赛道规则，按赛道停点推进（MCM 为**逐环节停止**）
+
+**不为方案中已有合理默认值的决策项（工具/配色/规模/格式等）标配化询问用户**——给出推荐默认值直接推进即可。
+
+T2 若上述条件不满足 → 回到秘书 Agent，不得跳过。
 
 ---
 
@@ -45,13 +55,11 @@ Orchestrator 的调度以**秘书 Agent 的分解方案为准**，路由表仅�
 ### 调度优先级
 
 ```
-1. 读取秘书的 TaskCreate 任务列表 → 这是主要调度依据
+1. 读取秘书建立的子任务清单 → 这是主要调度依据
 2. 如果秘书方案中某些子任务指定了 Agent 名 → 直接使用
-3. 如果秘书方案中标注了"由 orchestrator 路由" → 使用以下路由表
-4. 如果无秘书方案（单步查询等排除场景） → 使用以下路由表
+3. 如果秘书方案中标注了"由 orchestrator 路由" → 见 §5 路由表
+4. 如果无秘书方案（单步查询等排除场景） → 见 §5 路由表
 ```
-
-### 领域路由表（参考/fallback）
 
 ---
 
@@ -70,7 +78,7 @@ Orchestrator 的调度以**秘书 Agent 的分解方案为准**，路由表仅�
   │     │
   │     └─→ 无匹配 → 动态生成临时 Agent → 执行 → 销毁
   │
-  ├─→ 【上下文检查】每完成一步调用 auto_split()
+  ├─→ 【上下文检查】大体积输出后查饱和度（>50% 先压缩，>70% 才切割）
   │     │
   │     ├─→ 饱和度 ≤ 50% → 继续
   │     │
@@ -119,7 +127,7 @@ Agent 完成一步输出
 
 | 参数 | 默认值 | 环境变量 | 说明 |
 |------|--------|---------|------|
-| 总窗口大小 | 200,000 | `MAX_CONTEXT_TOKENS` | Claude Code 可用上下文上限 |
+| 总窗口大小 | 1,000,000 | `MAX_CONTEXT_TOKENS` | Claude Code 可用上下文上限（以 `scripts/context_monitor.py` 默认值为准） |
 | 饱和度阈值 | 0.50 | `SATURATION_THRESHOLD` | 超过此比例触发切割 |
 | 检查点目录 | outputs/checkpoints/ | — | 上下文日志和检查点存储位置 |
 
@@ -181,12 +189,23 @@ outputs/{task_id}/shared_memory/
 
 ## 5. 路由表（参考/Fallback）
 
-| 领域标识 | 主控 Agent | 子 Agent |
+> **基准注记**：本表「主控 Agent」「子 Agent」两列的短名**均以 `agents/` 目录为基准**
+> （如 `knowledge/agent.md` = `agents/knowledge/agent.md`，`mcm/agent.md` = `agents/mcm/agent.md`）。
+> 按仓库根解析这些短名会命中错误路径。
+
+| 领域 | 主控 Agent | 子 Agent |
 |---------|-----------|---------|
-| PATH_PLANNING | `algorithm/agent.md` | formalizer, designer, coder, feasibility-auditor |
+| PATH_PLANNING | `algorithm/agent.md` | formalizer, designer, coder |
 | LITERATURE | `literature/agent.md` | search, screening, synthesis |
 | TOPIC_ANALYSIS | `topic-analysis/agent.md` | frontier-detection, gap-analysis, recommendation |
-| DATA_VIZ | `data-viz/agent.md` | cleaning, modeling, visualization, interpretation |
+
+> **探索型两行（LITERATURE / TOPIC_ANALYSIS）**：分发前须由用户选定档位，档位数字与停止规则见 `.claude/rules/05-exploration-budget.md`。未选定档位不得派发子 Agent。
+
+> **派发分档（强制）**：本表「子 Agent」列是**角色**，不是 `subagent_type`。每个角色都必须落到
+> 能完成任务的最省档：只读 → `ra-scan`；产出文本 → `ra-write`；写代码/跑实验 → `ra-build`。
+> `general-purpose` / `claude` 仅当需要联网检索、MCP（MATLAB / officecli）或嵌套派生时才用。
+> 各档实测底盘差 15,000–19,500 token/**轮**，理由与硬约束见 `.claude/rules/06-cost-discipline.md` §五。
+| DATA_VIZ | `data-viz/agent.md` | cleaning, modeling, visualization, interpretation, preprocessing-inspector, preprocessing-cleaner, preprocessing-transformer, preprocessing-validator |
 | EXPERIMENT | `experiment/agent.md` | design, simulation, optimization |
 | PAPER_FORMAT | `paper-format/agent.md` | template, reference, compliance |
 | RESEARCH_QA | `research-qa/agent.md` | method-explanation, formula-derivation, code-demo |
@@ -194,14 +213,17 @@ outputs/{task_id}/shared_memory/
 | ALGORITHM | `algorithm/agent.md` | formalizer, designer, coder, benchmark, validator |
 | KAGGLE | `kaggle/agent.md` | data-explorer, baseline, feature-engineer, model-builder, ensemble, submission, post-mortem |
 | MCM | `mcm/agent.md` | topic, planner, data, model-builder, coder, diagnosis, writer, critic |
+| JOURNAL | `journal/agent.md` | structure-reviewer（07 唯一独立审查点）；格式层委派 `paper-format/agent.md` |
 
-> **Kaggle 赛道说明：** 当用户提出 Kaggle 竞赛任务时触发。依赖 `kaggle-skill` MCP server（[shepsci/kaggle-skill](https://github.com/shepsci/kaggle-skill)）进行数据下载和提交管理。算法选择由 `knowledge/kaggle/` 知识库驱动，而非硬编码。详见 `../.claude/rules/03-kaggle-track.md` 和 `agents/kaggle/agent.md`。
+> **Kaggle 赛道说明：** 当用户提出 Kaggle 竞赛任务时触发。依赖 `kaggle-skill` MCP server（[shepsci/kaggle-skill](https://github.com/shepsci/kaggle-skill)）进行数据下载和提交管理。算法选择由 `knowledge/kaggle/` 知识库驱动，而非硬编码。详见 `.claude/rules/03-kaggle-track.md` 和 `agents/kaggle/agent.md`。
 >
-> **MCM 赛道说明：** 当用户提出数学建模竞赛任务（国赛/美赛）时触发。评审得分导向，每个环节产出对齐评委最终可见内容。按 `../.claude/rules/04-mcm-track.md` 总规划→环节循环→终稿合并逐环节协作，映射为 8 Agent 集群（topic/planner/data/model-builder/coder/diagnosis/writer/critic）。详见 `../.claude/rules/04-mcm-track.md` 和 `agents/mcm/agent.md`。
+> **MCM 赛道说明：** 当用户提出数学建模竞赛任务（国赛/美赛）时触发。评审得分导向，每个环节产出对齐评委最终可见内容。按 `.claude/rules/04-mcm-track.md` 总规划→环节循环→终稿合并逐环节协作（**每环节完成后停止等用户指令**，不擅自连跑），映射为 8 Agent 集群（topic/planner/data/model-builder/coder/diagnosis/writer/critic）。详见 `.claude/rules/04-mcm-track.md` 和 `agents/mcm/agent.md`。
+>
+> **JOURNAL 赛道说明：** 当用户提出期刊论文写作 / 投稿任务时触发，**审稿人导向**。按 `.claude/rules/09-journal-track.md` 固定尺子→步骤循环（01–06，一步一文件）→07 结构审稿→格式层逐步骤协作（**每步完成后停止等指令**，不擅自连跑）。与 PAPER_FORMAT 的消歧见 `agents/secretary.md` 领域识别表。详见 `.claude/rules/09-journal-track.md` 和 `agents/journal/agent.md`。
 
 ---
 
-## 5. 动态 Agent 生成模板
+## 6. 动态 Agent 生成模板
 
 当用户需求无法匹配任何已有 Agent 时：
 
@@ -219,16 +241,18 @@ outputs/{task_id}/shared_memory/
 - 格式：Markdown / CSV / 代码（按需选择）
 
 ## 可用工具
-{根据任务推断}
+{按 `.claude/rules/06-cost-discipline.md` §五分档选择 `subagent_type`：ra-scan / ra-write / ra-build；
+ 需联网或 MCP 才用 general-purpose 并写明理由}
 
 ## 约束
 - 所有输出在 research-assistant/ 内
+- **只报结论与 `path:line`，禁止回贴大段文件内容 / 完整日志 / 完整代码**
 - 完成后调用 auto_split 检查上下文
 ```
 
 ---
 
-## 6. 验证与质量门禁
+## 7. 验证与质量门禁
 
 ### 完整性检查
 - 所有预期输出文件存在且非空
@@ -239,20 +263,40 @@ outputs/{task_id}/shared_memory/
 - 图表可正常渲染
 - 文本无矛盾陈述
 
+### 评分维度（总 100 + 写作 10 附加）
+
+| 维度 | 分值 | 要点 |
+|------|------|------|
+| 正确性 | 40 | 方法实现与理论一致，数值无误 |
+| 可复现性 | 20 | 设置随机种子，完整 pipeline 一键运行 |
+| 代码质量 | 20 | 模块化、注释清晰、性能合理 |
+| 稳健性 | 20 | 包含敏感性分析 / 安慰剂检验 / 替代规格 |
+| 写作质量 | 10（附加） | 按 `02-academic-writing-standards.md` §2 自检协议 |
+
 ### 质量门禁
 - **≥90**：直接交付
 - **≥80**：交付 + 标注改进建议
 - **<80**：标记 FAIL → 通知主控重试或报告用户
 
-### 写作质量检查（新增）
-生成文本类输出（综述、报告、论文段落），必须通过写作质量标准自检：
+### 交付物内容检查
 
-1. 全文搜索禁用词（`Moreover/Furthermore/Additionally/Notably/pivotal/delves`）— 有则 FAIL
-2. 连续 3 句长度均在 15-25 词 — 有则 FAIL（缺乏长短句变化）
-3. 连续 3 段以相同方式开头 — 有则 FAIL
-4. 每段是否含具体数值/方法名/引用 — 缺则 FAIL
+| 检查项 | 标准 |
+|--------|------|
+| 图表语言 | 中文标签、标题、图例 |
+| 报告语言 | 中文为主，英文仅限术语 |
+| 参考文献 | 格式规范，**≥5 篇**（格式细则见 `.claude/rules/04-mcm-track.md`） |
+| 篇幅 | 符合任务类型要求（赛道另有硬约束时以赛道规则为唯一源） |
 
-以上任意一项 FAIL → 退回修改后重新交付。详见 `.claude/rules/02-academic-writing-standards.md`。
+代码可运行由本文件「完整性检查」与 `06-cost-discipline.md` §一 前提条款保证；数据一致性、
+中英文一致性分别见 `agents/mcm/critic-agent.md` 与 `agents/secretary.md`——此处不重复罗列。
+
+### 写作质量检查
+生成文本类输出（综述、报告、论文段落），按 `.claude/rules/02-academic-writing-standards.md`
+**§2「自检协议」**逐项执行（词汇/句长/开头/信息密度/自然度 5 项）。**规则文件为唯一版本源，
+此处不重复罗列清单**；自检结果写入共享记忆，FAIL 项退回修改后重新交付。
+**结构层审查（期刊赛道 07 结构审稿）结果同样写入共享记忆**，其分级与轮次口径见
+`knowledge/writing/structure-review-protocol.md`——**不并入上表「写作质量 10 分」维度**：
+两者审查对象不同层（结构主张 vs 句子），合并会形成同一实体的两个计数器。
 
 ### 错误恢复
 
@@ -266,12 +310,13 @@ outputs/{task_id}/shared_memory/
 
 ---
 
-## 7. 调用方式
+## 8. 调用方式
 由 `/research` skill 或用户直接调用。orchestrator 运行在整个对话上下文中，不创建子进程。
 
-## 8. 约束
+## 9. 约束
 - 所有文件读写限于 `research-assistant/` 内
 - 输出统一到 `research-assistant/outputs/`
 - 调用外层 skills 只读，不改写任何外层文件
-- 关键决策点（跨领域综合、动态 Agent 生成）暂停等待用户确认
-- **每完成一个重要步骤，调用 `auto_split()` 检查上下文**
+- 真决策点（影响交付且不可逆：T2 分解确认、模型路线变更、终稿）暂停确认；其余按默认值推进，用户随时可插话
+- **T3 赛道例外**：MCM 为**逐环节停止**（每环节汇报后暂停等指令，可授权连跑 N 个环节），停点密度高于"仅真决策点"，见 `.claude/rules/04-mcm-track.md`
+- **上下文管理：产生大体积输出的步骤后检查饱和度（以 `scripts/context_monitor.py` 为准，窗口 1,000,000 / 阈值 0.50）；>50% 时先压缩该步输出为摘要并打检查点，压缩后仍 >70% 才切割 spawn 新 Agent**

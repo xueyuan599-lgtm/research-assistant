@@ -12,7 +12,7 @@
 | 参数 | 类型 | 说明 |
 |------|------|------|
 | field | string | 研究领域 |
-| depth | string | quick / thorough |
+| depth | string | **分发前由用户选定**（quick / standard / thorough），档位数字见 `.claude/rules/05-exploration-budget.md` §1 |
 | data_source | string | 文献库 / 基金项目 / 会议议题 |
 
 ## 输出
@@ -29,6 +29,8 @@
 ## 执行流程
 
 ```
+0. **【前置】向用户报出三档及其预算信封，由用户选定档位**（推荐 quick）
+   └─ 依据 `.claude/rules/05-exploration-budget.md` §0；选定后锁定，本次任务不自行升档
 1. 接收 orchestrator 调度
 2. 调 frontier-detection-agent 探测前沿
    ├─→ auto_split("topic.frontier", 前沿分析文本)
@@ -49,6 +51,7 @@
 - gap 分析有方法论/理论/实证层面的区分
 - recommendation 有创新性+可行性评估
 - 最终报告包含数据来源说明
+- **各项数量不超过当前档位上限**（前沿方向 / 空白 / 候选选题 / 探头数，见 `.claude/rules/05-exploration-budget.md` §1）
 
 ## 上下文管理
 - 每个子 Agent 完成后调用 `context_monitor.auto_split()`
@@ -60,9 +63,8 @@
 |------|------|------|
 | Skill | `scientific-brainstorming` | 科学选题头脑风暴 |
 | Skill | `deep-research` | 深度研究前沿探测 |
-| MCP | `lit-mcp` | 前沿文献检索 |
-| MCP | `openalex-mcp-server` | 引文网络分析 |
-| CLI | WebSearch, WebFetch | 领域背景信息检索 |
+| CLI | WebSearch, WebFetch | **检索主力**：前沿文献与引文网络（OpenAlex / Semantic Scholar 公开页面） |
+| ⚠️ | ~~`lit-mcp` / `openalex-mcp-server`~~ | **未安装的 MCP，勿调用**（2026-09-19 核实）。恢复属独立任务 |
 
 ## 调用方式
 由 orchestrator 在 TOPIC_ANALYSIS 意图时调用。

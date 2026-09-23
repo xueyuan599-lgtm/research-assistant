@@ -76,7 +76,7 @@
 |------|------|------|
 | CLI | Python (numpy, scipy, sklearn) | 算法原型、测试、基准 |
 | CLI | R (可选) | 统计类算法实现 |
-| MCP | arxiv-latex-mcp | 检索相关文献参考 |
+| CLI | WebSearch, WebFetch | 检索相关文献参考（原写的 `arxiv-latex-mcp` **未安装，勿调用**） |
 | MCP | matlab | 工程/优化类算法验证 |
 | Skill | `academic-paper` | 算法描述文档撰写 |
 

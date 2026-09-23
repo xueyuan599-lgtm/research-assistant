@@ -58,7 +58,9 @@ ROUND_MAX = int(os.environ.get("ROUND_MAX", "3"))
 
 # 终稿自收为 1 轮（critic 一次性输出全表 → 修复后只复核 FAIL → 仍不通过即升级团队）。
 # 硬编码，不随环境变量放宽：这是「自收更严」，不是可协商项。
-TARGET_MAX_FIXED = {"N7": 1}
+# S7 同理：期刊赛道的结构审稿三判据一次跑完记为 1 轮，FAIL 才按判据分轮（S7-1/S7-2/S7-3）。
+# 口径唯一源见 knowledge/writing/structure-review-protocol.md §3。
+TARGET_MAX_FIXED = {"N7": 1, "S7": 1}
 
 LEDGER_NAME = "复核轮次账.jsonl"
 RECORD_NAME = "节点状态记录.md"

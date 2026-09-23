@@ -13,6 +13,7 @@
 | 实验流程优化 | 方案设计、参数调优、敏感性分析 | 模拟实验自动化 pipeline |
 | 算法创造 | 研究想法到新算法：形式化→设计→实现→基准→验证入库 | 设计一个异质性处理效应稳健估计量 |
 | 数学建模竞赛 | 选题评估→审题→模型→代码→论文全流程 | "国赛C题农作物种植策略" |
+| 期刊论文结构写作 | 定尺子→标题→摘要→引言→方法→证据映射→讨论→结构审稿 | "投《管理世界》，按它的要求改这篇稿子" |
 | 论文格式与排版 | 模板适配、参考文献格式化、图表规范 | 期刊模板一键排版、LaTeX 编译辅助 |
 
 ## 使用方式
@@ -21,10 +22,11 @@
 /implement <研究想法>               # 想法 → 顶刊级实现完整流水线
 /preprocess <数据>                  # 数据预处理（表格/时间序列/函数型/面板）
 /pathplan <问题>                    # 路径规划诊断-松弛-修复（求解器报 INFEASIBLE 时）
+/paper <目标期刊与材料>             # 期刊论文结构写作（定尺子→逐步骤→结构审稿）
 /research-prompt-refiner <提示词>   # 科研提示词优化（强制前置检索增强）
 ```
 
-> 5 个命令定义在 `.claude/commands/`，该目录**尚未入库**——见 `## 架构` 末的「入库状态提醒」。
+> 6 个命令定义在 `.claude/commands/`，已随仓库提交（2026-09-20）——见 `## 架构` 末的「入库完整性提醒」。
 
 <!-- SHARED-BLOCK task-tiers v1 — 本节「分级要点」与 CLAUDE.md 同源，实质须一致（措辞可不逐字同）；改动须同批两侧落地 -->
 ## ⚠️ 任务启动流程（分级执行）
@@ -47,7 +49,7 @@ research-assistant/
 ├── AGENTS.md                       # 跨工具架构说明（Codex 等读取）
 ├── README.md                       # 仓库说明与团队交接
 ├── .claude/
-│   ├── rules/          (10)        # 行为规范（唯一规则层；常驻/按需见各文件 frontmatter）
+│   ├── rules/          (11)        # 行为规范（唯一规则层；常驻/按需见各文件 frontmatter）
 │   │   ├── 00-scope-boundary.md          # 作用域沙箱（不污染外层）
 │   │   ├── 01-agent-standards.md         # Agent 编写规范 + 引用与单一源约定
 │   │   ├── 02-academic-writing-standards.md  # 学术写作质量标准
@@ -57,13 +59,14 @@ research-assistant/
 │   │   ├── 05-exploration-budget.md      # 探索型环节预算闸门
 │   │   ├── 06-cost-discipline.md         # 任务分级 + 检验分层 + 产出纪律（跨赛道唯一源）
 │   │   ├── 07-data-preprocessing.md      # 数据预处理流水线（按需）
-│   │   └── 08-tool-selection.md          # 跨领域工具选型
+│   │   ├── 08-tool-selection.md          # 跨领域工具选型
+│   │   └── 09-journal-track.md           # 期刊论文结构写作赛道（薄壳，按需）
 │   ├── agents/         (3)         # 子 Agent 工具分档定义（ra-scan / ra-write / ra-build）
-│   ├── commands/       (5)         # 斜杠命令：research · implement · preprocess · pathplan · research-prompt-refiner
+│   ├── commands/       (6)         # 斜杠命令：research · implement · preprocess · pathplan · paper · research-prompt-refiner
 │   ├── skills/         (17)        # 专业技能（2026-09-20 由父层迁入）
 │   ├── settings.template.json      # 配置模板（入库）
 │   └── settings.local.json         # 本地配置（.gitignore，不入库）
-├── agents/             (56 个 .md) # 科研智能体（核心）
+├── agents/             (58 个 .md) # 科研智能体（核心）
 │   ├── secretary.md                # 任务分解守门人 — 所有任务的唯一入口
 │   ├── orchestrator.md             # 总协调人 — 意图识别 + 管线编排
 │   ├── shared-memory-template.md   # 跨 Agent 共享记忆模板
@@ -77,19 +80,20 @@ research-assistant/
 │   ├── research-qa/    (4)         # 科研知识问答：主控 + method-explanation / formula-derivation / code-demo
 │   ├── kaggle/         (8)         # Kaggle 竞赛：主控 + data-explorer / baseline / feature-engineer / model-builder / ensemble / submission / post-mortem
 │   ├── mcm/            (9)         # 数学建模国赛：主控 + topic / planner / data / model-builder / coder / diagnosis / writer / critic
+│   ├── journal/        (2)         # 期刊论文结构写作：主控 + structure-reviewer（07 结构审稿）
 │   └── knowledge/      (1)         # 知识检索
 ├── scripts/            (12)        # 辅助脚本；核心 = round_gate.py / context_monitor.py / checkpoint.py / build_appendix.py
 ├── workflows/          (3)         # 工作流协议
 │   ├── dynamic-workflow.md         # 动态管线协议
 │   ├── codex-claude-collaboration.md  # Codex ↔ Claude Worker 调度协议（执行器缺失，见 secretary.md ⚠️）
 │   └── schemas/                    # 交接 JSON Schema
-├── knowledge/          (127 个 .md) # 知识库（按需读，不预加载）
+├── knowledge/          (130 个 .md) # 知识库（按需读，不预加载）
 │   ├── _index.md                   # 知识库索引
 │   ├── algorithm-repository/ (84)  # 顶刊算法实现库
 │   ├── algorithms/           (17)  # 新算法条目（index + physarum-network-optimizer 等）
 │   ├── kaggle/               (12)  # 竞赛模式库
 │   ├── mcm/                  (10)  # 数学建模知识库（含 templates/format2026）
-│   ├── writing/               (1)  # 正面写作范式 academic-writing-patterns.md
+│   ├── writing/               (4)  # 写作判据：正面范式 / 01–06 论证结构 / 期刊尺子 / 07 结构审稿口径
 │   ├── project-experience/    (1)  # 项目经验沉淀
 │   ├── outputs/                    # PNO 实验 JSON（历史产物，非知识条目）
 │   └── optimization-validation-framework.md
@@ -104,6 +108,10 @@ research-assistant/
 `.claude/rules/` 5 个文件（含 `06-cost-discipline.md` 这一跨赛道唯一源）· `.claude/skills/`(17) ·
 `.claude/agents/`(3 档) · `.claude/commands/`(5) · `scripts/round_gate.py` · `scripts/build_appendix.py` ·
 `workflows/codex-claude-collaboration.md`。改动本目录结构时请复核本节。
+
+2026-09-21 新增期刊论文结构写作赛道（`.claude/rules/09-journal-track.md` · `agents/journal/`(2) ·
+`.claude/commands/paper.md` · `knowledge/writing/` 3 个判据文件），同样须随仓库提交——
+**3 个判据文件是 00–07 各步的唯一源，缺任一个则该步判据静默降级为「无标准」**。
 
 ## 工作原则
 - **动态管线**：不预设固定流水线，根据输入意图临时组装智能体

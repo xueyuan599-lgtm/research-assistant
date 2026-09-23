@@ -33,7 +33,7 @@ outputs/{task_id}/shared_memory/
 ```json
 {
   "task_id": "cumcm2024c",
-  "agent_name": "data-cleaner",
+  "agent_name": "preprocessing-cleaner",
   "timestamp": "2026-07-05T10:30:00",
   "status": "completed",
   "key_findings": [
@@ -78,15 +78,15 @@ outputs/{task_id}/shared_memory/
   "created": "2026-07-05T10:00:00",
   "updated": "2026-07-05T11:30:00",
   "agents": {
-    "data-inspector": {
-      "file": "data-inspector.json",
+    "preprocessing-inspector": {
+      "file": "preprocessing-inspector.json",
       "upstream": [],
-      "downstream": ["data-cleaner"],
+      "downstream": ["preprocessing-cleaner"],
       "status": "completed"
     },
-    "data-cleaner": {
-      "file": "data-cleaner.json",
-      "upstream": ["data-inspector"],
+    "preprocessing-cleaner": {
+      "file": "preprocessing-cleaner.json",
+      "upstream": ["preprocessing-inspector"],
       "downstream": ["modeler"],
       "status": "completed"
     }
@@ -103,8 +103,8 @@ outputs/{task_id}/shared_memory/
 
 | 时间 | Agent | 关键发现数 | 警告数 | 数据产物 | 状态 |
 |------|-------|-----------|--------|---------|------|
-| 10:00 | data-inspector | 3 | 1 | raw/data.csv | completed |
-| 10:15 | data-cleaner | 3 | 2 | clean/cleaned_data.csv | completed |
+| 10:00 | preprocessing-inspector | 3 | 1 | raw/data.csv | completed |
+| 10:15 | preprocessing-cleaner | 3 | 2 | clean/cleaned_data.csv | completed |
 ```
 
 ---

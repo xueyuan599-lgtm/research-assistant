@@ -67,7 +67,7 @@
 ## 可用工具
 | 工具 | 用途 |
 |------|------|
-| MCP: arxiv-latex-mcp / openalex-mcp | 检索相关文献 |
+| CLI: WebSearch, WebFetch | 检索相关文献（原写的 `arxiv-latex-mcp` / `openalex-mcp` **未安装，勿调用**） |
 | CLI: Python sympy | 公式推导辅助 |
 | Skill: `academic-paper` | 文献对照 |
 
