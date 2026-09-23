@@ -10,14 +10,26 @@
 | 类别 | 条目 |
 |------|------|
 | 集成学习 | [Random Forest](random-forest.md), [XGBoost / LightGBM](xgboost.md) |
-| 群智能优化 | [Gray Langurs Optimizer (GLO)](gray-langurs-optimizer.md), [Physarum Network Optimizer (PNO)](physarum-network-optimizer.md) |
+| 群智能优化 | [Gray Langurs Optimizer (GLO)](gray-langurs-optimizer.md), [Physarum Network Optimizer (PNO)](../algorithms/physarum-network-optimizer/README.md) |
 | 因果推断 | [Differences-in-Differences (DID)](did.md), [RDD 断点回归](rdd.md) |
 | 时间序列 | [ARIMA/SARIMA](arima.md), [Prophet](prophet.md), [GARCH](garch.md), [VAR/VEC](var.md), [State Space / Kalman](state-space.md) |
 | 统计建模 | [Lasso / Ridge / ElasticNet](lasso-ridge-elasticnet.md), [MICE 多重插补](mice.md) |
 | 机器学习 | [SVM (SVC/SVR)](svm.md), [K-Means / DBSCAN](clustering.md), [PCA / t-SNE / UMAP](dimensionality-reduction.md), [SHAP 可解释性](shap.md), [Tabular vs Deep 选型](tabular-vs-deep.md) |
-| 函数型数据分析 | [FPCA / 函数型回归](fpca.md), [残差校正混合函数型集成 (AHFE)](functional-ensemble-regression.md) |
+| 函数型数据分析 | [FPCA / 函数型回归](fpca.md), [残差校正混合函数型集成 (AHFE)](../algorithms/functional-ensemble-regression/README.md) |
 | 贝叶斯方法 | [MCMC (MH/Gibbs/HMC)](mcmc.md), [Gaussian Process](gaussian-process.md) |
 | 深度学习 | [LSTM/GRU](lstm.md), [Transformer](transformer.md), [Autoencoder / VAE](autoencoder.md), [MLP 基础](mlp-basics.md) |
+
+> **交叉引用说明（2026-09-23）**：本表含 **2 个自创方法**，实体均在自创算法库 `../algorithms/`，
+> 此处只保留反向索引链接以维持标签检索命中：
+>
+> - **AHFE（残差校正混合函数型集成）** → `../algorithms/functional-ensemble-regression/README.md`
+>   （标签 `functional` / `ensemble-learning` / `regression`）
+> - **PNO-GWO（黏菌管网络-灰狼混合优化）** → `../algorithms/physarum-network-optimizer/README.md`
+>   （标签 `heuristic` / `optimization` / `graph`）
+>
+> 两者原在本库各有一份**内容重复**的引用文档。重复已实际漂移出错误——同一张基准表里 Rastrigin 的
+> 0.89× 退化被标成"持平"（两份副本都错）——故于 2026-09-23 删除本库副本，标签随算法本体迁入其
+> README 的 frontmatter。本库其余 **80 个条目**均为顶刊提取的已有方法。
 
 ### 2021-2026 顶刊前沿方法
 
@@ -48,26 +60,26 @@
 | `connectivity` | [geometric-percolation-connectivity](geometric-percolation-connectivity.md) |
 | `deep-learning` | [alphafold3](alphafold3-biomolecular-structure-prediction.md), [autoencoder](autoencoder.md), [autoencoder-lstm-pinn](autoencoder-lstm-pinn.md), [causal-rep-learning](causal-representation-learning.md), [cell2location](cell2location-spatial-deconvolution.md), [cellrank](cellrank-trajectory-inference.md), [cs-lstms](contextual-seasonal-lstms-anomaly-detection.md), [data-model-hybrid-survey](data-model-hybrid-driven-survey.md), [deepiv](deep-instrumental-variables.md), [dim-reduction](dimensionality-reduction.md), [dpo](direct-preference-optimization.md), [dual-level-pi](dual-level-physics-informed-forecasting.md), [enformer](enformer-gene-expression-prediction.md), [flashattention](flashattention-io-aware-attention.md), [flow-matching](flow-matching-generative-modeling.md), [fno](fourier-neural-operator.md), [fusion-convlstm](fusion-convlstm.md), [geneformer](geneformer-single-cell-foundation-model.md), [hybrid-physics-ml](hybrid-physics-ml-taxonomy.md), [l-shape-spatial-branching](learning-for-spatial-branching.md), [lstm-pinn-battery](lstm-pinn-battery-soh.md), [lstm-pinn-seismic](lstm-pinn-seismic-response.md), [lstm](lstm.md), [lstm-dln](lstm-dln-nonparametric-cdf-forecasting.md), [mamba](mamba-selective-state-space-model.md), [mae](masked-autoencoder-vision.md), [mdstft](mdstft.md), [mlp-basics](mlp-basics.md), [optimizing-ensemble-nn](optimizing-ensemble-neural-networks.md), [pi-lstm](physics-informed-lstm.md), [proteinmpnn](proteinmpnn-sequence-design.md), [scvi](scvi-single-cell-deep-generative-model.md), [sam](segment-anything-model.md), [tabular-vs-deep](tabular-vs-deep.md), [tcn-transformer-lstm](tcn-transformer-lstm-ttl.md), [tsb](tsb-transformer-stacked-bilstm-spectrum-prediction.md), [tic-fusionnet](tic-fusionnet.md), [transformer](transformer.md), [xlstm](xlstm-extended-lstm.md) |
 | `dimensionality-reduction` | [causal-rep-learning](causal-representation-learning.md), [dim-reduction](dimensionality-reduction.md), [fpca](fpca.md), [mofa](mofa-multi-omics-factor-analysis.md) |
-| `ensemble-learning` | [causal-forest](causal-forest.md), [functional-ensemble](functional-ensemble-regression.md), [random-forest](random-forest.md), [tabular-vs-deep](tabular-vs-deep.md), [xgboost](xgboost.md) |
+| `ensemble-learning` | [causal-forest](causal-forest.md), [functional-ensemble](../algorithms/functional-ensemble-regression/README.md), [random-forest](random-forest.md), [tabular-vs-deep](tabular-vs-deep.md), [xgboost](xgboost.md) |
 | `financial` | [garch](garch.md), [var](var.md) |
 | `forecasting` | [arima](arima.md), [autoencoder-lstm-pinn](autoencoder-lstm-pinn.md), [cs-lstms](contextual-seasonal-lstms-anomaly-detection.md), [data-model-hybrid-survey](data-model-hybrid-driven-survey.md), [dual-level-pi](dual-level-physics-informed-forecasting.md), [fusion-convlstm](fusion-convlstm.md), [garch](garch.md), [hybrid-physics-ml](hybrid-physics-ml-taxonomy.md), [lstm-pinn-battery](lstm-pinn-battery-soh.md), [lstm-pinn-seismic](lstm-pinn-seismic-response.md), [lstm](lstm.md), [lstm-dln](lstm-dln-nonparametric-cdf-forecasting.md), [mdstft](mdstft.md), [pi-lstm](physics-informed-lstm.md), [prophet](prophet.md), [state-space](state-space.md), [tcn-transformer-lstm](tcn-transformer-lstm-ttl.md), [tsb](tsb-transformer-stacked-bilstm-spectrum-prediction.md), [tic-fusionnet](tic-fusionnet.md), [transformer](transformer.md), [xlstm](xlstm-extended-lstm.md), [var](var.md) |
-| `functional` | [fpca](fpca.md), [functional-ensemble](functional-ensemble-regression.md) |
+| `functional` | [fpca](fpca.md), [functional-ensemble](../algorithms/functional-ensemble-regression/README.md) |
 | `generative-modeling` | [alphafold3](alphafold3-biomolecular-structure-prediction.md), [autoencoder](autoencoder.md), [flow-matching](flow-matching-generative-modeling.md), [mae](masked-autoencoder-vision.md), [scvi](scvi-single-cell-deep-generative-model.md) |
 | `geometry` | [geometric-percolation-connectivity](geometric-percolation-connectivity.md) |
-| `graph` | [cellrank](cellrank-trajectory-inference.md), [geometric-percolation-connectivity](geometric-percolation-connectivity.md), [network-causal](network-causal-inference.md), [physarum](physarum-network-optimizer.md) |
-| `heuristic` | [gray-langurs](gray-langurs-optimizer.md), [l-shaped-heuristics](l-shaped-heuristics-supervised-learning.md), [physarum](physarum-network-optimizer.md) |
+| `graph` | [cellrank](cellrank-trajectory-inference.md), [geometric-percolation-connectivity](geometric-percolation-connectivity.md), [network-causal](network-causal-inference.md), [physarum](../algorithms/physarum-network-optimizer/README.md) |
+| `heuristic` | [gray-langurs](gray-langurs-optimizer.md), [l-shaped-heuristics](l-shaped-heuristics-supervised-learning.md), [physarum](../algorithms/physarum-network-optimizer/README.md) |
 | `inverse-problem` | [inverse-problem-root-finding-reliability](inverse-problem-root-finding-reliability.md) |
 | `matrix-tensor` | [mofa](mofa-multi-omics-factor-analysis.md), [tensor-cp](tensor-cp-decomposition-matrix-time-series.md) |
 | `monte-carlo` | [mcmc](mcmc.md), [monte-carlo-random-placement-simulation](monte-carlo-random-placement-simulation.md) |
 | `multi-objective` | [pareto-dominance](pareto-dominance-data-driven-optimization.md) |
 | `numerical` | [adaptive-admm](adaptive-admm.md), [first-order-penalty-bilevel](first-order-penalty-bilevel-optimization.md), [flashattention](flashattention-io-aware-attention.md), [fno](fourier-neural-operator.md), [spatial-branching](learning-for-spatial-branching.md), [vecchia-gp](vecchia-approximation-gaussian-processes.md) |
-| `optimization` | [adaptive-admm](adaptive-admm.md), [bayesian-dro](bayesian-distributionally-robust-optimization.md), [dpo](direct-preference-optimization.md), [dyn-opt-side-info](dynamic-optimization-side-information.md), [first-order-penalty-bilevel](first-order-penalty-bilevel-optimization.md), [gray-langurs](gray-langurs-optimizer.md), [inverse-problem-root-finding-reliability](inverse-problem-root-finding-reliability.md), [l-shaped-heuristics](l-shaped-heuristics-supervised-learning.md), [spatial-branching](learning-for-spatial-branching.md), [optimizing-ensemble-nn](optimizing-ensemble-neural-networks.md), [pareto-dominance](pareto-dominance-data-driven-optimization.md), [physarum](physarum-network-optimizer.md) |
+| `optimization` | [adaptive-admm](adaptive-admm.md), [bayesian-dro](bayesian-distributionally-robust-optimization.md), [dpo](direct-preference-optimization.md), [dyn-opt-side-info](dynamic-optimization-side-information.md), [first-order-penalty-bilevel](first-order-penalty-bilevel-optimization.md), [gray-langurs](gray-langurs-optimizer.md), [inverse-problem-root-finding-reliability](inverse-problem-root-finding-reliability.md), [l-shaped-heuristics](l-shaped-heuristics-supervised-learning.md), [spatial-branching](learning-for-spatial-branching.md), [optimizing-ensemble-nn](optimizing-ensemble-neural-networks.md), [pareto-dominance](pareto-dominance-data-driven-optimization.md), [physarum](../algorithms/physarum-network-optimizer/README.md) |
 | `pareto` | [pareto-dominance](pareto-dominance-data-driven-optimization.md) |
 | `percolation` | [geometric-percolation-connectivity](geometric-percolation-connectivity.md) |
 | `physics-informed` | [autoencoder-lstm-pinn](autoencoder-lstm-pinn.md), [data-model-hybrid-survey](data-model-hybrid-driven-survey.md), [dual-level-pi](dual-level-physics-informed-forecasting.md), [fno](fourier-neural-operator.md), [hybrid-physics-ml](hybrid-physics-ml-taxonomy.md), [lstm-pinn-battery](lstm-pinn-battery-soh.md), [lstm-pinn-seismic](lstm-pinn-seismic-response.md), [pi-lstm](physics-informed-lstm.md) |
 | `preprocessing` | [cs-lstms](contextual-seasonal-lstms-anomaly-detection.md), [mice](mice.md) |
 | `quantile-reliability` | [inverse-problem-root-finding-reliability](inverse-problem-root-finding-reliability.md) |
-| `regression` | [cate-meta-learners](cate-meta-learners.md), [causal-forest](causal-forest.md), [dml](double-machine-learning.md), [functional-ensemble](functional-ensemble-regression.md), [gaussian-process](gaussian-process.md), [lasso-ridge-elasticnet](lasso-ridge-elasticnet.md), [lstm-dln](lstm-dln-nonparametric-cdf-forecasting.md), [random-forest](random-forest.md), [selective-inference](selective-inference-effect-modification-lasso.md), [shap](shap.md), [svm](svm.md), [tabular-vs-deep](tabular-vs-deep.md), [tmle](targeted-maximum-likelihood-estimation.md), [vecchia-gp](vecchia-approximation-gaussian-processes.md), [xgboost](xgboost.md) |
+| `regression` | [cate-meta-learners](cate-meta-learners.md), [causal-forest](causal-forest.md), [dml](double-machine-learning.md), [functional-ensemble](../algorithms/functional-ensemble-regression/README.md), [gaussian-process](gaussian-process.md), [lasso-ridge-elasticnet](lasso-ridge-elasticnet.md), [lstm-dln](lstm-dln-nonparametric-cdf-forecasting.md), [random-forest](random-forest.md), [selective-inference](selective-inference-effect-modification-lasso.md), [shap](shap.md), [svm](svm.md), [tabular-vs-deep](tabular-vs-deep.md), [tmle](targeted-maximum-likelihood-estimation.md), [vecchia-gp](vecchia-approximation-gaussian-processes.md), [xgboost](xgboost.md) |
 | `sensitivity` | [sensitivity-ovb](sensitivity-analysis-omitted-variable.md) |
 | `sequence-modeling` | [cs-lstms](contextual-seasonal-lstms-anomaly-detection.md), [enformer](enformer-gene-expression-prediction.md), [fusion-convlstm](fusion-convlstm.md), [geneformer](geneformer-single-cell-foundation-model.md), [lstm](lstm.md), [lstm-dln](lstm-dln-nonparametric-cdf-forecasting.md), [mamba](mamba-selective-state-space-model.md), [proteinmpnn](proteinmpnn-sequence-design.md), [tcn-transformer-lstm](tcn-transformer-lstm-ttl.md), [tsb](tsb-transformer-stacked-bilstm-spectrum-prediction.md), [transformer](transformer.md), [xlstm](xlstm-extended-lstm.md) |
 | `signal-processing` | [cs-lstms](contextual-seasonal-lstms-anomaly-detection.md), [tic-fusionnet](tic-fusionnet.md), [tsb](tsb-transformer-stacked-bilstm-spectrum-prediction.md) |
@@ -128,7 +140,8 @@
 
 ---
 
-> **总计**: **82 个条目**（79 方法条目 + 3 个赛题适配条目：几何渗透/布放仿真/反问题），均含完整数学设定 + 可运行 Python 代码。
+> **总计**: **80 个条目**（77 方法条目 + 3 个赛题适配条目：几何渗透/布放仿真/反问题），均含完整数学设定 + 可运行 Python 代码。
+> （原 82 条中的 2 个自创方法 —— AHFE 与 PNO-GWO —— 已迁出自创算法库 `../algorithms/`，见上方交叉引用说明。）
 > **元数据**: 全部条目已迁移为 `_SCHEMA.md` 统一 frontmatter（多标签 `type` / `domain`）。
 > **维护**: 新条目须遵循 `_SCHEMA.md` schema（首行 frontmatter + 受控标签）才能被多标签联合检索命中。
 > **最近入库**（2026-09-10，时序/序列建模 4 条）: [CS-LSTMs 双分支异常检测](contextual-seasonal-lstms-anomaly-detection.md)、[LSTM-DLN 非参数 CDF 预测](lstm-dln-nonparametric-cdf-forecasting.md)、[xLSTM](xlstm-extended-lstm.md)、[TSB 多通道频谱预测](tsb-transformer-stacked-bilstm-spectrum-prediction.md)。

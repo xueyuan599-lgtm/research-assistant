@@ -1,3 +1,13 @@
+---
+title: Physarum Network Optimizer (PNO-GWO) — 黏菌管网络-灰狼混合优化算法
+type:
+  - heuristic
+  - optimization
+  - graph
+domain:
+  - operations-research
+source: 自创（Algorithm Design Pipeline）— 2026-09-23 由 algorithm-repository/ 迁入
+---
 # Physarum Network Optimizer (PNO-GWO) — 黏菌管网络-灰狼混合优化算法
 
 > 基于黏菌（Physarum polycephalum）管状网络自适应机制的原创群智能优化算法，
@@ -95,7 +105,8 @@ $$
 
 ## 适用场景
 
-- ✅ **多峰函数优化**（Rastrigin, Ackley — 保持 PNO 的探索优势）
+- ✅ **多峰函数优化**（Ackley 领先 v2.0 21×，保持 PNO 探索优势）
+- ⚠️ **Rastrigin 未突破**——v3.0 median 34.84 反比 v2.0 退化 0.89×，GWO 可达 0.00；v4 诊断列为第一瓶颈
 - ✅ **需自适应参数的复杂问题**（SHCA 自动适配）
 - ✅ **中等维度问题**（30-100D，CG-PSR 优势明显）
 - ✅ **需要混合探索-开发的问题**
@@ -107,12 +118,13 @@ $$
 | 函数 | v3.0 | v2.0 | 提升倍数 | 主要贡献机制 |
 |------|------|------|---------|------------|
 | Sphere | **3.17e-17** | 3.32e-15 | **104×** | SHCA + CAS |
-| Rastrigin | 34.84 | 31.05 | 持平 | — |
+| Rastrigin | 34.84 | 31.05 | **0.89×（退化）** | CAS 在多峰上过早切开发 |
 | Rosenbrock | 28.79 | 28.76 | 持平 | — |
 | Ackley | **1.58e-10** | 3.37e-09 | **21×** | SHCA + CG-PSR |
 | Griewank | 1.67e-16 | 0.00 | 持平 | — |
 
-> 详细数据见 [benchmark_v3.md](benchmark_v3.md) | 完整测试脚本: `run_benchmark.py`
+> 详细数据见 [benchmark_v3.md](benchmark_v3.md)（其"v3.0 vs v2.0 提升统计"表把 Rastrigin 记为 `0.89×（略差）`，
+> v4 诊断报告列为第一瓶颈）| 完整测试脚本: `run_benchmark.py`
 
 ## 快速使用
 

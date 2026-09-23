@@ -15,11 +15,11 @@
 
 | 目录/文件 | 说明 | 规模 |
 |-----------|------|------|
-| `algorithm-repository/` | **SCI 级算法实现库** — 从顶刊提取的方法 + 可运行代码 | **82 个条目**（26 经典 + 53 个 2021-2026 前沿 + 3 赛题适配） |
+| `algorithm-repository/` | **SCI 级算法实现库** — 从顶刊提取的方法 + 可运行代码 | **80 个条目**（24 经典 + 53 个 2021-2026 前沿 + 3 赛题适配） |
 | `optimization-validation-framework.md` | 优化问题求解→验证→交付全流程方法论 | 1 个文件 |
 | `project-experience/` | 项目经验沉淀模板（待填充） | 框架就绪 |
 | `kaggle/` | Kaggle 竞赛复盘 + 模式模板 | 8 个模式 + 1 个 agent |
-| `algorithms/` | Algorithm Pipeline 自创算法（与顶刊提取的 `algorithm-repository/` 互补） | 17 个条目 |
+| `algorithms/` | Algorithm Pipeline 自创算法（与顶刊提取的 `algorithm-repository/` 互补） | 2 个条目（PNO-GWO · AHFE） |
 | `mcm/` | 数学建模知识库（含 `templates/` 官方格式规范与节点清单） | 10 个文件 |
 | `writing/` | 写作判据与范式：正面范式 · 01–06 论证结构 · 期刊尺子 · 07 结构审稿口径 | 4 个文件 |
 | `outputs/` | PNO 实验 JSON（历史产物，非知识条目） | — |
